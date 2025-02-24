@@ -8,7 +8,7 @@ interface WordPressConfig {
 }
 
 interface WordPressPage {
-  [key: string]: any;
+  [key: string]: string;
 }
 
 interface MenuItem {
@@ -28,10 +28,13 @@ class WordPressService {
       const response = await fetch(
         `${this.config.url}/wp-json/wp/v2/pages?slug=${slug}&lang=${lang}`,
       );
-      const page: WordPressPage[] = await response.json();
+      const page: WordPressPage[] = (await response.json()) as WordPressPage[];
       return page.length ? page[0] : null;
-    } catch (error: any) {
-      console.error("Error fetching page:", error.message);
+    } catch (error: unknown) {
+      console.error(
+        "Error fetching page:",
+        error instanceof Error ? error.message : error,
+      );
       throw error;
     }
   }
@@ -48,10 +51,13 @@ class WordPressService {
           },
         },
       );
-      const menuItems: MenuItem[] = await response.json();
+      const menuItems: MenuItem[] = (await response.json()) as MenuItem[];
       return this.createMenuTree(menuItems);
-    } catch (error: any) {
-      console.error("Error fetching menu:", error.message);
+    } catch (error: unknown) {
+      console.error(
+        "Error fetching menu:",
+        error instanceof Error ? error.message : error,
+      );
       throw error;
     }
   }

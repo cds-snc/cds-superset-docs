@@ -6,6 +6,11 @@ on:
       - "app/**"
       - ".github/workflows/app-pull-request.yml"
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./app
+
 jobs:
   app-pull-request:
     runs-on: ubuntu-latest
@@ -33,13 +38,13 @@ jobs:
           bun-version: 1.2.2
 
       - name: Install dependencies
-        working-directory: app
         run: bun install
 
       - name: Format check
-        working-directory: app
         run: bun run format-ci
 
+      - name: Lint check
+        run: bun run lint-ci
+
       - name: Docker build check
-        working-directory: app
-        run: docker build -t cds-superset-docs --platform linux/arm64 .
+        run: bun run docker
