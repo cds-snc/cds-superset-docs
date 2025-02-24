@@ -4,7 +4,8 @@
   "main": "index.ts",
   "scripts": {
     "start": "bun run index.ts",
-    "format": "prettier --write '**/*.ts' '**/*.js'"
+    "format": "prettier --write '**/*.ts' '**/*.js'",
+    "format-ci": "prettier --check '**/*.ts' '**/*.js'"
   },
   "keywords": ["WordPress", "proxy"],
   "author": "Pat Heard",
