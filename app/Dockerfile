@@ -1,4 +1,4 @@
-FROM oven/bun:1.2.3-slim AS install
+FROM oven/bun:1.2.2-slim AS install
 
 RUN mkdir -p /tmp/build
 WORKDIR /tmp/build
@@ -7,7 +7,7 @@ COPY . .
 RUN bun install --frozen-lockfile --production
 RUN bun build --entrypoints ./index.ts --outdir ./dist --target=bun
 
-FROM oven/bun:1.2.3-distroless AS release
+FROM oven/bun:1.2.2-distroless AS release
 WORKDIR /var/task
 
 COPY --from=install /tmp/build/dist index.js
