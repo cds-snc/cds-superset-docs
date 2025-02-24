@@ -35,16 +35,13 @@ const config = {
   },
   routing: {
     pathSegmentsAllowed: parseInt(Bun.env.PATH_SEGMENTS_ALLOWED || "3"),
-    pathPattern: "/:path1/:path2/:path3?",
+    get pathPattern() {
+      return Array(this.pathSegmentsAllowed)
+        .fill("/:path")
+        .map((p, i) => p + (i + 1) + "?")
+        .join("");
+    },
   },
 };
-
-// Build the dynamic path pattern based on the number of allowed segments.
-// This determines how many levels of nesting a page in WordPress can have
-// and still resolve in this site.
-config.routing.pathPattern = Array(config.routing.pathSegmentsAllowed)
-  .fill("/:path")
-  .map((p, i) => p + (i + 1) + "?")
-  .join("");
 
 export default config;

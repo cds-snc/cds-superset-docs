@@ -1,4 +1,5 @@
-import express, { Request, Response } from "express";
+import type { Request, Response } from "express";
+import express from "express";
 import WordPressService from "../services/wordpress";
 import config from "../config";
 
@@ -7,8 +8,8 @@ const router = express.Router();
 
 router.get(
   config.routing.pathPattern,
-  async (req: Request, res: Response): Response => {
-    const { lang = "en" } = req.query;
+  async (req: Request, res: Response): Promise<void> => {
+    const lang = (req.query["lang"] as "en" | "fr") || "en";
     const pathSegments: string[] = Object.values(req.params).filter(
       Boolean,
     ) as string[];
@@ -21,21 +22,21 @@ router.get(
       ]);
 
       if (page && menuItems) {
-        return res.render("page", {
+        res.render("page", {
           page,
           menuItems,
           isHome: lastSegment === "home",
           langSwap: lang === "en" ? "fr" : "en",
-          langSwapSlug: lang === "en" ? page?.slug_fr : page?.slug_en,
+          langSwapSlug: lang === "en" ? page["slug_fr"] : page["slug_en"],
           siteName: config.site.names[lang],
         });
       } else {
         console.log(`Page not found for: ${lastSegment}`);
-        return res.status(404).send("Page not found");
+        res.status(404).send("Page not found");
       }
     } catch (error) {
       console.error("Route handler error:", error);
-      return res.status(500).send("Internal server error");
+      res.status(500).send("Internal server error");
     }
   },
 );
