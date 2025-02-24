@@ -1,0 +1,28 @@
+{
+	"name": "cds-superset-docs",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"containerEnv": {
+		"SHELL": "/bin/zsh"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/terraform:1": {
+			"version": "1.10.5",
+			"tflint": "latest"
+		},
+    	"ghcr.io/shyim/devcontainers-features/bun:0": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"hashicorp.terraform",
+				"github.copilot",
+				"github.vscode-github-actions",
+				"hashicorp.hcl"
+			]
+		}
+	},
+	"remoteUser": "vscode"
+}

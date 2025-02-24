@@ -1,0 +1,9 @@
+__tests__
+eslint.config.mjs
+node_modules
+Dockerfile*
+tsconfig.json
+.dockerignore
+.env*
+.git
+.gitignore

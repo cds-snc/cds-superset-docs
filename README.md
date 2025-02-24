@@ -1,10 +1,15 @@
-# Generic Project Template
+# CDS Superset Docs
 
-This repository provides some base files for setting up a repository at
-CDS. Plan is to create more project template for specific technologies:
+Documentation site for [CDS Superset](https://superset.cds-snc.ca/). Content is managed in WordPress and retrieved via its API.
 
-- project-template-terraform
-- project-template-python
-- project-template-nodejs
+The app is built using [Express.js](https://expressjs.com/) and uses the [GC Design System](https://design-system.alpha.canada.ca/) for its frontend. Hosting is done using a Lambda function with content caching provided by CloudFront.
 
-Note that default community health files are maintained at https://github.com/cds-snc/.github 
+## Running locally
+```sh
+# Install bun or use the devcontainer
+# https://bun.sh/docs/installation
+cd app
+cp .env.example .env # and set your values
+bun install
+bun start
+```

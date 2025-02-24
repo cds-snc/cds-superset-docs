@@ -1,0 +1,53 @@
+name: App pull request
+
+on:
+  pull_request:
+    paths:
+      - "app/**"
+      - ".github/workflows/app-pull-request.yml"
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./app
+
+jobs:
+  app-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Audit DNS requests
+        uses: cds-snc/dns-proxy-action@main
+        env:
+          DNS_PROXY_FORWARDTOSENTINEL: "true"
+          DNS_PROXY_LOGANALYTICSWORKSPACEID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+          DNS_PROXY_LOGANALYTICSSHAREDKEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@4574d27a4764455b42196d70a065bc6853246a25 # v3.4.0
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca # v3.9.0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2.0.1
+        with:
+          bun-version: 1.2.2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Format check
+        run: bun run format-ci
+
+      - name: Lint check
+        run: bun run lint
+
+      - name: Test
+        run: bun test
+
+      - name: Docker build
+        run: bun run docker
