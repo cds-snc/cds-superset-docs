@@ -1,0 +1,21 @@
+{
+  "name": "cds-superset-docs",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "bun run index.ts",
+    "format": "prettier --write '**/*.ts' '**/*.js'"
+  },
+  "keywords": ["WordPress", "proxy"],
+  "author": "Pat Heard",
+  "license": "MIT",
+  "description": "Serves the CDS Superset Docs site.  Content is managed in WordPress and retrieved via its API.",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.3",
+    "prettier": "^3.5.1"
+  }
+}
