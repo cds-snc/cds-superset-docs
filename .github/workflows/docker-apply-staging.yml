@@ -1,0 +1,74 @@
+name: Docker build and push Staging
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "app/**"
+      - ".github/workflows/docker-apply-staging.yml"
+
+env: 
+  AWS_REGION: ca-central-1
+  REGISTRY: ${{ vars.STAGING_AWS_ACCOUNT_ID }}.dkr.ecr.ca-central-1.amazonaws.com/cds-superset-docs
+  GITHUB_SHA: ${{ github.sha }}
+
+permissions:
+  id-token: write
+  contents: write
+  
+jobs:
+  docker-push:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Audit DNS requests
+      uses: cds-snc/dns-proxy-action@main
+      env:
+        DNS_PROXY_FORWARDTOSENTINEL: "true"
+        DNS_PROXY_LOGANALYTICSWORKSPACEID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+        DNS_PROXY_LOGANALYTICSSHAREDKEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
+
+    - name: Checkout
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+    - name: Setup QEMU
+      uses: docker/setup-qemu-action@4574d27a4764455b42196d70a065bc6853246a25 # v3.4.0
+
+    - name: Setup Docker Buildx
+      uses: docker/setup-buildx-action@f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca # v3.9.0
+
+    - name: Configure aws credentials using OIDC
+      uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 # v4.1.0
+      with:
+        role-to-assume: arn:aws:iam::${{ vars.STAGING_AWS_ACCOUNT_ID }}:role/cds-superset-docs-apply 
+        role-session-name: PushContainer
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@062b18b96a7aff071d4dc91bc00c4c1a7945b076 # v2.0.1 
+  
+    - name: Build container
+      run: |
+        docker build \
+          --file ./app/Dockerfile \
+          --platform linux/arm64 \
+          --tag $REGISTRY:sha-${{ env.GITHUB_SHA }} \
+          --tag $REGISTRY:latest ./app
+
+    - name: Push Container to Amazon ECR
+      run: |
+        docker push $REGISTRY:sha-${{ env.GITHUB_SHA }}
+        docker push $REGISTRY:latest
+
+    - name: Docker generate SBOM
+      uses: cds-snc/security-tools/.github/actions/generate-sbom@34794baf2af592913bb5b51d8df4f8d0acc49b6f # v3.2.0
+      env:
+        TRIVY_DB_REPOSITORY: ${{ vars.TRIVY_DB_REPOSITORY }}
+      with:
+        docker_image: "${{ env.REGISTRY }}:latest"
+        dockerfile_path: "./app/Dockerfile"
+        sbom_name: "cds-superset-docs"
+        token: "${{ secrets.GITHUB_TOKEN }}"
