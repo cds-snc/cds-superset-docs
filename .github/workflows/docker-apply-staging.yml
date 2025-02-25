@@ -70,5 +70,6 @@ jobs:
       with:
         docker_image: "${{ env.REGISTRY }}:latest"
         dockerfile_path: "./app/Dockerfile"
+        platform: "linux/arm64"
         sbom_name: "cds-superset-docs"
         token: "${{ secrets.GITHUB_TOKEN }}"
