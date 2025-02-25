@@ -39,5 +39,5 @@ jobs:
       run: |
         aws lambda update-function-code \
           --function-name ${{ env.FUNCTION_NAME }} \
-          --image-uri $REGISTRY:${{ env.TAG_VERSION }}  > /dev/null 2>&1
+          --image-uri $REGISTRY:$TAG_VERSION  > /dev/null 2>&1
 
