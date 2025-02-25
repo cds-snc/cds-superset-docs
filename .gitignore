@@ -5,6 +5,7 @@
 node_modules
 
 # Terraform
+.terragrunt-cache
 **/.terraform/*
 *.tfstate
 *.tfstate.*

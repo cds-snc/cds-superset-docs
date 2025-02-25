@@ -11,6 +11,9 @@ defaults:
     shell: bash
     working-directory: ./app
 
+permissions:
+  contents: read
+
 jobs:
   app-pull-request:
     runs-on: ubuntu-latest
