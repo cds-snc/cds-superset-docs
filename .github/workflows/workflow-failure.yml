@@ -3,6 +3,10 @@ name: Workflow failure
 on:
   workflow_run:
     workflows:
+      - "Docker build and push Production"
+      - "Docker build and push Staging"
+      - "Docker deploy Production"
+      - "Docker deploy Staging"
       - "Terraform Apply Production"
       - "Terraform Apply Staging"
     types:
