@@ -10,6 +10,7 @@
 		},
 		"ghcr.io/devcontainers/features/terraform:1": {
 			"version": "1.10.5",
+			"terragrunt": "0.73.13",
 			"tflint": "latest"
 		},
     	"ghcr.io/shyim/devcontainers-features/bun:0": {}
