@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "bun run index.ts",
+    "start": "bun run index.js",
     "docker": "docker build --tag cds-superset-docs --platform linux/arm64 .",
-    "format": "prettier --write '**/*.ts'",
-    "format-ci": "prettier --check '**/*.ts'",
-    "lint": "eslint '**/*.ts'"
+    "format": "prettier --write '**/*.js'",
+    "format-ci": "prettier --check '**/*.js'",
+    "lint": "eslint '**/*.js'"
   },
   "keywords": ["WordPress", "proxy"],
   "author": "Pat Heard",
@@ -19,14 +19,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
-    "@types/bun": "^1.2.3",
-    "@types/express": "^5.0.0",
-    "@types/jest": "^29.5.14",
-    "@types/supertest": "^6.0.2",
+    "@types/bun": "latest",
     "eslint": "^9.21.0",
-    "prettier": "^3.5.1",
-    "supertest": "^7.0.0",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.24.1"
-  }
+    "globals": "^16.0.0",
+    "prettier": "^3.5.1"
+  },
+  "private": true
 }

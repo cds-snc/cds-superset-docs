@@ -5,7 +5,7 @@ WORKDIR /tmp/build
 
 COPY . .
 RUN bun install --frozen-lockfile --production
-RUN bun build --entrypoints ./index.ts --outdir ./dist --target=bun
+RUN bun build --entrypoints ./index.js --outdir ./dist --target=bun
 
 FROM oven/bun:1.2.2-distroless AS release
 WORKDIR /var/task

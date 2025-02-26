@@ -9,7 +9,7 @@ describe("services/wordpress", () => {
     menuIds: { en: "1", fr: "2" },
   };
 
-  let service: WordPressService;
+  let service;
 
   beforeEach(() => {
     service = new WordPressService(mockConfig);
@@ -18,7 +18,7 @@ describe("services/wordpress", () => {
 
   describe("getPage", () => {
     it("should return the first page when available", async () => {
-      (fetch as jest.Mock).mockResolvedValueOnce({
+      fetch.mockResolvedValueOnce({
         json: async () => [{ title: "Test Page" }],
       });
       const result = await service.getPage("test-slug", "en");
@@ -29,7 +29,7 @@ describe("services/wordpress", () => {
     });
 
     it("should return null when no pages found", async () => {
-      (fetch as jest.Mock).mockResolvedValueOnce({
+      fetch.mockResolvedValueOnce({
         json: async () => [],
       });
       const result = await service.getPage("missing-page", "en");
@@ -37,7 +37,7 @@ describe("services/wordpress", () => {
     });
 
     it("should throw an error if fetch fails", async () => {
-      (fetch as jest.Mock).mockRejectedValueOnce(new Error("Network error"));
+      fetch.mockRejectedValueOnce(new Error("Network error"));
       await expect(service.getPage("test-slug", "en")).rejects.toThrow(
         "Network error",
       );
@@ -60,7 +60,7 @@ describe("services/wordpress", () => {
           children: [],
         },
       ];
-      (fetch as jest.Mock).mockResolvedValueOnce({
+      fetch.mockResolvedValueOnce({
         json: async () => mockMenuItems,
       });
       const menu = await service.getMenu("en");
@@ -74,7 +74,7 @@ describe("services/wordpress", () => {
     });
 
     it("should throw an error if fetch fails to get menu", async () => {
-      (fetch as jest.Mock).mockRejectedValueOnce(new Error("Menu fetch error"));
+      fetch.mockRejectedValueOnce(new Error("Menu fetch error"));
       await expect(service.getMenu("en")).rejects.toThrow("Menu fetch error");
     });
   });
