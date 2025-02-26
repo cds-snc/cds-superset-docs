@@ -1,5 +1,5 @@
 describe("config", () => {
-  let config: typeof import("../../config").default;
+  let config;
   const originalEnv = { ...process.env };
 
   beforeAll(async () => {
