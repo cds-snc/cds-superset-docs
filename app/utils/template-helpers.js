@@ -1,4 +1,5 @@
 import config from "../config";
+import { escapeRegExp } from "./string-helpers";
 
 const templateHelpers = {
   dateFormat: (date) =>
@@ -11,7 +12,7 @@ const templateHelpers = {
   updateMarkup: (content) => {
     if (!content) return "";
 
-    const siteUrl = new RegExp(`${config.wordpress.url}`, "g");
+    const siteUrl = new RegExp(`${escapeRegExp(config.wordpress.url)}`, "g");
 
     // Updates the WordPress content to match with the expected markup
     // for the Design System components.
