@@ -2,12 +2,12 @@
     
     {{#if menuItems}}
     <gcds-top-nav slot="menu" label="Main menu" alignment="right">
-        <gcds-nav-link href="/" slot="home">{{siteName}}</gcds-nav-link>
+        <gcds-nav-link href="/{{#if (eq "fr" page.lang)}}home-fr?lang=fr{{/if}}" slot="home">{{siteName}}</gcds-nav-link>
         {{#each menuItems}}
             {{#if children}}
                 <gcds-nav-group  open-trigger="{{title.rendered}}" menu-label="{{title.rendered}}">
                     {{#each children}}
-                        <gcds-nav-link href="{{url}}">{{title.rendered}}</gcds-nav-link>
+                        <gcds-nav-link href="{{url}}" {{#if (eq title.rendered ../../page.title.rendered)}}current{{/if}}>{{title.rendered}}</gcds-nav-link>
                     {{/each}}
                 </gcds-nav-group>
             {{else}}
@@ -19,7 +19,7 @@
 
     <gcds-breadcrumbs slot="breadcrumb">
     {{#unless isHome}}
-        <gcds-breadcrumbs-item href="/">{{siteName}}</gcds-breadcrumbs-item>
+        <gcds-breadcrumbs-item href="/{{#if (eq "fr" page.lang)}}home-fr?lang=fr{{/if}}">{{siteName}}</gcds-breadcrumbs-item>
     {{/unless}}
     </gcds-breadcrumbs>
 
