@@ -7,11 +7,11 @@
             {{#if children}}
                 <gcds-nav-group  open-trigger="{{title.rendered}}" menu-label="{{title.rendered}}">
                     {{#each children}}
-                        <gcds-nav-link href="{{url}}" {{#if (eq title.rendered ../../page.title.rendered)}}current{{/if}}>{{title.rendered}}</gcds-nav-link>
+                        <gcds-nav-link href="{{url}}" {{#if (eq title.rendered ../../page.title.rendered)}}current{{/if}}>{{{title.rendered}}}</gcds-nav-link>
                     {{/each}}
                 </gcds-nav-group>
             {{else}}
-                <gcds-nav-link href="{{url}}" {{#if (eq title.rendered ../page.title.rendered)}}current{{/if}}>{{title.rendered}}</gcds-nav-link>
+                <gcds-nav-link href="{{url}}" {{#if (eq title.rendered ../page.title.rendered)}}current{{/if}}>{{{title.rendered}}}</gcds-nav-link>
             {{/if}}
         {{/each}}
     </gcds-top-nav>
