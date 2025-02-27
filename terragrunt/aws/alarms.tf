@@ -65,6 +65,10 @@ resource "aws_cloudwatch_metric_alarm" "superset_docs_invocation_errors" {
   threshold           = "0"
   treat_missing_data  = "notBreaching"
 
+  dimensions = {
+    FunctionName = module.superset_docs.function_name
+  }
+
   alarm_actions = [data.aws_sns_topic.cloudwatch_alert_warning.arn]
   ok_actions    = [data.aws_sns_topic.cloudwatch_alert_ok.arn]
 
