@@ -5,6 +5,7 @@ export default class WordPressService {
 
   async getPage(slug, lang) {
     try {
+      console.log(`Fetching page: "${slug} (${lang})"`);
       const response = await fetch(
         `${this.config.url}/wp-json/wp/v2/pages?slug=${slug}&lang=${lang}`,
       );
@@ -21,6 +22,7 @@ export default class WordPressService {
       lang === "en" ? this.config.menuIds.en : this.config.menuIds.fr;
 
     try {
+      console.log(`Fetching menu: ${menuId}`);
       const response = await fetch(
         `${this.config.url}/wp-json/wp/v2/menu-items?menus=${menuId}`,
         {

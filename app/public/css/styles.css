@@ -23,4 +23,8 @@ gcds-container :is(ul li) {
 gcds-details p {
   margin-block-start: var(--gcds-spacing-100);
   margin-block-end: var(--gcds-spacing-100);
+} 
+
+gcds-container code {
+  background-color: var(--gcds-bg-light);
 }
