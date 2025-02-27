@@ -11,12 +11,14 @@ router.get(config.routing.pathPattern, async (req, res) => {
   const lastSegment = pathSegments[pathSegments.length - 1] || "home";
 
   try {
+    console.log(`Request for "/${pathSegments.join("/")}"`);
     const [page, menuItems] = await Promise.all([
       wordPressService.getPage(lastSegment, lang),
       wordPressService.getMenu(lang),
     ]);
 
     if (page && menuItems) {
+      console.log(`Rendering page: ${page.title.rendered}`);
       res.render("page", {
         page: page,
         menuItems: menuItems,
