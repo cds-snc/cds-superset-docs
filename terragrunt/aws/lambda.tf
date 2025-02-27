@@ -5,7 +5,7 @@ module "superset_docs" {
   image_uri = "${aws_ecr_repository.superset_docs.repository_url}:latest"
 
   architectures          = ["arm64"]
-  memory                 = 4096
+  memory                 = 1024
   timeout                = 10
   enable_lambda_insights = true
 
