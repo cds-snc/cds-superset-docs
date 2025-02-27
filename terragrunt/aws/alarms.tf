@@ -24,7 +24,7 @@ data "aws_sns_topic" "cloudwatch_alert_ok_us_east_1" {
 #
 resource "aws_cloudwatch_log_metric_filter" "superset_docs_errors" {
   name           = "error-superset-docs"
-  pattern        = "ERROR? Error? error?"
+  pattern        = "?ERROR ?Error ?error"
   log_group_name = local.superset_docs_cloudwatch_log_group_name
 
   metric_transformation {
@@ -54,7 +54,7 @@ resource "aws_cloudwatch_metric_alarm" "superset_docs_errors" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "superset_docs_invocation_errors" {
-  alarm_name          = "invokcation-errors-superset-docs"
+  alarm_name          = "invocation-errors-superset-docs"
   alarm_description   = "`superset-docs` invocation errors logged over 1 minute."
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "1"
