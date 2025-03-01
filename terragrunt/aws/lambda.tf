@@ -31,8 +31,8 @@ resource "aws_lambda_function_url" "superset_docs" {
 # Function warmer
 #
 resource "aws_cloudwatch_event_rule" "superset_docs" {
-  name        = "invoke-superset-docs"
-  description = "Keep the function toasty warm"
+  name                = "invoke-superset-docs"
+  description         = "Keep the function toasty warm"
   schedule_expression = "rate(5 minutes)"
 }
 
