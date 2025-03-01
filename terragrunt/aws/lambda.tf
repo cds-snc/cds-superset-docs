@@ -26,3 +26,27 @@ resource "aws_lambda_function_url" "superset_docs" {
   function_name      = module.superset_docs.function_name
   authorization_type = "NONE"
 }
+
+#
+# Function warmer
+#
+resource "aws_cloudwatch_event_rule" "superset_docs" {
+  name        = "invoke-superset-docs"
+  description = "Keep the function toasty warm"
+  schedule_expression = "rate(5 minutes)"
+}
+
+resource "aws_cloudwatch_event_target" "superset_docs" {
+  target_id = "invoke-lambda"
+  rule      = aws_cloudwatch_event_rule.superset_docs.name
+  arn       = module.superset_docs.function_arn
+  input     = jsonencode({})
+}
+
+resource "aws_lambda_permission" "superset_docs" {
+  statement_id  = "AllowExecutionFromEventBridge"
+  action        = "lambda:InvokeFunction"
+  function_name = module.superset_docs.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.superset_docs.arn
+}
