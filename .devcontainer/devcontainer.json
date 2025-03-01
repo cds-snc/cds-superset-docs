@@ -1,6 +1,6 @@
 {
 	"name": "cds-superset-docs",
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye@sha256:f485b76ec2971017849252b494e61f4b7d97cd75d094db8161c34343edc026e9",
 	"containerEnv": {
 		"SHELL": "/bin/zsh"
 	},
