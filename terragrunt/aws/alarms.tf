@@ -9,16 +9,6 @@ data "aws_sns_topic" "cloudwatch_alert_ok" {
   name = "cloudwatch-alert-ok"
 }
 
-data "aws_sns_topic" "cloudwatch_alert_warning_us_east_1" {
-  provider = aws.us-east-1
-  name     = "cloudwatch-alert-warning"
-}
-
-data "aws_sns_topic" "cloudwatch_alert_ok_us_east_1" {
-  provider = aws.us-east-1
-  name     = "cloudwatch-alert-ok"
-}
-
 #
 # Errors logged
 #
@@ -71,30 +61,6 @@ resource "aws_cloudwatch_metric_alarm" "superset_docs_invocation_errors" {
 
   alarm_actions = [data.aws_sns_topic.cloudwatch_alert_warning.arn]
   ok_actions    = [data.aws_sns_topic.cloudwatch_alert_ok.arn]
-
-  tags = local.common_tags
-}
-
-resource "aws_cloudwatch_metric_alarm" "superset_docs_health_check" {
-  provider = aws.us-east-1
-
-  alarm_name          = "health-check-superset-docs"
-  alarm_description   = "`superset-docs` heath check has failed in a 2 minute period."
-  comparison_operator = "LessThanThreshold"
-  evaluation_periods  = "2"
-  metric_name         = "HealthCheckStatus"
-  namespace           = "AWS/Route53"
-  period              = "60"
-  statistic           = "Minimum"
-  threshold           = "1"
-  treat_missing_data  = "notBreaching"
-
-  alarm_actions = [data.aws_sns_topic.cloudwatch_alert_warning_us_east_1.arn]
-  ok_actions    = [data.aws_sns_topic.cloudwatch_alert_ok_us_east_1.arn]
-
-  dimensions = {
-    HealthCheckId = aws_route53_health_check.superset_docs.id
-  }
 
   tags = local.common_tags
 }
