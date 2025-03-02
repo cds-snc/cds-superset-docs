@@ -1,4 +1,4 @@
-FROM oven/bun:1.2.2-slim AS install
+FROM oven/bun:1.2.3-slim AS install
 
 RUN mkdir -p /tmp/build
 WORKDIR /tmp/build
