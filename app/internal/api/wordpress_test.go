@@ -214,7 +214,7 @@ func TestFetchPageWithTrailingSlash(t *testing.T) {
 // TestFetchPageNetworkError tests handling of network errors
 func TestFetchPageNetworkError(t *testing.T) {
 	// Create client with invalid URL to trigger network error
-	client := &WordPressClient{BaseURL: "http://invalid-domain-that-does-not-exist.example"}
+	client := &WordPressClient{BaseURL: "http://docs.superset.unit.tests.dev"}
 
 	_, err := client.FetchPage("/any-page")
 
