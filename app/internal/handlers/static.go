@@ -15,7 +15,9 @@ type StaticHandler struct {
 
 // NewStaticHandler creates a new static file handler
 func NewStaticHandler(staticDir string) *StaticHandler {
-	mime.AddExtensionType(".js", "text/javascript; charset=utf-8")
+	if err := mime.AddExtensionType(".js", "text/javascript; charset=utf-8"); err != nil {
+		log.Fatalf("Could not add MIME type for .js files: %v", err)
+	}
 
 	return &StaticHandler{
 		fileServer: http.FileServer(http.Dir(staticDir)),
