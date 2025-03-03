@@ -75,7 +75,7 @@ func TestStaticHandlerServeHTTP(t *testing.T) {
 			name:           "JavaScript file",
 			path:           "/test.js",
 			expectedStatus: http.StatusOK,
-			expectedType:   "application/javascript",
+			expectedType:   "text/javascript; charset=utf-8",
 			checkBody:      true,
 		},
 		{
@@ -133,7 +133,7 @@ func TestStaticHandlerServeHTTP(t *testing.T) {
 			// Check Content-Type header
 			contentType := resp.Header.Get("Content-Type")
 			if tc.expectedType != "" && contentType != tc.expectedType {
-				t.Errorf("Expected Content-Type %q, got %q", tc.expectedType, contentType)
+				t.Errorf("Expected Content-Type %q, got %q for %q", tc.expectedType, contentType, tc.name)
 			}
 
 			// Check Cache-Control header
