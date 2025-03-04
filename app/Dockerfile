@@ -1,19 +1,16 @@
-FROM oven/bun:1.2.2-slim AS install
+FROM golang:1.24-alpine as build
 
-RUN mkdir -p /tmp/build
-WORKDIR /tmp/build
+WORKDIR /build
 
-COPY . .
-RUN bun install --frozen-lockfile --production
-RUN bun build --entrypoints ./index.js --outdir ./dist --target=bun
+COPY go.mod go.sum ./
+RUN go mod download
 
-FROM oven/bun:1.2.2-distroless AS release
-WORKDIR /var/task
+COPY ./ ./
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -trimpath -o wordpress-go-proxy ./cmd/server
 
-COPY --from=install /tmp/build/dist index.js
-COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.9.0 /lambda-adapter /opt/extensions/lambda-adapter
-COPY ./public ./public
-COPY ./views ./views
+FROM scratch
+COPY --from=build /build/wordpress-go-proxy /wordpress-go-proxy
+COPY --from=build /build/templates /templates
+COPY --from=build /build/static /static
 
-ENV PORT=5000
-ENTRYPOINT [ "bun", "run", "index.js" ]
+ENTRYPOINT ["/wordpress-go-proxy"]

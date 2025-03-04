@@ -1,8 +1,9 @@
-__tests__
-eslint.config.mjs
-node_modules
-Dockerfile*
-.dockerignore
-.env*
 .git
 .gitignore
+.golangci.yml
+.env
+*_test.go
+Dockerfile
+LICENSE
+README.md
+terraform
