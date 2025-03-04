@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.3.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.2.1...v1.3.0) (2025-03-04)
+
+
+### Features
+
+* add an EventBridge rule to warm the function ([#28](https://github.com/cds-snc/cds-superset-docs/issues/28)) ([b83ce7c](https://github.com/cds-snc/cds-superset-docs/commit/b83ce7c712dc66e4c5a5b64e3224adb91404e82e))
+* switch to Go WordPress proxy ([#30](https://github.com/cds-snc/cds-superset-docs/issues/30)) ([195d085](https://github.com/cds-snc/cds-superset-docs/commit/195d085d2c305f472497d638c5e401a04ca411de))
+
+
+### Bug Fixes
+
+* Articles column layouts ([#24](https://github.com/cds-snc/cds-superset-docs/issues/24)) ([69977a7](https://github.com/cds-snc/cds-superset-docs/commit/69977a754516e026ab004a458974220a8c6de31f))
+* lambda function's environment vars ([#34](https://github.com/cds-snc/cds-superset-docs/issues/34)) ([8a3b4ea](https://github.com/cds-snc/cds-superset-docs/commit/8a3b4ea1cea1056f83f03e0a9643c7d1cd221514))
+* reduce function memory ([#25](https://github.com/cds-snc/cds-superset-docs/issues/25)) ([dda132d](https://github.com/cds-snc/cds-superset-docs/commit/dda132daf4adf882eacf4aa6fba5808839178416))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#31](https://github.com/cds-snc/cds-superset-docs/issues/31)) ([53d052d](https://github.com/cds-snc/cds-superset-docs/commit/53d052dd453e447925558489be3c5314cd57966d))
+* **deps:** pin mcr.microsoft.com/devcontainers/base docker tag to f485b76 ([#26](https://github.com/cds-snc/cds-superset-docs/issues/26)) ([6fbbd32](https://github.com/cds-snc/cds-superset-docs/commit/6fbbd329fa879174f8d696e3ae0e4e44a76cd6cc))
+* **deps:** update all non-major github action dependencies ([#33](https://github.com/cds-snc/cds-superset-docs/issues/33)) ([f60cd66](https://github.com/cds-snc/cds-superset-docs/commit/f60cd666f03b41de2641a7ba55b87ac1d117c9aa))
+* **deps:** update googleapis/release-please-action action to v4.1.4 ([#27](https://github.com/cds-snc/cds-superset-docs/issues/27)) ([47129b0](https://github.com/cds-snc/cds-superset-docs/commit/47129b02da17a6985c656559139db25ccb11cdff))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.3.1 ([#29](https://github.com/cds-snc/cds-superset-docs/issues/29)) ([d7f8278](https://github.com/cds-snc/cds-superset-docs/commit/d7f8278aeba03e7e2cf127ab0976c6e2939d661f))
+
 ## [1.2.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.2.0...v1.2.1) (2025-02-27)
 
 
