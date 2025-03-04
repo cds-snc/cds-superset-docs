@@ -10,13 +10,13 @@ module "superset_docs" {
   enable_lambda_insights = true
 
   environment_variables = {
-    MENU_ID_EN         = var.menu_id_en
-    MENU_ID_FR         = var.menu_id_fr
-    SITE_NAME_EN       = var.site_name_en
-    SITE_NAME_FR       = var.site_name_fr
-    WORDPRESS_URL      = var.wordpress_url
-    WORDPRESS_USER     = var.wordpress_user
-    WORDPRESS_PASSWORD = var.wordpress_password
+    SITE_NAME_EN         = var.site_name_en
+    SITE_NAME_FR         = var.site_name_fr
+    WORDPRESS_MENU_ID_EN = var.menu_id_en
+    WORDPRESS_MENU_ID_FR = var.menu_id_fr
+    WORDPRESS_URL        = var.wordpress_url
+    WORDPRESS_USERNAME   = var.wordpress_user
+    WORDPRESS_PASSWORD   = var.wordpress_password
   }
 
   billing_tag_value = var.billing_code
