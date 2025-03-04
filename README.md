@@ -6,11 +6,10 @@ The app is built using [Express.js](https://expressjs.com/) and uses the [GC Des
 
 ## Running locally
 
-1. [Install Go](https://go.dev/doc/install) or use the devcontainer.
-1. Update the values in `./app/.env.example` and set them your terminal environment.
+To run locally, [install Go](https://go.dev/doc/install) or use the [devcontainer](https://containers.dev/supporting).  Then, from a terminal:
 
 ```sh
 cd app
-go mod download
-go run cmd/server/main.go
+cp .env.example .env # and set your values
+make run
 ```

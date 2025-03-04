@@ -404,3 +404,154 @@ func TestNewMenuData(t *testing.T) {
 		})
 	}
 }
+
+// TestConvertToDesignSystem tests the convertToDesignSystem function which transforms
+// WordPress HTML content to Design System components
+func TestConvertToDesignSystem(t *testing.T) {
+	testCases := []struct {
+		name         string
+		pageContent  string
+		baseUrl      string
+		expectedHTML string
+	}{
+		{
+			name:         "Base URL removal",
+			pageContent:  "This is a link to https://example.com/page and another to https://example.com/other.",
+			baseUrl:      "https://example.com",
+			expectedHTML: "This is a link to /page and another to /other.",
+		},
+		{
+			name:         "Alert pattern conversion",
+			pageContent:  `<details class="alert alert-info" open><summary class="h3"><h3>Information</h3></summary><p>Some important information here.</p></details>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<section class="mt-300 mb-300"><gcds-notice type="info" notice-title-tag="h2" notice-title="Information"><gcds-text><p>Some important information here.</p></gcds-text></gcds-notice></section>`,
+		},
+		{
+			name:         "Button pattern conversion",
+			pageContent:  `<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact">Contact Us</a></div>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<gcds-button type="link" href="/contact">Contact Us</gcds-button>`,
+		},
+		{
+			name:         "Accordion pattern conversion",
+			pageContent:  `<details class="wp-block-cds-snc-accordion"><summary>Frequently Asked Questions</summary><div class="wp-block-cds-snc-accordion__content"><p>FAQ content goes here</p></div></details>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<gcds-details details-title="Frequently Asked Questions"><gcds-text><p>FAQ content goes here</p></gcds-text></gcds-details>`,
+		},
+		{
+			name:         "Accordion content pattern conversion only",
+			pageContent:  `<div class="wp-block-cds-snc-accordion__content"><p>Some standalone content</p></div>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<gcds-text><p>Some standalone content</p></gcds-text>`,
+		},
+		{
+			name:         "Multiple patterns in one content",
+			pageContent:  `<details class="alert alert-warning" open><summary class="h3"><h3>Warning</h3></summary><p>Be careful!</p></details><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://example.com/help">Get Help</a></div>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<section class="mt-300 mb-300"><gcds-notice type="warning" notice-title-tag="h2" notice-title="Warning"><gcds-text><p>Be careful!</p></gcds-text></gcds-notice></section><gcds-button type="link" href="/help">Get Help</gcds-button>`,
+		},
+		{
+			name:         "Complex nested patterns",
+			pageContent:  `<details class="wp-block-cds-snc-accordion"><summary>FAQs</summary><div class="wp-block-cds-snc-accordion__content"><p>Question 1</p><details class="alert alert-info" open><summary class="h3"><h3>Note</h3></summary><p>Additional info</p></details></div></details>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<gcds-details details-title="FAQs"><gcds-text><p>Question 1</p><section class="mt-300 mb-300"><gcds-notice type="info" notice-title-tag="h2" notice-title="Note"><gcds-text><p>Additional info</p></gcds-text></gcds-notice></section></gcds-text></gcds-details>`,
+		},
+		{
+			name:         "Empty content",
+			pageContent:  "",
+			baseUrl:      "https://example.com",
+			expectedHTML: "",
+		},
+		{
+			name:         "Content with no patterns",
+			pageContent:  "<p>This is regular content with no special patterns.</p>",
+			baseUrl:      "https://example.com",
+			expectedHTML: "<p>This is regular content with no special patterns.</p>",
+		},
+		{
+			name:         "Alert with different types",
+			pageContent:  `<details class="alert alert-success" open><summary class="h3"><h3>Success</h3></summary><p>Operation completed successfully.</p></details>`,
+			baseUrl:      "https://example.com",
+			expectedHTML: `<section class="mt-300 mb-300"><gcds-notice type="success" notice-title-tag="h2" notice-title="Success"><gcds-text><p>Operation completed successfully.</p></gcds-text></gcds-notice></section>`,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			// Call the function being tested
+			result := convertToDesignSystem(tc.pageContent, tc.baseUrl)
+
+			// Verify result
+			if result != tc.expectedHTML {
+				t.Errorf("Expected HTML:\n%s\n\nGot:\n%s", tc.expectedHTML, result)
+			}
+		})
+	}
+}
+
+// TestConvertToDesignSystemTemplatePreservation tests that the convertToDesignSystem
+// function properly preserves template variables and structures
+func TestConvertToDesignSystemTemplatePreservation(t *testing.T) {
+	// Test case with template variables in content
+	pageContent := `<details class="alert alert-info" open><summary class="h3"><h3>{{ .Title }}</h3></summary>{{ .Content }}</details>`
+	baseUrl := "https://example.com"
+	expected := `<section class="mt-300 mb-300"><gcds-notice type="info" notice-title-tag="h2" notice-title="{{ .Title }}"><gcds-text>{{ .Content }}</gcds-text></gcds-notice></section>`
+
+	result := convertToDesignSystem(pageContent, baseUrl)
+
+	if result != expected {
+		t.Errorf("Template variables not preserved correctly.\nExpected: %s\nGot: %s", expected, result)
+	}
+}
+
+// TestConvertToDesignSystemRealWorldExamples tests the convertToDesignSystem function
+// with realistic content examples
+func TestConvertToDesignSystemRealWorldExamples(t *testing.T) {
+	testCases := []struct {
+		name         string
+		pageContent  string
+		baseUrl      string
+		expectedHTML string
+	}{
+		{
+			name: "Page with multiple components",
+			pageContent: `<h1>Welcome to our site</h1>
+<p>Here's some important information:</p>
+<details class="alert alert-info" open><summary class="h3"><h3>Information Notice</h3></summary><p>This service will be down for maintenance on Sunday.</p></details>
+<p>Need help? Click the button below:</p>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://example.com/contact">Contact Support</a></div>
+<h2>FAQ</h2>
+<details class="wp-block-cds-snc-accordion"><summary>How do I reset my password?</summary><div class="wp-block-cds-snc-accordion__content"><p>Visit the account page and click "Reset Password".</p></div></details>`,
+			baseUrl: "https://example.com",
+			expectedHTML: `<h1>Welcome to our site</h1>
+<p>Here's some important information:</p>
+<section class="mt-300 mb-300"><gcds-notice type="info" notice-title-tag="h2" notice-title="Information Notice"><gcds-text><p>This service will be down for maintenance on Sunday.</p></gcds-text></gcds-notice></section>
+<p>Need help? Click the button below:</p>
+<gcds-button type="link" href="/contact">Contact Support</gcds-button>
+<h2>FAQ</h2>
+<gcds-details details-title="How do I reset my password?"><gcds-text><p>Visit the account page and click "Reset Password".</p></gcds-text></gcds-details>`,
+		},
+		{
+			name: "Edge case with partial matches",
+			pageContent: `<p>This is a normal paragraph</p>
+<div class="not-wp-block-button"><a href="/link">Not a button</a></div>
+<details><summary>Not an accordion</summary>Some content</details>
+<div class="something-else">Not accordion content</div>`,
+			baseUrl: "https://example.com",
+			expectedHTML: `<p>This is a normal paragraph</p>
+<div class="not-wp-block-button"><a href="/link">Not a button</a></div>
+<details><summary>Not an accordion</summary>Some content</details>
+<div class="something-else">Not accordion content</div>`,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			result := convertToDesignSystem(tc.pageContent, tc.baseUrl)
+
+			if result != tc.expectedHTML {
+				t.Errorf("Content transformation failed.\nExpected:\n%s\n\nGot:\n%s", tc.expectedHTML, result)
+			}
+		})
+	}
+}

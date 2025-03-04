@@ -3,6 +3,7 @@ package models
 import (
 	"html/template"
 	"log"
+	"regexp"
 	"strings"
 )
 
@@ -65,6 +66,14 @@ type MenuData struct {
 	Items []*MenuItemData
 }
 
+// Regular expressions used to convert the Articles CDS base theme markdown to Design System components.
+var (
+	alertPattern            = regexp.MustCompile(`<details class="alert alert-([^"]+)" open><summary class="h3"><h3>([^<]+)</h3></summary>(.+?)</details>`)
+	buttonPattern           = regexp.MustCompile(`<div class="wp-block-button"><a class="wp-block-button__link[^"]+" href="([^"]+)">([^<]+)</a></div>`)
+	accordionPattern        = regexp.MustCompile(`<details class="wp-block-cds-snc-accordion"><summary>([^<]+)</summary>\s*(.+?)\s*</details>`)
+	accordionContentPattern = regexp.MustCompile(`<div class="wp-block-cds-snc-accordion__content">(.+?)</div>`)
+)
+
 // NewPageData creates a new PageData object that can then be used to render a page.
 func NewPageData(page *WordPressPage, menu *MenuData, siteNames map[string]string, baseUrl string) PageData {
 	lang := page.Lang
@@ -89,7 +98,7 @@ func NewPageData(page *WordPressPage, menu *MenuData, siteNames map[string]strin
 		Home:           langPaths[lang].home,
 		Modified:       strings.Split(page.Modified, "T")[0],
 		Title:          template.HTML(page.Title.Rendered),
-		Content:        template.HTML(strings.ReplaceAll(page.Content.Rendered, baseUrl, "")),
+		Content:        template.HTML(convertToDesignSystem(page.Content.Rendered, baseUrl)),
 		ShowBreadcrumb: !strings.Contains(page.Slug, "home"),
 		SiteName:       siteNames[lang],
 		Menu:           menu,
@@ -125,4 +134,19 @@ func NewMenuData(menuItems *[]WordPressMenuItem, baseUrl string) *MenuData {
 	return &MenuData{
 		Items: menuTree,
 	}
+}
+
+// convertToDesignSystem updates the Articles CDS base theme markdown to Design System components.
+func convertToDesignSystem(pageContent string, baseUrl string) string {
+
+	// Remove the site's base URL from the content
+	pageContent = strings.ReplaceAll(pageContent, baseUrl, "")
+
+	// Convert the markdown to Design System components
+	pageContent = alertPattern.ReplaceAllString(pageContent, `<section class="mt-300 mb-300"><gcds-notice type="$1" notice-title-tag="h2" notice-title="$2"><gcds-text>$3</gcds-text></gcds-notice></section>`)
+	pageContent = buttonPattern.ReplaceAllString(pageContent, `<gcds-button type="link" href="$1">$2</gcds-button>`)
+	pageContent = accordionPattern.ReplaceAllString(pageContent, `<gcds-details details-title="$1">$2</gcds-details>`)
+	pageContent = accordionContentPattern.ReplaceAllString(pageContent, `<gcds-text>$1</gcds-text>`)
+
+	return pageContent
 }
