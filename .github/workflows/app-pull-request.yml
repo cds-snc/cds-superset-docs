@@ -63,7 +63,7 @@ jobs:
           working-directory: ./app
 
       - name: Test
-        run: go test ./...
+        run: make test
 
       - name: Docker build
-        run: docker build --tag cds-superset-docs --platform linux/arm64 .
+        run: make docker
