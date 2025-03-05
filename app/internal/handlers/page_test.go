@@ -215,7 +215,7 @@ func TestServeHTTP(t *testing.T) {
 			name:           "Path with file extension",
 			method:         "GET",
 			path:           "/about-us.html",
-			expectedStatus: http.StatusNotFound,
+			expectedStatus: http.StatusBadRequest,
 			expectError:    true,
 		},
 		{
@@ -327,7 +327,7 @@ func TestHandlePage(t *testing.T) {
 			testResponses: map[string]interface{}{
 				"pages/not-found": []models.WordPressPage{},
 			},
-			expectedStatus: http.StatusInternalServerError,
+			expectedStatus: http.StatusNotFound,
 		},
 	}
 

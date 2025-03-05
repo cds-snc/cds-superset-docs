@@ -31,6 +31,8 @@ type MenuResult struct {
 	Err       error
 }
 
+var ErrPageNotFound = fmt.Errorf("page not found")
+
 // NewWordPressClient creates and initializes a new WordPress API client.
 // It performs authentication and fetches menus concurrently during initialization.
 func NewWordPressClient(baseURL string, username string, password string, menuIdEn string, menuIdFr string) *WordPressClient {
@@ -168,7 +170,7 @@ func (c *WordPressClient) FetchPage(path string) (*models.WordPressPage, error) 
 	}
 
 	if len(pages) == 0 {
-		return nil, fmt.Errorf("page not found")
+		return nil, ErrPageNotFound
 	}
 
 	return &pages[0], nil

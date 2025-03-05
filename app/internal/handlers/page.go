@@ -4,8 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	"path/filepath"
-	"strings"
+	"regexp"
 
 	"wordpress-go-proxy/internal/api"
 	"wordpress-go-proxy/pkg/models"
@@ -51,24 +50,17 @@ func (h *PageHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Do not allow paths with file extensions
-	if ext := filepath.Ext(path); ext != "" {
-		log.Printf("Invalid path: contains file extension: %s", path)
-		http.NotFound(w, r)
-		return
-	}
-
 	// Check for invalid URL characters
-	if strings.ContainsAny(path, "<>\"'%\\`^{}|") {
+	if matched, _ := regexp.MatchString(`^[a-zA-Z0-9/\-_]*$`, path); !matched {
 		log.Printf("URL contains invalid characters: %s", path)
-		http.Error(w, "Invalid URL", http.StatusBadRequest)
+		http.Error(w, "Path not allowed", http.StatusBadRequest)
 		return
 	}
 
 	// Prevent DoS via long URLs
 	if len(path) > 255 {
 		log.Printf("URL path too long: %d characters", len(path))
-		http.Error(w, "URI too long", http.StatusRequestURITooLong)
+		http.Error(w, "URL path too long", http.StatusRequestURITooLong)
 		return
 	}
 
@@ -80,8 +72,13 @@ func (h *PageHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (h *PageHandler) handlePage(w http.ResponseWriter, _ *http.Request, path string) {
 	page, err := h.WordPressClient.FetchPage(path)
 	if err != nil {
-		http.Error(w, "Error fetching page content", http.StatusInternalServerError)
-		log.Printf("Error fetching page: %v", err)
+		if err == api.ErrPageNotFound {
+			log.Printf("Page not found: %s", path)
+			http.NotFound(w, nil)
+		} else {
+			log.Printf("Error fetching page: %v", err)
+			http.Error(w, "Error fetching page content", http.StatusInternalServerError)
+		}
 		return
 	}
 
