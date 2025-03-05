@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.4.0...v1.5.0) (2025-03-05)
+
+
+### Features
+
+* add a WAF rule to only allow Canadian IP addresses ([#40](https://github.com/cds-snc/cds-superset-docs/issues/40)) ([d7b1b48](https://github.com/cds-snc/cds-superset-docs/commit/d7b1b4818a2114ce2f75a4dc52089e31bafec080))
+
+
+### Miscellaneous Chores
+
+* remove unused css file ([#38](https://github.com/cds-snc/cds-superset-docs/issues/38)) ([298817d](https://github.com/cds-snc/cds-superset-docs/commit/298817db9194c22c5d97ab3eeef07ed56528a961))
+
 ## [1.4.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.3.0...v1.4.0) (2025-03-05)
 
 
