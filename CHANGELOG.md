@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.3.0...v1.4.0) (2025-03-05)
+
+
+### Features
+
+* add robots.txt file ([#35](https://github.com/cds-snc/cds-superset-docs/issues/35)) ([f6ffaa0](https://github.com/cds-snc/cds-superset-docs/commit/f6ffaa05784f23eb5dff7d9e4c9e09fa766f4bab))
+
+
+### Bug Fixes
+
+* properly return a 404 when page not found ([#37](https://github.com/cds-snc/cds-superset-docs/issues/37)) ([e7d2aef](https://github.com/cds-snc/cds-superset-docs/commit/e7d2aef768eb82bb245e0fe895e525435096c8dd))
+
 ## [1.3.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.2.1...v1.3.0) (2025-03-04)
 
 
