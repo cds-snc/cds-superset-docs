@@ -40,3 +40,9 @@ variable "wordpress_password" {
   type        = string
   sensitive   = true
 }
+
+variable "upptime_status_header" {
+  description = "The header to check for Upptime status check requests."
+  type        = string
+  sensitive   = true
+}
