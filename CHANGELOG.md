@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.1...v1.5.2) (2025-03-10)
+
+
+### Bug Fixes
+
+* list max width in content ([#46](https://github.com/cds-snc/cds-superset-docs/issues/46)) ([4efad98](https://github.com/cds-snc/cds-superset-docs/commit/4efad988c4bfd768fa09af4a3d122e523263ed35))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#44](https://github.com/cds-snc/cds-superset-docs/issues/44)) ([395744a](https://github.com/cds-snc/cds-superset-docs/commit/395744a24c745eaf38c9fa474805cb31e8ee4bef))
+* **deps:** update googleapis/release-please-action action to v4.1.5 ([#43](https://github.com/cds-snc/cds-superset-docs/issues/43)) ([6aa6dd4](https://github.com/cds-snc/cds-superset-docs/commit/6aa6dd455acdb3fce03ba1aeacf2317826feea3b))
+
 ## [1.5.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.0...v1.5.1) (2025-03-06)
 
 
