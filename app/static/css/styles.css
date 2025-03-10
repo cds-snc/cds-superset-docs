@@ -9,6 +9,7 @@ gcds-container :is(ol, ul, p, hr) {
 }
 
 gcds-container :is(ol, ul) {
+    max-width: var(--gcds-text-character-limit);
     padding-inline-start: var(--gcds-spacing-300);
 }
 
