@@ -1,9 +1,4 @@
-gcds-container :is(h2, h3, h4, h5, h6) {
-    margin-block-start: var(--gcds-spacing-600);
-    margin-block-end: var(--gcds-spacing-300);
-}
-
-gcds-container :is(ol, ul, p, hr) {
+gcds-container :is(ol, ul, hr) {
     margin-block-start: var(--gcds-spacing-0);
     margin-block-end: var(--gcds-spacing-300);
 }
@@ -19,11 +14,6 @@ gcds-container :is(ol li) {
 
 gcds-container :is(ul li) {
     list-style: disc;
-}
-
-gcds-details p {
-    margin-block-start: var(--gcds-spacing-100);
-    margin-block-end: var(--gcds-spacing-100);
 }
 
 gcds-container code {
