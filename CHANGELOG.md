@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.2...v1.5.3) (2025-03-11)
+
+
+### Miscellaneous Chores
+
+* upgrade to v1.6.0 release of the GCDS utility library ([#47](https://github.com/cds-snc/cds-superset-docs/issues/47)) ([f67639e](https://github.com/cds-snc/cds-superset-docs/commit/f67639e7b207982cdbd7b44fec2f8b93876ae201))
+
 ## [1.5.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.1...v1.5.2) (2025-03-10)
 
 
