@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.2...v1.5.3) (2025-03-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#50](https://github.com/cds-snc/cds-superset-docs/issues/50)) ([867ff66](https://github.com/cds-snc/cds-superset-docs/commit/867ff667a0f7e7af34c49b34d9d42ecef94b6af6))
+* **deps:** update all non-major github action dependencies ([#49](https://github.com/cds-snc/cds-superset-docs/issues/49)) ([a83c078](https://github.com/cds-snc/cds-superset-docs/commit/a83c078916464a928109ea630d58ed3f70311ffc))
+* upgrade to v1.6.0 release of the GCDS utility library ([#47](https://github.com/cds-snc/cds-superset-docs/issues/47)) ([f67639e](https://github.com/cds-snc/cds-superset-docs/commit/f67639e7b207982cdbd7b44fec2f8b93876ae201))
+
 ## [1.5.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.1...v1.5.2) (2025-03-10)
 
 
