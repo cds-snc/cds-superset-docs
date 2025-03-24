@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.3...v1.5.4) (2025-03-24)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#54](https://github.com/cds-snc/cds-superset-docs/issues/54)) ([27364f4](https://github.com/cds-snc/cds-superset-docs/commit/27364f4dd829c9a72e0eacba89a057ec4956f06b))
+* **deps:** update golangci/golangci-lint-action action to v6.5.1 ([#52](https://github.com/cds-snc/cds-superset-docs/issues/52)) ([b9a16c9](https://github.com/cds-snc/cds-superset-docs/commit/b9a16c97ec996d71b6912dff08aaaedff4c72a11))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 0b3c5ff ([#51](https://github.com/cds-snc/cds-superset-docs/issues/51)) ([157d618](https://github.com/cds-snc/cds-superset-docs/commit/157d6182974ccad863f4553432d4bdf5cf0e7d97))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.3.2 ([#53](https://github.com/cds-snc/cds-superset-docs/issues/53)) ([2a716bd](https://github.com/cds-snc/cds-superset-docs/commit/2a716bd36e3e53f829f2ae4fa1cffa8048787f66))
+
 ## [1.5.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.2...v1.5.3) (2025-03-17)
 
 
