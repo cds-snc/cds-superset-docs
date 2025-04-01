@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.5](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.4...v1.5.5) (2025-04-01)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to d0a798f ([#56](https://github.com/cds-snc/cds-superset-docs/issues/56)) ([bfe4978](https://github.com/cds-snc/cds-superset-docs/commit/bfe4978ae70ba40a8125c5d89f49f7e61f774455))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#58](https://github.com/cds-snc/cds-superset-docs/issues/58)) ([c6b456a](https://github.com/cds-snc/cds-superset-docs/commit/c6b456ab3ec0a196ecd74d93e570b9409cd3e235))
+* **deps:** update all non-major github action dependencies ([#57](https://github.com/cds-snc/cds-superset-docs/issues/57)) ([c95ce85](https://github.com/cds-snc/cds-superset-docs/commit/c95ce8503d3afaef88c624f3bfeccdecf6770e2b))
+
 ## [1.5.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.3...v1.5.4) (2025-03-24)
 
 
