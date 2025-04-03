@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.6](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.5...v1.5.6) (2025-04-03)
+
+
+### Miscellaneous Chores
+
+* upgrade to latest GCDS component release ([#60](https://github.com/cds-snc/cds-superset-docs/issues/60)) ([f8e4a3d](https://github.com/cds-snc/cds-superset-docs/commit/f8e4a3de7075bc8c75fc1211f5398e48adde393c))
+
 ## [1.5.5](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.4...v1.5.5) (2025-04-01)
 
 
