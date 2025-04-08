@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.6](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.5...v1.5.6) (2025-04-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#66](https://github.com/cds-snc/cds-superset-docs/issues/66)) ([346ac4b](https://github.com/cds-snc/cds-superset-docs/commit/346ac4b38f482dda134f5086cd1d38fba089baf6))
+* **deps:** update actions/create-github-app-token action to v2 ([#62](https://github.com/cds-snc/cds-superset-docs/issues/62)) ([557f791](https://github.com/cds-snc/cds-superset-docs/commit/557f79186900f35808571f9a0db5b53a01f36467))
+* **deps:** update all non-major github action dependencies ([#64](https://github.com/cds-snc/cds-superset-docs/issues/64)) ([6703687](https://github.com/cds-snc/cds-superset-docs/commit/670368742c9f510dfffa234203aa74a3a1fc2ba1))
+* **deps:** update golangci/golangci-lint-action action to v7 ([#63](https://github.com/cds-snc/cds-superset-docs/issues/63)) ([2cf865b](https://github.com/cds-snc/cds-superset-docs/commit/2cf865bcf7f359253ba5de70f4ec8d0ef4b4d432))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.4.1 ([#65](https://github.com/cds-snc/cds-superset-docs/issues/65)) ([28e537d](https://github.com/cds-snc/cds-superset-docs/commit/28e537de4b69e7e638db8bbb4af537eb4fa8c55a))
+* upgrade to latest GCDS component release ([#60](https://github.com/cds-snc/cds-superset-docs/issues/60)) ([f8e4a3d](https://github.com/cds-snc/cds-superset-docs/commit/f8e4a3de7075bc8c75fc1211f5398e48adde393c))
+
 ## [1.5.5](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.4...v1.5.5) (2025-04-01)
 
 
