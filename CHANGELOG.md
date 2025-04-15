@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.7](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.6...v1.5.7) (2025-04-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to d67d4d2 ([#67](https://github.com/cds-snc/cds-superset-docs/issues/67)) ([4280935](https://github.com/cds-snc/cds-superset-docs/commit/4280935c3ac400d473a07349fe2211782e05981a))
+* upgrade to latest GCDS component release ([#69](https://github.com/cds-snc/cds-superset-docs/issues/69)) ([c4d2f31](https://github.com/cds-snc/cds-superset-docs/commit/c4d2f3119c37ecc56c1bf33a584d99ffb3b2b835))
+
 ## [1.5.6](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.5...v1.5.6) (2025-04-07)
 
 
