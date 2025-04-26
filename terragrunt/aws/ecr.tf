@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "superset_docs" {
+resource "aws_ecr_repository" "superset_docs_test" {
   name                 = var.product_name
   image_tag_mutability = "MUTABLE"
 
@@ -9,8 +9,8 @@ resource "aws_ecr_repository" "superset_docs" {
   tags = local.common_tags
 }
 
-resource "aws_ecr_lifecycle_policy" "superset_docs" {
-  repository = aws_ecr_repository.superset_docs.name
+resource "aws_ecr_lifecycle_policy" "superset_docs_test" {
+  repository = aws_ecr_repository.superset_docs_test.name
   policy = jsonencode({
     "rules" : [
       {
@@ -54,4 +54,14 @@ resource "aws_ecr_lifecycle_policy" "superset_docs" {
       }
     ]
   })
+}
+
+moved {
+  from = aws_ecr_repository.superset_docs
+  to   = aws_ecr_repository.superset_doc_test
+}
+
+moved {
+  from = aws_ecr_lifecycle_policy.superset_docs
+  to   = aws_ecr_lifecycle_policy.superset_doc_test
 }
