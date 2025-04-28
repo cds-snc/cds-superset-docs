@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.9](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.8...v1.5.9) (2025-04-28)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 9c1aa6a ([#77](https://github.com/cds-snc/cds-superset-docs/issues/77)) ([afbfcae](https://github.com/cds-snc/cds-superset-docs/commit/afbfcaebb04b9dfd06b22fa96cff618d02574205))
+
+
+### Miscellaneous Chores
+
+* **deps:** update cds-snc/terraform-plan action to v3.4.2 ([#76](https://github.com/cds-snc/cds-superset-docs/issues/76)) ([000b6de](https://github.com/cds-snc/cds-superset-docs/commit/000b6de83637ce0dbb8e45dd94b283e99158eddf))
+* synced file(s) with cds-snc/site-reliability-engineering ([#74](https://github.com/cds-snc/cds-superset-docs/issues/74)) ([2ab8594](https://github.com/cds-snc/cds-superset-docs/commit/2ab8594b61e4ea45287bdd5e1f14298b0702155a))
+
 ## [1.5.8](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.7...v1.5.8) (2025-04-22)
 
 
