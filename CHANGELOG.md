@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.12](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.11...v1.5.12) (2025-05-12)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major github action dependencies ([#85](https://github.com/cds-snc/cds-superset-docs/issues/85)) ([fa537cc](https://github.com/cds-snc/cds-superset-docs/commit/fa537ccd5898fce4f679c7bac0f05b5dada30a08))
+* **deps:** update all patch dependencies ([#86](https://github.com/cds-snc/cds-superset-docs/issues/86)) ([98c43ad](https://github.com/cds-snc/cds-superset-docs/commit/98c43ad1dd3dc587b9ce2289dd20c6b0d69fc983))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 76a2d99 ([#84](https://github.com/cds-snc/cds-superset-docs/issues/84)) ([c1c176b](https://github.com/cds-snc/cds-superset-docs/commit/c1c176b6059029eb5f486530bbaa6e2d69a81abd))
+
 ## [1.5.11](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.10...v1.5.11) (2025-05-05)
 
 
