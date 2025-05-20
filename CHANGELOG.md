@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.13](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.12...v1.5.13) (2025-05-20)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major github action dependencies ([#88](https://github.com/cds-snc/cds-superset-docs/issues/88)) ([08cc6cb](https://github.com/cds-snc/cds-superset-docs/commit/08cc6cb905fc53add2360b1ddcdb73600811a26e))
+
 ## [1.5.12](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.11...v1.5.12) (2025-05-12)
 
 
