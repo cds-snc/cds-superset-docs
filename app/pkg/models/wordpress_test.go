@@ -11,7 +11,7 @@ func TestNewPageData(t *testing.T) {
 		name              string
 		page              WordPressPage
 		menu              *MenuData
-		googleAnalyticsId string
+		googleAnalyticsID string
 		siteNames         map[string]string
 		baseUrl           string
 		expectedData      PageData
@@ -36,14 +36,14 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
-			googleAnalyticsId: "UA-12345678-9",
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				GoogleAnalyticsId: "UA-12345678-9",
+				GoogleAnalyticsID: "UA-12345678-9",
 				Lang:              "en",
 				LangSwapPath:      "/fr/",
 				LangSwapSlug:      "a-propos",
@@ -75,14 +75,14 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
-			googleAnalyticsId: "UA-12345678-9",
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				GoogleAnalyticsId: "UA-12345678-9",
+				GoogleAnalyticsID: "UA-12345678-9",
 				Lang:              "fr",
 				LangSwapPath:      "/",
 				LangSwapSlug:      "about",
@@ -114,14 +114,14 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
-			googleAnalyticsId: "UA-12345678-9",
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				GoogleAnalyticsId: "UA-12345678-9",
+				GoogleAnalyticsID: "UA-12345678-9",
 				Lang:              "en",
 				LangSwapPath:      "/fr/",
 				LangSwapSlug:      "a-propos",
@@ -153,14 +153,14 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
-			googleAnalyticsId: "UA-12345678-9",
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				GoogleAnalyticsId: "UA-12345678-9",
+				GoogleAnalyticsID: "UA-12345678-9",
 				Lang:              "en",
 				LangSwapPath:      "/fr/",
 				LangSwapSlug:      "accueil",
@@ -180,11 +180,11 @@ func TestNewPageData(t *testing.T) {
 			page := tc.page
 
 			// Call the function being tested
-			result := NewPageData(&page, tc.menu, tc.googleAnalyticsId, tc.siteNames, tc.baseUrl)
+			result := NewPageData(&page, tc.menu, tc.googleAnalyticsID, tc.siteNames, tc.baseUrl)
 
 			// Verify results
-			if result.GoogleAnalyticsId != tc.expectedData.GoogleAnalyticsId {
-				t.Errorf("Expected GoogleAnalyticsId %q, got %q", tc.expectedData.GoogleAnalyticsId, result.GoogleAnalyticsId)
+			if result.GoogleAnalyticsID != tc.expectedData.GoogleAnalyticsID {
+				t.Errorf("Expected GoogleAnalyticsID %q, got %q", tc.expectedData.GoogleAnalyticsID, result.GoogleAnalyticsID)
 			}
 
 			if result.Lang != tc.expectedData.Lang {

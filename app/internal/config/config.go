@@ -7,7 +7,7 @@ import (
 
 // Config holds all application configuration
 type Config struct {
-	GoogleAnalyticsId string
+	GoogleAnalyticsID string
 
 	// Server settings
 	Port       string
@@ -53,7 +53,7 @@ func Load() (*Config, error) {
 	}
 
 	// Set optional variables
-	cfg.GoogleAnalyticsId = os.Getenv("GOOGLE_ANALYTICS_ID")
+	cfg.GoogleAnalyticsID = os.Getenv("GOOGLE_ANALYTICS_ID")
 	cfg.Port = os.Getenv("PORT")
 
 	return cfg, nil

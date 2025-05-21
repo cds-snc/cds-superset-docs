@@ -41,7 +41,7 @@ type WordPressMenuItem struct {
 
 // PageData holds the data needed to render a page.
 type PageData struct {
-	GoogleAnalyticsId string
+	GoogleAnalyticsID string
 	Lang              string
 	LangSwapPath      string
 	LangSwapSlug      string
@@ -76,7 +76,7 @@ var (
 )
 
 // NewPageData creates a new PageData object that can then be used to render a page.
-func NewPageData(page *WordPressPage, menu *MenuData, googleAnalyticsId string, siteNames map[string]string, baseUrl string) PageData {
+func NewPageData(page *WordPressPage, menu *MenuData, googleAnalyticsID string, siteNames map[string]string, baseUrl string) PageData {
 	lang := page.Lang
 	if lang != "en" && lang != "fr" {
 		lang = "en"
@@ -93,7 +93,7 @@ func NewPageData(page *WordPressPage, menu *MenuData, googleAnalyticsId string, 
 	}
 
 	return PageData{
-		GoogleAnalyticsId: googleAnalyticsId,
+		GoogleAnalyticsID: googleAnalyticsID,
 		Lang:              lang,
 		LangSwapPath:      langPaths[lang].swap,
 		LangSwapSlug:      langPaths[lang].slug,
