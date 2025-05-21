@@ -1,3 +1,8 @@
+variable "google_analytics_id" {
+  description = "The Google Analytics ID"
+  type        = string
+}
+
 variable "hosted_zone_id" {
   description = "The Route53 hosted zone ID"
   type        = string

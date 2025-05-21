@@ -14,16 +14,17 @@ import (
 // fetching the page content from the WordPress API and rendering it using
 // an HTML template.
 type PageHandler struct {
-	SiteNames       map[string]string
-	WordPressClient *api.WordPressClient
-	Templates       *template.Template
+	GoogleAnalyticsId string
+	SiteNames         map[string]string
+	WordPressClient   *api.WordPressClient
+	Templates         *template.Template
 }
 
 var parseTemplateFiles = template.ParseFiles
 
 // NewPageHandler creates a new page handler that will be used
 // to retrieve and render WordPress pages.
-func NewPageHandler(siteNames map[string]string, wordPressClient *api.WordPressClient) *PageHandler {
+func NewPageHandler(googleAnalyticsId string, siteNames map[string]string, wordPressClient *api.WordPressClient) *PageHandler {
 	// Load templates
 	tmpl, err := parseTemplateFiles("templates/layout.html")
 	if err != nil {
@@ -31,9 +32,10 @@ func NewPageHandler(siteNames map[string]string, wordPressClient *api.WordPressC
 	}
 
 	return &PageHandler{
-		SiteNames:       siteNames,
-		WordPressClient: wordPressClient,
-		Templates:       tmpl,
+		GoogleAnalyticsId: googleAnalyticsId,
+		SiteNames:         siteNames,
+		WordPressClient:   wordPressClient,
+		Templates:         tmpl,
 	}
 }
 
@@ -88,7 +90,7 @@ func (h *PageHandler) handlePage(w http.ResponseWriter, _ *http.Request, path st
 		menu = h.WordPressClient.Menus["en"]
 	}
 
-	data := models.NewPageData(page, menu, h.SiteNames, h.WordPressClient.BaseURL)
+	data := models.NewPageData(page, menu, h.GoogleAnalyticsId, h.SiteNames, h.WordPressClient.BaseURL)
 
 	log.Printf("Rendering page template")
 	err = h.Templates.ExecuteTemplate(w, "layout.html", data)

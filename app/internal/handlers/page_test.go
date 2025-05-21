@@ -113,11 +113,15 @@ func TestNewPageHandler(t *testing.T) {
 	}
 
 	// Create the handler
-	handler := NewPageHandler(siteNames, client)
+	handler := NewPageHandler("UA-12345678-9", siteNames, client)
 
 	// Verify handler was created correctly
 	if handler == nil {
 		t.Fatal("Expected handler to be created, got nil")
+	}
+
+	if handler.GoogleAnalyticsId != "UA-12345678-9" {
+		t.Errorf("Expected GoogleAnalyticsId to be 'UA-12345678-9', got %s", handler.GoogleAnalyticsId)
 	}
 
 	if handler.SiteNames["en"] != "English Site" {
@@ -171,9 +175,10 @@ func TestServeHTTP(t *testing.T) {
 	}
 
 	handler := &PageHandler{
-		SiteNames:       siteNames,
-		WordPressClient: client,
-		Templates:       setupTestTemplates(),
+		GoogleAnalyticsId: "UA-12345678-9",
+		SiteNames:         siteNames,
+		WordPressClient:   client,
+		Templates:         setupTestTemplates(),
 	}
 
 	tests := []struct {
@@ -348,9 +353,10 @@ func TestHandlePage(t *testing.T) {
 
 			// Create handler
 			handler := &PageHandler{
-				SiteNames:       map[string]string{"en": "English Site", "fr": "French Site"},
-				WordPressClient: client,
-				Templates:       setupTestTemplates(),
+				GoogleAnalyticsId: "UA-12345678-9",
+				SiteNames:         map[string]string{"en": "English Site", "fr": "French Site"},
+				WordPressClient:   client,
+				Templates:         setupTestTemplates(),
 			}
 
 			// Create request and response recorder
@@ -415,9 +421,10 @@ func TestTemplateRenderingError(t *testing.T) {
 
 	// Create handler with the error-generating template
 	handler := &PageHandler{
-		SiteNames:       map[string]string{"en": "English Site"},
-		WordPressClient: client,
-		Templates:       errorTemplate,
+		GoogleAnalyticsId: "UA-12345678-9",
+		SiteNames:         map[string]string{"en": "English Site"},
+		WordPressClient:   client,
+		Templates:         errorTemplate,
 	}
 
 	// Create request and response recorder
