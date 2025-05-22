@@ -8,12 +8,13 @@ import (
 // TestNewPageData tests the NewPageData function which creates page rendering data
 func TestNewPageData(t *testing.T) {
 	testCases := []struct {
-		name         string
-		page         WordPressPage
-		menu         *MenuData
-		siteNames    map[string]string
-		baseUrl      string
-		expectedData PageData
+		name              string
+		page              WordPressPage
+		menu              *MenuData
+		googleAnalyticsID string
+		siteNames         map[string]string
+		baseUrl           string
+		expectedData      PageData
 	}{
 		{
 			name: "English page",
@@ -35,21 +36,23 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				Lang:           "en",
-				LangSwapPath:   "/fr/",
-				LangSwapSlug:   "a-propos",
-				Home:           "/",
-				Modified:       "2023-05-15",
-				Title:          "About Us",
-				Content:        "<p>This is content with /image.jpg</p>",
-				ShowBreadcrumb: true,
-				SiteName:       "English Site Name",
+				GoogleAnalyticsID: "UA-12345678-9",
+				Lang:              "en",
+				LangSwapPath:      "/fr/",
+				LangSwapSlug:      "a-propos",
+				Home:              "/",
+				Modified:          "2023-05-15",
+				Title:             "About Us",
+				Content:           "<p>This is content with /image.jpg</p>",
+				ShowBreadcrumb:    true,
+				SiteName:          "English Site Name",
 			},
 		},
 		{
@@ -72,21 +75,23 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				Lang:           "fr",
-				LangSwapPath:   "/",
-				LangSwapSlug:   "about",
-				Home:           "/fr/",
-				Modified:       "2023-05-15",
-				Title:          "À propos",
-				Content:        "<p>C'est du contenu avec /image.jpg</p>",
-				ShowBreadcrumb: true,
-				SiteName:       "French Site Name",
+				GoogleAnalyticsID: "UA-12345678-9",
+				Lang:              "fr",
+				LangSwapPath:      "/",
+				LangSwapSlug:      "about",
+				Home:              "/fr/",
+				Modified:          "2023-05-15",
+				Title:             "À propos",
+				Content:           "<p>C'est du contenu avec /image.jpg</p>",
+				ShowBreadcrumb:    true,
+				SiteName:          "French Site Name",
 			},
 		},
 		{
@@ -109,21 +114,23 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				Lang:           "en",
-				LangSwapPath:   "/fr/",
-				LangSwapSlug:   "a-propos",
-				Home:           "/",
-				Modified:       "2023-05-15",
-				Title:          "About Us",
-				Content:        "<p>Content</p>",
-				ShowBreadcrumb: true,
-				SiteName:       "English Site Name",
+				GoogleAnalyticsID: "UA-12345678-9",
+				Lang:              "en",
+				LangSwapPath:      "/fr/",
+				LangSwapSlug:      "a-propos",
+				Home:              "/",
+				Modified:          "2023-05-15",
+				Title:             "About Us",
+				Content:           "<p>Content</p>",
+				ShowBreadcrumb:    true,
+				SiteName:          "English Site Name",
 			},
 		},
 		{
@@ -146,21 +153,23 @@ func TestNewPageData(t *testing.T) {
 			menu: &MenuData{
 				Items: []*MenuItemData{},
 			},
+			googleAnalyticsID: "UA-12345678-9",
 			siteNames: map[string]string{
 				"en": "English Site Name",
 				"fr": "French Site Name",
 			},
 			baseUrl: "https://example.com",
 			expectedData: PageData{
-				Lang:           "en",
-				LangSwapPath:   "/fr/",
-				LangSwapSlug:   "accueil",
-				Home:           "/",
-				Modified:       "2023-05-15",
-				Title:          "Home Page",
-				Content:        "<p>Welcome home</p>",
-				ShowBreadcrumb: false, // Home page, no breadcrumb
-				SiteName:       "English Site Name",
+				GoogleAnalyticsID: "UA-12345678-9",
+				Lang:              "en",
+				LangSwapPath:      "/fr/",
+				LangSwapSlug:      "accueil",
+				Home:              "/",
+				Modified:          "2023-05-15",
+				Title:             "Home Page",
+				Content:           "<p>Welcome home</p>",
+				ShowBreadcrumb:    false, // Home page, no breadcrumb
+				SiteName:          "English Site Name",
 			},
 		},
 	}
@@ -171,9 +180,13 @@ func TestNewPageData(t *testing.T) {
 			page := tc.page
 
 			// Call the function being tested
-			result := NewPageData(&page, tc.menu, tc.siteNames, tc.baseUrl)
+			result := NewPageData(&page, tc.menu, tc.googleAnalyticsID, tc.siteNames, tc.baseUrl)
 
 			// Verify results
+			if result.GoogleAnalyticsID != tc.expectedData.GoogleAnalyticsID {
+				t.Errorf("Expected GoogleAnalyticsID %q, got %q", tc.expectedData.GoogleAnalyticsID, result.GoogleAnalyticsID)
+			}
+
 			if result.Lang != tc.expectedData.Lang {
 				t.Errorf("Expected Lang %q, got %q", tc.expectedData.Lang, result.Lang)
 			}

@@ -39,7 +39,7 @@ func main() {
 	// Set up routes
 	http.Handle("/static/", http.StripPrefix("/static/", handlers.NewStaticHandler("static")))
 	http.Handle("/robots.txt", middleware.SecurityHeaders(handlers.NewRobotsHandler()))
-	http.Handle("/", middleware.SecurityHeaders(handlers.NewPageHandler(siteNames, wordPressClient)))
+	http.Handle("/", middleware.SecurityHeaders(handlers.NewPageHandler(cfg.GoogleAnalyticsID, siteNames, wordPressClient)))
 
 	// Determine if this is a Lambda or HTTP server startup
 	if cfg.Port == "" {

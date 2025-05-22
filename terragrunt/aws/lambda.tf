@@ -10,6 +10,7 @@ module "superset_docs" {
   enable_lambda_insights = true
 
   environment_variables = {
+    GOOGLE_ANALYTICS_ID  = var.google_analytics_id
     SITE_NAME_EN         = var.site_name_en
     SITE_NAME_FR         = var.site_name_fr
     WORDPRESS_MENU_ID_EN = var.menu_id_en

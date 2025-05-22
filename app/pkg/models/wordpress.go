@@ -41,16 +41,17 @@ type WordPressMenuItem struct {
 
 // PageData holds the data needed to render a page.
 type PageData struct {
-	Lang           string
-	LangSwapPath   string
-	LangSwapSlug   string
-	Home           string
-	Modified       string
-	Title          template.HTML
-	Content        template.HTML
-	ShowBreadcrumb bool
-	SiteName       string
-	Menu           *MenuData
+	GoogleAnalyticsID string
+	Lang              string
+	LangSwapPath      string
+	LangSwapSlug      string
+	Home              string
+	Modified          string
+	Title             template.HTML
+	Content           template.HTML
+	ShowBreadcrumb    bool
+	SiteName          string
+	Menu              *MenuData
 }
 
 // MenuItemData holds the data needed to render a menu item.
@@ -75,7 +76,7 @@ var (
 )
 
 // NewPageData creates a new PageData object that can then be used to render a page.
-func NewPageData(page *WordPressPage, menu *MenuData, siteNames map[string]string, baseUrl string) PageData {
+func NewPageData(page *WordPressPage, menu *MenuData, googleAnalyticsID string, siteNames map[string]string, baseUrl string) PageData {
 	lang := page.Lang
 	if lang != "en" && lang != "fr" {
 		lang = "en"
@@ -92,16 +93,17 @@ func NewPageData(page *WordPressPage, menu *MenuData, siteNames map[string]strin
 	}
 
 	return PageData{
-		Lang:           lang,
-		LangSwapPath:   langPaths[lang].swap,
-		LangSwapSlug:   langPaths[lang].slug,
-		Home:           langPaths[lang].home,
-		Modified:       strings.Split(page.Modified, "T")[0],
-		Title:          template.HTML(page.Title.Rendered),
-		Content:        template.HTML(convertToDesignSystem(page.Content.Rendered, baseUrl)),
-		ShowBreadcrumb: !strings.Contains(page.Slug, "home"),
-		SiteName:       siteNames[lang],
-		Menu:           menu,
+		GoogleAnalyticsID: googleAnalyticsID,
+		Lang:              lang,
+		LangSwapPath:      langPaths[lang].swap,
+		LangSwapSlug:      langPaths[lang].slug,
+		Home:              langPaths[lang].home,
+		Modified:          strings.Split(page.Modified, "T")[0],
+		Title:             template.HTML(page.Title.Rendered),
+		Content:           template.HTML(convertToDesignSystem(page.Content.Rendered, baseUrl)),
+		ShowBreadcrumb:    !strings.Contains(page.Slug, "home"),
+		SiteName:          siteNames[lang],
+		Menu:              menu,
 	}
 }
 

@@ -19,6 +19,16 @@
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="/static/css/styles.css">
+
+  {{if .GoogleAnalyticsID}}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{.GoogleAnalyticsID}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{.GoogleAnalyticsID}}');
+  </script>
+  {{end}}
 </head>
 
 <body>
