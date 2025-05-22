@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.13...v1.6.0) (2025-05-22)
+
+
+### Features
+
+* add Google Analytics to prod ([#92](https://github.com/cds-snc/cds-superset-docs/issues/92)) ([e1e5d41](https://github.com/cds-snc/cds-superset-docs/commit/e1e5d41fafe43b460853865c0b669e8cae68ed1a))
+
+
+### Bug Fixes
+
+* post workflow failure messages to correct env channel ([#90](https://github.com/cds-snc/cds-superset-docs/issues/90)) ([3ffe623](https://github.com/cds-snc/cds-superset-docs/commit/3ffe62310ae0b261fd2f27defad6bd783bfc4f9c))
+
 ## [1.5.13](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.12...v1.5.13) (2025-05-20)
 
 
