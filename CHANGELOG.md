@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.6.0...v1.6.1) (2025-05-26)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to ebc8e46 ([#93](https://github.com/cds-snc/cds-superset-docs/issues/93)) ([ea4d3d6](https://github.com/cds-snc/cds-superset-docs/commit/ea4d3d64bbe42f1a3294feecd9603e8cba0e0532))
+* race condition to retrieve commit SHA ([#98](https://github.com/cds-snc/cds-superset-docs/issues/98)) ([027e99e](https://github.com/cds-snc/cds-superset-docs/commit/027e99ee55fa6dc265e1d20109f817c329106eb5))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#96](https://github.com/cds-snc/cds-superset-docs/issues/96)) ([5389464](https://github.com/cds-snc/cds-superset-docs/commit/5389464766c615e27416153fb9e279b2ef2d2e1f))
+* **deps:** update all non-major github action dependencies ([#94](https://github.com/cds-snc/cds-superset-docs/issues/94)) ([7aaa0e5](https://github.com/cds-snc/cds-superset-docs/commit/7aaa0e5b4dd7ff8c8a06a85c5dda480b8b34451a))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.4.6 ([#95](https://github.com/cds-snc/cds-superset-docs/issues/95)) ([7b105fa](https://github.com/cds-snc/cds-superset-docs/commit/7b105fafbf1237fe579a91ac3c4b1e0c028c32c3))
+
 ## [1.6.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.5.13...v1.6.0) (2025-05-22)
 
 
