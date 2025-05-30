@@ -3,7 +3,9 @@ name: Cache invalidate Staging
 on:
   repository_dispatch:
   workflow_run:
-    workflows: ["Docker deploy Staging"]
+    workflows:
+    - "Docker deploy Staging"
+    - "Lambda restart Staging"
     types:
     - completed
 
