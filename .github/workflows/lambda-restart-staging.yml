@@ -31,7 +31,7 @@ jobs:
 
     - name: Restart Lambda function
       run: |
-        aws lambda update-function-code \
+        aws lambda update-function-configuration \
           --function-name ${{ env.FUNCTION_NAME }} \
           --description "Updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" > /dev/null 2>&1
 
