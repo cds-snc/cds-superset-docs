@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.7.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.6.1...v1.7.0) (2025-06-02)
+
+
+### Features
+
+* add Lambda restart workflows ([#99](https://github.com/cds-snc/cds-superset-docs/issues/99)) ([2d3f8f3](https://github.com/cds-snc/cds-superset-docs/commit/2d3f8f346e05fb52d0ff84f2b9d41d072c3035ec))
+
+
+### Bug Fixes
+
+* update to use correct AWS CLI command ([#101](https://github.com/cds-snc/cds-superset-docs/issues/101)) ([3c2e723](https://github.com/cds-snc/cds-superset-docs/commit/3c2e7238431bec8395b3a58dff6a7a21a88fcc15))
+
+
+### Miscellaneous Chores
+
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to c283798 ([#102](https://github.com/cds-snc/cds-superset-docs/issues/102)) ([e5da9e6](https://github.com/cds-snc/cds-superset-docs/commit/e5da9e644d35f84d0969d601d640f5706c05e014))
+
 ## [1.6.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.6.0...v1.6.1) (2025-05-26)
 
 
