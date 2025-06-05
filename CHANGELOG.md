@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.0...v1.7.1) (2025-06-05)
+
+
+### Documentation
+
+* update wording of local install ([#105](https://github.com/cds-snc/cds-superset-docs/issues/105)) ([a6e8300](https://github.com/cds-snc/cds-superset-docs/commit/a6e8300f2a4b661b5ed5b01007eab4431674ab2b))
+
 ## [1.7.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.6.1...v1.7.0) (2025-06-02)
 
 
