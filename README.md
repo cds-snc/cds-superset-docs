@@ -6,7 +6,7 @@ The app is built using [Go](https://go.dev/) and uses the [GC Design System](htt
 
 ## Running locally
 
-To run locally [install Go](https://go.dev/doc/install) or use the [devcontainer](https://containers.dev/supporting).  Then, from a terminal:
+To run the project locally [install Go](https://go.dev/doc/install) or use the [devcontainer](https://containers.dev/supporting).  Then, from a terminal:
 
 ```sh
 cd app
