@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.1...v1.7.2) (2025-06-09)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-lambda-go to v1.49.0 ([#108](https://github.com/cds-snc/cds-superset-docs/issues/108)) ([4b090c6](https://github.com/cds-snc/cds-superset-docs/commit/4b090c664cd9fa10f145ea941606b44e079e52a6))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#109](https://github.com/cds-snc/cds-superset-docs/issues/109)) ([b82ff90](https://github.com/cds-snc/cds-superset-docs/commit/b82ff90fab8c649bc1f1f4b8b83741d17d9a4cb1))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.4.7 ([#107](https://github.com/cds-snc/cds-superset-docs/issues/107)) ([f1364db](https://github.com/cds-snc/cds-superset-docs/commit/f1364dbca67f38843d525029c4e25f4d6a86c41c))
+
 ## [1.7.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.0...v1.7.1) (2025-06-05)
 
 
