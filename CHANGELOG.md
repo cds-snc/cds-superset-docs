@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.2...v1.8.0) (2025-06-13)
+
+
+### Features
+
+* add CODEOWNERS ([#111](https://github.com/cds-snc/cds-superset-docs/issues/111)) ([9ee1d8b](https://github.com/cds-snc/cds-superset-docs/commit/9ee1d8b2b696d8f0b247bad667c6543f3e23dfb8))
+* add Slack notification for Security PRs ([#113](https://github.com/cds-snc/cds-superset-docs/issues/113)) ([04cf52f](https://github.com/cds-snc/cds-superset-docs/commit/04cf52f05abcd418dff3cac35c67a0c939eaf18e))
+
 ## [1.7.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.1...v1.7.2) (2025-06-09)
 
 
