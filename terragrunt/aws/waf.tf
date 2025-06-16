@@ -238,3 +238,12 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   tags = local.common_tags
 }
+
+#
+# AWS Shield Advanced
+#
+resource "aws_shield_protection" "superset_docs_cloudfront" {
+  name         = "superset-docs-cloudfront"
+  resource_arn = aws_cloudfront_distribution.superset.arn
+  tags         = local.common_tags
+}
