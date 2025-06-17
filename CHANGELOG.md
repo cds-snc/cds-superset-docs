@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.8.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.2...v1.8.0) (2025-06-17)
+
+
+### Features
+
+* add CODEOWNERS ([#111](https://github.com/cds-snc/cds-superset-docs/issues/111)) ([9ee1d8b](https://github.com/cds-snc/cds-superset-docs/commit/9ee1d8b2b696d8f0b247bad667c6543f3e23dfb8))
+* add Slack notification for Security PRs ([#113](https://github.com/cds-snc/cds-superset-docs/issues/113)) ([04cf52f](https://github.com/cds-snc/cds-superset-docs/commit/04cf52f05abcd418dff3cac35c67a0c939eaf18e))
+* enable AWS Shield Advanced ([#118](https://github.com/cds-snc/cds-superset-docs/issues/118)) ([18821e6](https://github.com/cds-snc/cds-superset-docs/commit/18821e6ceb0b2b2f0c333d401e86da5d85368782))
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 3bf9d2a ([#114](https://github.com/cds-snc/cds-superset-docs/issues/114)) ([b1e64c6](https://github.com/cds-snc/cds-superset-docs/commit/b1e64c65fd7a79762ed235be52941a8581bad851))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all patch dependencies to v1.24.4 ([#115](https://github.com/cds-snc/cds-superset-docs/issues/115)) ([dafcf41](https://github.com/cds-snc/cds-superset-docs/commit/dafcf41ff9491bc0ed66b2dc78cd4fc64eda7e00))
+* **deps:** update dependency go to v1.24.4 ([#116](https://github.com/cds-snc/cds-superset-docs/issues/116)) ([30e92b7](https://github.com/cds-snc/cds-superset-docs/commit/30e92b7dadc93616c5f08d1e289703e864a089db))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.5.0 ([#117](https://github.com/cds-snc/cds-superset-docs/issues/117)) ([505af80](https://github.com/cds-snc/cds-superset-docs/commit/505af80aea060ffe8b08ed9d422c09dc9b4bf302))
+
 ## [1.7.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.1...v1.7.2) (2025-06-09)
 
 
