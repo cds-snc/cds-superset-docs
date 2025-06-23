@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.8.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.0...v1.8.1) (2025-06-23)
+
+
+### Bug Fixes
+
+* pin GitHub actions to commit SHAs ([#119](https://github.com/cds-snc/cds-superset-docs/issues/119)) ([d290fc3](https://github.com/cds-snc/cds-superset-docs/commit/d290fc35e9b60199f31fc4b74038759411602176))
+
+
+### Miscellaneous Chores
+
+* **deps:** update cds-snc/terraform-tools-setup digest to cc15ce9 ([#122](https://github.com/cds-snc/cds-superset-docs/issues/122)) ([1cda392](https://github.com/cds-snc/cds-superset-docs/commit/1cda392b1ee7cc3148fb0a66de8375b591b18900))
+* **deps:** update golangci/golangci-lint-action action to v8 ([#124](https://github.com/cds-snc/cds-superset-docs/issues/124)) ([19560d9](https://github.com/cds-snc/cds-superset-docs/commit/19560d9bbe2545bb8af8e4c0ef8abd76d3cfbd95))
+* **deps:** update terraform aws to v6 ([#125](https://github.com/cds-snc/cds-superset-docs/issues/125)) ([74eb5f3](https://github.com/cds-snc/cds-superset-docs/commit/74eb5f3d5d6eaf5459e4670377f921b35c45ff1a))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.5.1 ([#123](https://github.com/cds-snc/cds-superset-docs/issues/123)) ([f1ff4d0](https://github.com/cds-snc/cds-superset-docs/commit/f1ff4d0925c8078c89a69377044685a679e9501f))
+* synced file(s) with cds-snc/site-reliability-engineering ([#121](https://github.com/cds-snc/cds-superset-docs/issues/121)) ([6acb96b](https://github.com/cds-snc/cds-superset-docs/commit/6acb96bfb5f82758335cef104371c0d4b1eb2950))
+* synced local '.github/workflows/backstage-catalog-helper.yml' with remote 'tools/sre_file_sync/backstage-catalog-helper.yml' ([6acb96b](https://github.com/cds-snc/cds-superset-docs/commit/6acb96bfb5f82758335cef104371c0d4b1eb2950))
+
 ## [1.8.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.7.2...v1.8.0) (2025-06-17)
 
 
