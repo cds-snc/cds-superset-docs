@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.1...v1.8.2) (2025-07-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** update docker/setup-buildx-action action to v3.11.1 ([#127](https://github.com/cds-snc/cds-superset-docs/issues/127)) ([64a64ca](https://github.com/cds-snc/cds-superset-docs/commit/64a64ca710113687bda8e48317db6b537877dfcf))
+
 ## [1.8.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.0...v1.8.1) (2025-06-23)
 
 
