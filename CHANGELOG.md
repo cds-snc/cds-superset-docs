@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.8.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.1...v1.8.2) (2025-07-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#131](https://github.com/cds-snc/cds-superset-docs/issues/131)) ([6bdcf2c](https://github.com/cds-snc/cds-superset-docs/commit/6bdcf2cca28e229bceaf6882f25b368b2d366acb))
+* **deps:** update cds-snc/dns-proxy-action digest to fbe67c9 ([#129](https://github.com/cds-snc/cds-superset-docs/issues/129)) ([5ea4efd](https://github.com/cds-snc/cds-superset-docs/commit/5ea4efdf948c1a1308101341a835d854f1c3edfb))
+* **deps:** update docker/setup-buildx-action action to v3.11.1 ([#127](https://github.com/cds-snc/cds-superset-docs/issues/127)) ([64a64ca](https://github.com/cds-snc/cds-superset-docs/commit/64a64ca710113687bda8e48317db6b537877dfcf))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.6.2 ([#130](https://github.com/cds-snc/cds-superset-docs/issues/130)) ([0f2c73c](https://github.com/cds-snc/cds-superset-docs/commit/0f2c73cf94a080cc034f0ac1fa18d3fd13c51228))
+
 ## [1.8.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.0...v1.8.1) (2025-06-23)
 
 
