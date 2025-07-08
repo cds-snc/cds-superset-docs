@@ -1,7 +1,7 @@
 resource "aws_route53_record" "superset_docs_A" {
   zone_id = var.hosted_zone_id
   name    = var.domain
-  type    = "A"
+  type    = "HTTPS"
 
   alias {
     name                   = aws_cloudfront_distribution.superset_docs.domain_name
