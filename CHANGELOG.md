@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.2...v1.9.0) (2025-07-09)
+
+
+### Features
+
+* enable http3 support and switch to HTTPS DNS record ([#132](https://github.com/cds-snc/cds-superset-docs/issues/132)) ([da0a974](https://github.com/cds-snc/cds-superset-docs/commit/da0a974450cb2303809e9b9d90851f4fd73957b2))
+
 ## [1.8.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.8.1...v1.8.2) (2025-07-07)
 
 
