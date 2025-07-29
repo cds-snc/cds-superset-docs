@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.1...v1.9.2) (2025-07-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** update golang docker tag to v1.24.5 ([#140](https://github.com/cds-snc/cds-superset-docs/issues/140)) ([aca04a3](https://github.com/cds-snc/cds-superset-docs/commit/aca04a339319914d192b8a013e624178f5a4088e))
+
 ## [1.9.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.0...v1.9.1) (2025-07-21)
 
 
