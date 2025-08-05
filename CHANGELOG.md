@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.2...v1.9.3) (2025-08-05)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#143](https://github.com/cds-snc/cds-superset-docs/issues/143)) ([c0c0296](https://github.com/cds-snc/cds-superset-docs/commit/c0c0296d7ac9ad41b33873f6edd457771c280802))
+* **deps:** update cds-snc/dns-proxy-action digest to 50d3033 ([#142](https://github.com/cds-snc/cds-superset-docs/issues/142)) ([af33d53](https://github.com/cds-snc/cds-superset-docs/commit/af33d536e44dc3189d1cab4e002dbc8141232c67))
+
 ## [1.9.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.1...v1.9.2) (2025-07-28)
 
 
