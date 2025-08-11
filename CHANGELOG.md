@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.3...v1.9.4) (2025-08-11)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#145](https://github.com/cds-snc/cds-superset-docs/issues/145)) ([4cf1d3f](https://github.com/cds-snc/cds-superset-docs/commit/4cf1d3fc2ea119298579a83a0dd22d69b276bfeb))
+
 ## [1.9.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.2...v1.9.3) (2025-08-05)
 
 
