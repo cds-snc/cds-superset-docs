@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.6](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.5...v1.9.6) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/dependency-review-action action to v4.7.3 ([#156](https://github.com/cds-snc/cds-superset-docs/issues/156)) ([76280dc](https://github.com/cds-snc/cds-superset-docs/commit/76280dcb81c8072319ec35741d6daaf726ac1f44))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to b387f79 ([#155](https://github.com/cds-snc/cds-superset-docs/issues/155)) ([fb99577](https://github.com/cds-snc/cds-superset-docs/commit/fb99577fcbb9277c3a40d73e364ccbb5fb7b6b55))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.7.0 ([#157](https://github.com/cds-snc/cds-superset-docs/issues/157)) ([de37b91](https://github.com/cds-snc/cds-superset-docs/commit/de37b91b6f7c377041c5de4442c81faee625996d))
+
 ## [1.9.5](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.4...v1.9.5) (2025-09-02)
 
 
