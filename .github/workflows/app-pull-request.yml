@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Audit DNS requests
-        uses: cds-snc/dns-proxy-action@50d3033adea55c246f2e314920759cd81ecae522
+        uses: cds-snc/dns-proxy-action@abae14dc37311af3a9bf8e6838dba2c1d873d06e
         env:
           DNS_PROXY_FORWARDTOSENTINEL: "true"
           DNS_PROXY_LOGANALYTICSWORKSPACEID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
@@ -40,7 +40,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version: '1.25.0'
+          go-version: '1.25.1'
 
       - name: Install dependencies
         run: go mod download
