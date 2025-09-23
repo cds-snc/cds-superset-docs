@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.8](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.7...v1.9.8) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#165](https://github.com/cds-snc/cds-superset-docs/issues/165)) ([077aff5](https://github.com/cds-snc/cds-superset-docs/commit/077aff598cc44cf1954e81a951cc745d5cf827b4))
+* **deps:** update actions/create-github-app-token action to v2.1.4 ([#163](https://github.com/cds-snc/cds-superset-docs/issues/163)) ([09a2b28](https://github.com/cds-snc/cds-superset-docs/commit/09a2b28aba1b3a0487bbc45839530b5185c2627b))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.7.1 ([#164](https://github.com/cds-snc/cds-superset-docs/issues/164)) ([ec85100](https://github.com/cds-snc/cds-superset-docs/commit/ec85100a8e9c374ed89c154a2ab7cd74e733f855))
+
 ## [1.9.7](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.6...v1.9.7) (2025-09-15)
 
 
