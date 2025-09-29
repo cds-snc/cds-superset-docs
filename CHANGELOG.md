@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.9](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.8...v1.9.9) (2025-09-29)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#169](https://github.com/cds-snc/cds-superset-docs/issues/169)) ([4808fea](https://github.com/cds-snc/cds-superset-docs/commit/4808fea5a0529ad3c9726ca754edbe767aea1dc8))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.8.1 ([#168](https://github.com/cds-snc/cds-superset-docs/issues/168)) ([cadd0c9](https://github.com/cds-snc/cds-superset-docs/commit/cadd0c9daa4006cd9f0d3c8aa439acb0b0ca00ef))
+
 ## [1.9.8](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.7...v1.9.8) (2025-09-22)
 
 
