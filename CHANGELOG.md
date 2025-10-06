@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.9.9](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.8...v1.9.9) (2025-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 2beaa59 ([#167](https://github.com/cds-snc/cds-superset-docs/issues/167)) ([3d18e85](https://github.com/cds-snc/cds-superset-docs/commit/3d18e8577010cc860175c285d7e2512270af0c24))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#169](https://github.com/cds-snc/cds-superset-docs/issues/169)) ([4808fea](https://github.com/cds-snc/cds-superset-docs/commit/4808fea5a0529ad3c9726ca754edbe767aea1dc8))
+* **deps:** lock file maintenance ([#173](https://github.com/cds-snc/cds-superset-docs/issues/173)) ([8f1717e](https://github.com/cds-snc/cds-superset-docs/commit/8f1717ebae7a10777fc4eea30aa8db6b9307e32e))
+* **deps:** update actions/dependency-review-action action to v4.8.0 ([#171](https://github.com/cds-snc/cds-superset-docs/issues/171)) ([810c6eb](https://github.com/cds-snc/cds-superset-docs/commit/810c6eb915dd80c483dad9383f6f224031855624))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.8.1 ([#168](https://github.com/cds-snc/cds-superset-docs/issues/168)) ([cadd0c9](https://github.com/cds-snc/cds-superset-docs/commit/cadd0c9daa4006cd9f0d3c8aa439acb0b0ca00ef))
+* synced file(s) with cds-snc/site-reliability-engineering ([#172](https://github.com/cds-snc/cds-superset-docs/issues/172)) ([97235a6](https://github.com/cds-snc/cds-superset-docs/commit/97235a68b847ac7160f8073f079b4f5bf9177e75))
+* synced file(s) with cds-snc/site-reliability-engineering ([#174](https://github.com/cds-snc/cds-superset-docs/issues/174)) ([d750fca](https://github.com/cds-snc/cds-superset-docs/commit/d750fcab9cb0ad4e3c4945e1e91dde62f164f140))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([97235a6](https://github.com/cds-snc/cds-superset-docs/commit/97235a68b847ac7160f8073f079b4f5bf9177e75))
+
 ## [1.9.8](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.7...v1.9.8) (2025-09-22)
 
 
