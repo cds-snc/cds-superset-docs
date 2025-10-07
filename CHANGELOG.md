@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.10](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.9...v1.9.10) (2025-10-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v5 ([#175](https://github.com/cds-snc/cds-superset-docs/issues/175)) ([058fd82](https://github.com/cds-snc/cds-superset-docs/commit/058fd821543659d404c3d5ef0ed2e0aa478aa89a))
+* **deps:** update actions/setup-go action to v6 ([#176](https://github.com/cds-snc/cds-superset-docs/issues/176)) ([c6caac9](https://github.com/cds-snc/cds-superset-docs/commit/c6caac90ed4bdf22d52b8f7ba08a0f1e2e19a1f8))
+* **deps:** update aws-actions/configure-aws-credentials action to v5 ([#177](https://github.com/cds-snc/cds-superset-docs/issues/177)) ([beec078](https://github.com/cds-snc/cds-superset-docs/commit/beec07881d5536fd8d389d294027fc34bcaff7c5))
+
 ## [1.9.9](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.8...v1.9.9) (2025-10-06)
 
 
