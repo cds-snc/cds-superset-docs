@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.10](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.9...v1.9.10) (2025-10-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#181](https://github.com/cds-snc/cds-superset-docs/issues/181)) ([26339be](https://github.com/cds-snc/cds-superset-docs/commit/26339beca9df44729737a80528c642a6213ce9c9))
+* **deps:** update actions/checkout action to v5 ([#175](https://github.com/cds-snc/cds-superset-docs/issues/175)) ([058fd82](https://github.com/cds-snc/cds-superset-docs/commit/058fd821543659d404c3d5ef0ed2e0aa478aa89a))
+* **deps:** update actions/setup-go action to v6 ([#176](https://github.com/cds-snc/cds-superset-docs/issues/176)) ([c6caac9](https://github.com/cds-snc/cds-superset-docs/commit/c6caac90ed4bdf22d52b8f7ba08a0f1e2e19a1f8))
+* **deps:** update aws-actions/configure-aws-credentials action to v5 ([#177](https://github.com/cds-snc/cds-superset-docs/issues/177)) ([beec078](https://github.com/cds-snc/cds-superset-docs/commit/beec07881d5536fd8d389d294027fc34bcaff7c5))
+* **deps:** update cds-snc/dns-proxy-action digest to a0d4428 ([#180](https://github.com/cds-snc/cds-superset-docs/issues/180)) ([15d86a5](https://github.com/cds-snc/cds-superset-docs/commit/15d86a5474d1e401921eef30222a1b6c916d1d57))
+* synced file(s) with cds-snc/site-reliability-engineering ([#179](https://github.com/cds-snc/cds-superset-docs/issues/179)) ([fe1eb7f](https://github.com/cds-snc/cds-superset-docs/commit/fe1eb7fa36f9b2f54e0d5ad4baf47c5f6b8d1dfc))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([fe1eb7f](https://github.com/cds-snc/cds-superset-docs/commit/fe1eb7fa36f9b2f54e0d5ad4baf47c5f6b8d1dfc))
+
 ## [1.9.9](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.8...v1.9.9) (2025-10-06)
 
 
