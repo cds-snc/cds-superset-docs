@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.11](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.10...v1.9.11) (2025-10-17)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 0b7aa0c ([#182](https://github.com/cds-snc/cds-superset-docs/issues/182)) ([72a5428](https://github.com/cds-snc/cds-superset-docs/commit/72a5428b412d08a41574e172608ae2c00dde4369))
+* **deps:** update module github.com/aws/aws-lambda-go to v1.50.0 ([#183](https://github.com/cds-snc/cds-superset-docs/issues/183)) ([09cb26e](https://github.com/cds-snc/cds-superset-docs/commit/09cb26e54caae561e38001c310b6eb4610f96134))
+
 ## [1.9.10](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.9...v1.9.10) (2025-10-14)
 
 
