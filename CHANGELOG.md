@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.11](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.10...v1.9.11) (2025-10-20)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 0b7aa0c ([#182](https://github.com/cds-snc/cds-superset-docs/issues/182)) ([72a5428](https://github.com/cds-snc/cds-superset-docs/commit/72a5428b412d08a41574e172608ae2c00dde4369))
+* **deps:** update module github.com/aws/aws-lambda-go to v1.50.0 ([#183](https://github.com/cds-snc/cds-superset-docs/issues/183)) ([09cb26e](https://github.com/cds-snc/cds-superset-docs/commit/09cb26e54caae561e38001c310b6eb4610f96134))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#188](https://github.com/cds-snc/cds-superset-docs/issues/188)) ([e9ce886](https://github.com/cds-snc/cds-superset-docs/commit/e9ce886931fc5531dcd73ccd6893419dac52fd8e))
+* **deps:** update all non-major github action dependencies ([#186](https://github.com/cds-snc/cds-superset-docs/issues/186)) ([9b1217b](https://github.com/cds-snc/cds-superset-docs/commit/9b1217b5a9f5bcef240daccfdd76a8402c4b71bc))
+* **deps:** update all patch dependencies ([#187](https://github.com/cds-snc/cds-superset-docs/issues/187)) ([89d85d9](https://github.com/cds-snc/cds-superset-docs/commit/89d85d990ee77eaf06d32f94cb91f9c26815eab2))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 1f1835d ([#185](https://github.com/cds-snc/cds-superset-docs/issues/185)) ([aa3f9ce](https://github.com/cds-snc/cds-superset-docs/commit/aa3f9ce98da97a0cfb741175b5d8f5c7f0a835af))
+
 ## [1.9.10](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.9...v1.9.10) (2025-10-14)
 
 
