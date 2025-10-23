@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.12](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.11...v1.9.12) (2025-10-23)
+
+
+### Miscellaneous Chores
+
+* synced file(s) with cds-snc/site-reliability-engineering ([#189](https://github.com/cds-snc/cds-superset-docs/issues/189)) ([4f63812](https://github.com/cds-snc/cds-superset-docs/commit/4f63812e67e887aac1f0f23f7fe07f3ee6bd6696))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([4f63812](https://github.com/cds-snc/cds-superset-docs/commit/4f63812e67e887aac1f0f23f7fe07f3ee6bd6696))
+
 ## [1.9.11](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.10...v1.9.11) (2025-10-20)
 
 
