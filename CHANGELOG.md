@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.13](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.12...v1.9.13) (2025-10-28)
+
+
+### Bug Fixes
+
+* update function URL permissions ([#194](https://github.com/cds-snc/cds-superset-docs/issues/194)) ([fb090bc](https://github.com/cds-snc/cds-superset-docs/commit/fb090bc408cf045dec0d6bffe810e8706cdcfdef))
+
 ## [1.9.12](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.11...v1.9.12) (2025-10-27)
 
 
