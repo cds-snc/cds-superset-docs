@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.9.12](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.11...v1.9.12) (2025-10-27)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#193](https://github.com/cds-snc/cds-superset-docs/issues/193)) ([668b839](https://github.com/cds-snc/cds-superset-docs/commit/668b839a2369ce93ca1e79c1dd971f582dfe9a6a))
+* **deps:** update dependency go to v1.25.3 ([#191](https://github.com/cds-snc/cds-superset-docs/issues/191)) ([3a99c46](https://github.com/cds-snc/cds-superset-docs/commit/3a99c46dc0151da8473a504a3428cbe5a997d73a))
+* **deps:** update golang docker tag to v1.25.3 ([#192](https://github.com/cds-snc/cds-superset-docs/issues/192)) ([3e02b2b](https://github.com/cds-snc/cds-superset-docs/commit/3e02b2be8b6e03ac8748dccbfe90c9d4de1986a7))
+* synced file(s) with cds-snc/site-reliability-engineering ([#189](https://github.com/cds-snc/cds-superset-docs/issues/189)) ([4f63812](https://github.com/cds-snc/cds-superset-docs/commit/4f63812e67e887aac1f0f23f7fe07f3ee6bd6696))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([4f63812](https://github.com/cds-snc/cds-superset-docs/commit/4f63812e67e887aac1f0f23f7fe07f3ee6bd6696))
+
 ## [1.9.11](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.10...v1.9.11) (2025-10-20)
 
 
