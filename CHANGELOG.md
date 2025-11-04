@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.14](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.13...v1.9.14) (2025-11-03)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#198](https://github.com/cds-snc/cds-superset-docs/issues/198)) ([6358d56](https://github.com/cds-snc/cds-superset-docs/commit/6358d565f935defd15cf1da913c0a3a0e469d725))
+* **deps:** update googleapis/release-please-action action to v4.4.0 ([#197](https://github.com/cds-snc/cds-superset-docs/issues/197)) ([a97627c](https://github.com/cds-snc/cds-superset-docs/commit/a97627cc18c39774e461f42ababf7ad6f92f059f))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.8.3 ([#196](https://github.com/cds-snc/cds-superset-docs/issues/196)) ([a79fa28](https://github.com/cds-snc/cds-superset-docs/commit/a79fa28d375d12b50e00129ce6ea3b597b8e9bc8))
+
 ## [1.9.13](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.12...v1.9.13) (2025-10-28)
 
 
