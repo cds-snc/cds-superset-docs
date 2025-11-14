@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.15](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.14...v1.9.15) (2025-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to c0531f9 ([#201](https://github.com/cds-snc/cds-superset-docs/issues/201)) ([d401659](https://github.com/cds-snc/cds-superset-docs/commit/d4016595ebcaf8632d75171cd7af9f86b91be666))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#203](https://github.com/cds-snc/cds-superset-docs/issues/203)) ([23d4738](https://github.com/cds-snc/cds-superset-docs/commit/23d4738b85114bac551e63a0c6be65fc4738c9ba))
+* **deps:** update cds-snc/dns-proxy-action digest to b63a989 ([#200](https://github.com/cds-snc/cds-superset-docs/issues/200)) ([ae4c7dc](https://github.com/cds-snc/cds-superset-docs/commit/ae4c7dc3d41af2459f47d5621c95816fbefa153e))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.8.4 ([#202](https://github.com/cds-snc/cds-superset-docs/issues/202)) ([7c4e6ef](https://github.com/cds-snc/cds-superset-docs/commit/7c4e6efa12593bf5f09a6431dddd59f00b89e601))
+* synced file(s) with cds-snc/site-reliability-engineering ([#205](https://github.com/cds-snc/cds-superset-docs/issues/205)) ([e8b41c2](https://github.com/cds-snc/cds-superset-docs/commit/e8b41c27597b4895c20986f36d59557c1f07e754))
+* synced local '.github/workflows/s3-backup.yml' with remote 'tools/sre_file_sync/s3-backup.yml' ([e8b41c2](https://github.com/cds-snc/cds-superset-docs/commit/e8b41c27597b4895c20986f36d59557c1f07e754))
+
 ## [1.9.14](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.13...v1.9.14) (2025-11-03)
 
 
