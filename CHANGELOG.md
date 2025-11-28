@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.17](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.16...v1.9.17) (2025-11-28)
+
+
+### Miscellaneous Chores
+
+* enable Renovate OSV and GitHub vulnerability alert PRs ([#214](https://github.com/cds-snc/cds-superset-docs/issues/214)) ([0c26a15](https://github.com/cds-snc/cds-superset-docs/commit/0c26a157c243270d172cbe2c10c455a1fdb5ae44))
+* synced file(s) with cds-snc/site-reliability-engineering ([#212](https://github.com/cds-snc/cds-superset-docs/issues/212)) ([3b19057](https://github.com/cds-snc/cds-superset-docs/commit/3b190573b622ed733a254caba7a42cd9c4e1f7a5))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([3b19057](https://github.com/cds-snc/cds-superset-docs/commit/3b190573b622ed733a254caba7a42cd9c4e1f7a5))
+
 ## [1.9.16](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.15...v1.9.16) (2025-11-24)
 
 
