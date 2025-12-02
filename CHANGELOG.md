@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.17](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.16...v1.9.17) (2025-12-01)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 4e0068c ([#216](https://github.com/cds-snc/cds-superset-docs/issues/216)) ([f68092e](https://github.com/cds-snc/cds-superset-docs/commit/f68092e1d98d345e5c029deca01bad0e8b786a8a))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major github action dependencies ([#217](https://github.com/cds-snc/cds-superset-docs/issues/217)) ([5eaec72](https://github.com/cds-snc/cds-superset-docs/commit/5eaec724f5acb862b9091128230f3b3fb0fc65a1))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.9.0 ([#218](https://github.com/cds-snc/cds-superset-docs/issues/218)) ([af0a1f4](https://github.com/cds-snc/cds-superset-docs/commit/af0a1f41c67de4a680402255bf8c2af6f8936eaa))
+* enable Renovate OSV and GitHub vulnerability alert PRs ([#214](https://github.com/cds-snc/cds-superset-docs/issues/214)) ([0c26a15](https://github.com/cds-snc/cds-superset-docs/commit/0c26a157c243270d172cbe2c10c455a1fdb5ae44))
+* synced file(s) with cds-snc/site-reliability-engineering ([#212](https://github.com/cds-snc/cds-superset-docs/issues/212)) ([3b19057](https://github.com/cds-snc/cds-superset-docs/commit/3b190573b622ed733a254caba7a42cd9c4e1f7a5))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([3b19057](https://github.com/cds-snc/cds-superset-docs/commit/3b190573b622ed733a254caba7a42cd9c4e1f7a5))
+
 ## [1.9.16](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.15...v1.9.16) (2025-11-24)
 
 
