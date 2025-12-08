@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.9.18](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.17...v1.9.18) (2025-12-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#223](https://github.com/cds-snc/cds-superset-docs/issues/223)) ([436034d](https://github.com/cds-snc/cds-superset-docs/commit/436034d5a3f111f7423eb54d3340afa68b65bb34))
+* **deps:** update aws-actions/configure-aws-credentials action to v5.1.1 ([#221](https://github.com/cds-snc/cds-superset-docs/issues/221)) ([70b6197](https://github.com/cds-snc/cds-superset-docs/commit/70b6197d669bdeefddf023362f6cd4477884247b))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 7916038 ([#215](https://github.com/cds-snc/cds-superset-docs/issues/215)) ([66bc9f0](https://github.com/cds-snc/cds-superset-docs/commit/66bc9f0143ca21265b87a73864dd113486fe0171))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.9.1 ([#222](https://github.com/cds-snc/cds-superset-docs/issues/222)) ([ae9e6e1](https://github.com/cds-snc/cds-superset-docs/commit/ae9e6e11712b68d44509147a4c00931888d01e4f))
+* remove default Renovate config ([#220](https://github.com/cds-snc/cds-superset-docs/issues/220)) ([a580345](https://github.com/cds-snc/cds-superset-docs/commit/a58034567501f5bbc956d89277e78d91e6c82149))
+
 ## [1.9.17](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.16...v1.9.17) (2025-12-01)
 
 
