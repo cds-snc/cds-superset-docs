@@ -25,7 +25,7 @@ jobs:
     steps:
 
       - name: Audit DNS requests
-        uses: cds-snc/dns-proxy-action@b63a989befc20506036aab86a7d66c4159272637
+        uses: cds-snc/dns-proxy-action@efd50395ec485b6ba290418d0f9fb79e7c83b6c4
         env:
           DNS_PROXY_FORWARDTOSENTINEL: "true"
           DNS_PROXY_LOGANALYTICSWORKSPACEID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Setup terraform tools
-        uses: cds-snc/terraform-tools-setup@cc15ce9039f6c37c592fb9930b70466b229d2e9b # v1
+        uses: cds-snc/terraform-tools-setup@5f76a50c0b5f0e133634fecc8dd42f67db57bc05 # v1.1.0
 
       - name: Configure aws credentials using OIDC
         uses: aws-actions/configure-aws-credentials@61815dcd50bd041e203e49132bacad1fd04d2708 # v5.1.1
