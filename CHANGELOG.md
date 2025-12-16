@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.19](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.18...v1.9.19) (2025-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-lambda-go to v1.51.0 ([#226](https://github.com/cds-snc/cds-superset-docs/issues/226)) ([ae6b5c0](https://github.com/cds-snc/cds-superset-docs/commit/ae6b5c0c2ccd4a7b5d705e946d32c28da967bd37))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#227](https://github.com/cds-snc/cds-superset-docs/issues/227)) ([ea28c78](https://github.com/cds-snc/cds-superset-docs/commit/ea28c78568747c282508ac6209c58d51f162f09d))
+* **deps:** update all non-major github action dependencies ([#224](https://github.com/cds-snc/cds-superset-docs/issues/224)) ([bc09fb7](https://github.com/cds-snc/cds-superset-docs/commit/bc09fb78bf8ae8bd435075e1cb46b20beb650d27))
+* **deps:** update all patch dependencies to v1.25.5 ([#225](https://github.com/cds-snc/cds-superset-docs/issues/225)) ([ddd41dc](https://github.com/cds-snc/cds-superset-docs/commit/ddd41dc0310719db81485483163dee3965e65436))
+
 ## [1.9.18](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.17...v1.9.18) (2025-12-08)
 
 
