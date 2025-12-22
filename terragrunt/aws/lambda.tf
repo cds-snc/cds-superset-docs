@@ -1,5 +1,5 @@
 module "superset_docs" {
-  source    = "github.com/cds-snc/terraform-modules//lambda?ref=v10.10.0"
+  source    = "github.com/cds-snc/terraform-modules//lambda?ref=v10.10.1"
   name      = var.product_name
   ecr_arn   = aws_ecr_repository.superset_docs.arn
   image_uri = "${aws_ecr_repository.superset_docs.repository_url}:latest"
