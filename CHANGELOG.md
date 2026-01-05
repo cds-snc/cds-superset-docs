@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.9.20](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.19...v1.9.20) (2026-01-05)
+
+
+### Bug Fixes
+
+* **deps:** update all patch dependencies ([#231](https://github.com/cds-snc/cds-superset-docs/issues/231)) ([7c11341](https://github.com/cds-snc/cds-superset-docs/commit/7c113418398d7a27038a48b142a8d1d4e25afebe))
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 7dacc38 ([#230](https://github.com/cds-snc/cds-superset-docs/issues/230)) ([2054433](https://github.com/cds-snc/cds-superset-docs/commit/20544339325a8ee7654929a53d59179f6f1fe7f4))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#233](https://github.com/cds-snc/cds-superset-docs/issues/233)) ([9c98290](https://github.com/cds-snc/cds-superset-docs/commit/9c98290d22ab6b11f848dbe39757c023216df3ff))
+* **deps:** update all non-major github action dependencies ([#236](https://github.com/cds-snc/cds-superset-docs/issues/236)) ([760f76c](https://github.com/cds-snc/cds-superset-docs/commit/760f76c7ecbb192582724bb1393e71ec46bf03d6))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 03e618a ([#229](https://github.com/cds-snc/cds-superset-docs/issues/229)) ([5f716ed](https://github.com/cds-snc/cds-superset-docs/commit/5f716ed76ca63ca00dffd3d708127ea25f0fe34e))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.10.0 ([#232](https://github.com/cds-snc/cds-superset-docs/issues/232)) ([62c1b25](https://github.com/cds-snc/cds-superset-docs/commit/62c1b25e0225fd7223ceaae6a3add7517c0d2b67))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.10.2 ([#235](https://github.com/cds-snc/cds-superset-docs/issues/235)) ([2a0c4ae](https://github.com/cds-snc/cds-superset-docs/commit/2a0c4ae37141826ff8dfff3877904bfb05e42dc6))
+
 ## [1.9.19](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.18...v1.9.19) (2025-12-16)
 
 
