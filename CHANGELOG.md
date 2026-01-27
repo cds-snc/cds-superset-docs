@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.23](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.22...v1.9.23) (2026-01-26)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 7d0074c ([#245](https://github.com/cds-snc/cds-superset-docs/issues/245)) ([7dbf3ff](https://github.com/cds-snc/cds-superset-docs/commit/7dbf3ff327c90b250b856a78adf4118a1a8cef1e))
+* **deps:** update module github.com/aws/aws-lambda-go to v1.52.0 ([#248](https://github.com/cds-snc/cds-superset-docs/issues/248)) ([5f14986](https://github.com/cds-snc/cds-superset-docs/commit/5f14986860336c16a06170f630bfb3753fd67d93))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major github action dependencies ([#247](https://github.com/cds-snc/cds-superset-docs/issues/247)) ([56ee415](https://github.com/cds-snc/cds-superset-docs/commit/56ee41554b2c48854b5ea2eebf4b475b230e30af))
+* **deps:** update all patch dependencies to v1.25.6 ([#246](https://github.com/cds-snc/cds-superset-docs/issues/246)) ([f4145e3](https://github.com/cds-snc/cds-superset-docs/commit/f4145e3f55a914a1117a2e460c80d735a2b00827))
+* synced file(s) with cds-snc/site-reliability-engineering ([#243](https://github.com/cds-snc/cds-superset-docs/issues/243)) ([8593539](https://github.com/cds-snc/cds-superset-docs/commit/8593539fb965093171f6d33c966d1761d370a473))
+* synced local '.github/workflows/backstage-catalog-helper.yml' with remote 'tools/sre_file_sync/backstage-catalog-helper.yml' ([8593539](https://github.com/cds-snc/cds-superset-docs/commit/8593539fb965093171f6d33c966d1761d370a473))
+
 ## [1.9.22](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.21...v1.9.22) (2026-01-19)
 
 
