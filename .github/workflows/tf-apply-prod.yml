@@ -46,4 +46,4 @@ jobs:
 
       - name: Apply Terraform
         working-directory: terragrunt/env/prod
-        run: terragrunt apply --terragrunt-non-interactive -auto-approve
+        run: terragrunt run --non-interactive -- apply -auto-approve

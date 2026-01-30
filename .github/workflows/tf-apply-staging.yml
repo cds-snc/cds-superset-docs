@@ -54,4 +54,4 @@ jobs:
 
       - name: Apply Terraform
         working-directory: terragrunt/env/staging
-        run: terragrunt apply --terragrunt-non-interactive -auto-approve
+        run: terragrunt run --non-interactive -- apply -auto-approve
