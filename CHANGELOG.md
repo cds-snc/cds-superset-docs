@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.24](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.23...v1.9.24) (2026-02-02)
+
+
+### Bug Fixes
+
+* terragrunt apply flags ([#253](https://github.com/cds-snc/cds-superset-docs/issues/253)) ([595d1e2](https://github.com/cds-snc/cds-superset-docs/commit/595d1e28df26c29d6d82385efc8241ca0b48220f))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#255](https://github.com/cds-snc/cds-superset-docs/issues/255)) ([81c6f71](https://github.com/cds-snc/cds-superset-docs/commit/81c6f71011948826210bc93fa55e843d9e72fa3a))
+* **deps:** update actions/checkout action to v6 ([#249](https://github.com/cds-snc/cds-superset-docs/issues/249)) ([0c646fc](https://github.com/cds-snc/cds-superset-docs/commit/0c646fcb5c64f5864eec1764d8aade41fac6848e))
+* **deps:** update cds-snc/terraform-plan action to v4 ([#250](https://github.com/cds-snc/cds-superset-docs/issues/250)) ([d6130f9](https://github.com/cds-snc/cds-superset-docs/commit/d6130f902ed8118c750db8cf1631baa60540a4f7))
+* **deps:** update golangci/golangci-lint-action action to v9 ([#251](https://github.com/cds-snc/cds-superset-docs/issues/251)) ([de0a5ca](https://github.com/cds-snc/cds-superset-docs/commit/de0a5ca05dbd3b06c5574049e52c4021d96f1dd7))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to fb17cc9 ([#254](https://github.com/cds-snc/cds-superset-docs/issues/254)) ([207df31](https://github.com/cds-snc/cds-superset-docs/commit/207df3199ed534a39ca8b61b18805cd81f77bd97))
+
 ## [1.9.23](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.22...v1.9.23) (2026-01-26)
 
 
