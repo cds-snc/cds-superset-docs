@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.25](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.24...v1.9.25) (2026-02-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** update cds-snc/dns-proxy-action digest to 65e3e98 ([#256](https://github.com/cds-snc/cds-superset-docs/issues/256)) ([f6085b2](https://github.com/cds-snc/cds-superset-docs/commit/f6085b2d261102738de307a29daba4b9f1c2abed))
+
 ## [1.9.24](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.23...v1.9.24) (2026-02-02)
 
 
