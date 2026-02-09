@@ -2,10 +2,13 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: cds-superset-docs
-  description: Doc site for Superset
-  labels:
-    license: MIT
+  title: CDS Superset Docs
+  description: Documentation site for the CDS Superset service.
+  annotations:
+    github.com/project-slug: cds-snc/cds-superset-docs
 spec:
-  type: website
-  lifecycle: experimental
-  owner: platform-core-services
+  type: service
+  lifecycle: production
+  owner: group:cds-snc/platform-core
+  system: business-intelligence
+
