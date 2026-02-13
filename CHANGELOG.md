@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.25...v1.10.0) (2026-02-13)
+
+
+### Features
+
+* add `/.well-known/security.txt` ([#259](https://github.com/cds-snc/cds-superset-docs/issues/259)) ([9a51477](https://github.com/cds-snc/cds-superset-docs/commit/9a514778293d0ab10a788efe4f8453505479a4dd))
+
 ## [1.9.25](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.24...v1.9.25) (2026-02-09)
 
 
