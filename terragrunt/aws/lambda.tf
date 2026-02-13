@@ -11,6 +11,7 @@ module "superset_docs" {
 
   environment_variables = {
     GOOGLE_ANALYTICS_ID  = var.google_analytics_id
+    SECURITY_TXT_CONTENT = var.security_txt_content
     SITE_NAME_EN         = var.site_name_en
     SITE_NAME_FR         = var.site_name_fr
     WORDPRESS_MENU_ID_EN = var.menu_id_en

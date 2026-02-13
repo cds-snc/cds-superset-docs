@@ -14,6 +14,7 @@ func TestLoad_SiteNameEn(t *testing.T) {
 	originalWordPressPassword := os.Getenv("WORDPRESS_PASSWORD")
 	originalWordPressMenuIdEn := os.Getenv("WORDPRESS_MENU_ID_EN")
 	originalWordPressMenuIdFr := os.Getenv("WORDPRESS_MENU_ID_FR")
+	originalSecurityTxtContent := os.Getenv("SECURITY_TXT_CONTENT")
 
 	// Restore environment variables after test
 	defer func() {
@@ -24,6 +25,7 @@ func TestLoad_SiteNameEn(t *testing.T) {
 		os.Setenv("WORDPRESS_PASSWORD", originalWordPressPassword)
 		os.Setenv("WORDPRESS_MENU_ID_EN", originalWordPressMenuIdEn)
 		os.Setenv("WORDPRESS_MENU_ID_FR", originalWordPressMenuIdFr)
+		os.Setenv("SECURITY_TXT_CONTENT", originalSecurityTxtContent)
 	}()
 
 	t.Run("SiteNameEn is loaded correctly when set", func(t *testing.T) {
@@ -36,6 +38,7 @@ func TestLoad_SiteNameEn(t *testing.T) {
 		os.Setenv("WORDPRESS_PASSWORD", "pass")
 		os.Setenv("WORDPRESS_MENU_ID_EN", "1")
 		os.Setenv("WORDPRESS_MENU_ID_FR", "2")
+		os.Setenv("SECURITY_TXT_CONTENT", "Test security text")
 
 		cfg, err := Load()
 		if err != nil {
@@ -56,6 +59,7 @@ func TestLoad_SiteNameEn(t *testing.T) {
 		os.Setenv("WORDPRESS_PASSWORD", "pass")
 		os.Setenv("WORDPRESS_MENU_ID_EN", "1")
 		os.Setenv("WORDPRESS_MENU_ID_FR", "2")
+		os.Setenv("SECURITY_TXT_CONTENT", "Test security text")
 
 		_, err := Load()
 		if err == nil {
@@ -77,6 +81,7 @@ func TestLoad_SiteNameEn(t *testing.T) {
 		os.Setenv("WORDPRESS_PASSWORD", "pass")
 		os.Setenv("WORDPRESS_MENU_ID_EN", "1")
 		os.Setenv("WORDPRESS_MENU_ID_FR", "2")
+		os.Setenv("SECURITY_TXT_CONTENT", "Test security text")
 
 		_, err := Load()
 		if err == nil {
@@ -138,6 +143,7 @@ func TestConfigCompleteness(t *testing.T) {
 		"WORDPRESS_PASSWORD":   os.Getenv("WORDPRESS_PASSWORD"),
 		"WORDPRESS_MENU_ID_EN": os.Getenv("WORDPRESS_MENU_ID_EN"),
 		"WORDPRESS_MENU_ID_FR": os.Getenv("WORDPRESS_MENU_ID_FR"),
+		"SECURITY_TXT_CONTENT": os.Getenv("SECURITY_TXT_CONTENT"),
 		"PORT":                 os.Getenv("PORT"),
 	}
 
@@ -157,6 +163,7 @@ func TestConfigCompleteness(t *testing.T) {
 		"WORDPRESS_PASSWORD":   "apisecret",
 		"WORDPRESS_MENU_ID_EN": "42",
 		"WORDPRESS_MENU_ID_FR": "43",
+		"SECURITY_TXT_CONTENT": "Example security text",
 		"PORT":                 "8080",
 	}
 

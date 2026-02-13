@@ -19,6 +19,11 @@ variable "menu_id_fr" {
   type        = string
 }
 
+variable "security_txt_content" {
+  description = "The content of the /.well-known/security.txt response."
+  type        = string
+}
+
 variable "site_name_en" {
   description = "The English site name"
   type        = string

@@ -7,7 +7,8 @@ import (
 
 // Config holds all application configuration
 type Config struct {
-	GoogleAnalyticsID string
+	GoogleAnalyticsID  string
+	SecurityTxtContent string
 
 	// Server settings
 	Port       string
@@ -27,6 +28,7 @@ func Load() (*Config, error) {
 	cfg := &Config{}
 
 	requiredVars := map[string]*string{
+		"SECURITY_TXT_CONTENT": &cfg.SecurityTxtContent,
 		"SITE_NAME_EN":         &cfg.SiteNameEn,
 		"SITE_NAME_FR":         &cfg.SiteNameFr,
 		"WORDPRESS_URL":        &cfg.WordPressBaseURL,
