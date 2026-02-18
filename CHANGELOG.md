@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.0...v1.10.1) (2026-02-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#263](https://github.com/cds-snc/cds-superset-docs/issues/263)) ([24dc84c](https://github.com/cds-snc/cds-superset-docs/commit/24dc84cd277021c000dedf568e14653c923fa217))
+* **deps:** update all non-major github action dependencies ([#261](https://github.com/cds-snc/cds-superset-docs/issues/261)) ([a0ce46d](https://github.com/cds-snc/cds-superset-docs/commit/a0ce46d3cfc56c4f8077fe984b3757893a76d8af))
+* **deps:** update golang docker tag to v1.25.7 ([#262](https://github.com/cds-snc/cds-superset-docs/issues/262)) ([fbe47f1](https://github.com/cds-snc/cds-superset-docs/commit/fbe47f1956b91b3290f70e89cf105fc1cfe0939f))
+
 ## [1.10.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.9.25...v1.10.0) (2026-02-13)
 
 
