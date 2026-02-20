@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.1...v1.10.2) (2026-02-20)
+
+
+### Miscellaneous Chores
+
+* synced file(s) with cds-snc/site-reliability-engineering ([#265](https://github.com/cds-snc/cds-superset-docs/issues/265)) ([af0b2c2](https://github.com/cds-snc/cds-superset-docs/commit/af0b2c2da96b71da8803428f532f5f83265ff98d))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([af0b2c2](https://github.com/cds-snc/cds-superset-docs/commit/af0b2c2da96b71da8803428f532f5f83265ff98d))
+* upgrade docker-scan action ([#266](https://github.com/cds-snc/cds-superset-docs/issues/266)) ([d8bedb7](https://github.com/cds-snc/cds-superset-docs/commit/d8bedb72473e22424a14f49bf3db1a5dbff446aa))
+
 ## [1.10.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.0...v1.10.1) (2026-02-17)
 
 
