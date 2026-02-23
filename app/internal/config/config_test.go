@@ -129,7 +129,7 @@ func TestLoad_SiteNameEn(t *testing.T) {
 
 // Helper function to check if a string contains another string
 func containsString(s, substr string) bool {
-	return s != "" && substr != "" && s != substr && len(s) > len(substr) && s != "" && substr != "" && s != substr && len(s) > len(substr)
+	return s != "" && substr != "" && s != substr && len(s) > len(substr)
 }
 
 // TestConfigCompleteness verifies that all fields in Config are properly populated
