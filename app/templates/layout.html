@@ -9,8 +9,8 @@
     <title>{{.Title}}</title>
 
     <!-- GC Design System -->
-    <link rel="stylesheet" href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.44.0/dist/gcds/gcds.css" />
-    <script type="module" src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.44.0/dist/gcds/gcds.esm.js" ></script>
+    <link rel="stylesheet" href="https://cdn.design-system.alpha.canada.ca/@gcds-core/components@1.0.0/dist/gcds/gcds.css" />
+    <script type="module" src="https://cdn.design-system.alpha.canada.ca/@gcds-core/components@1.0.0/dist/gcds/gcds.esm.js" ></script>
 
     <!-- GC Design System CSS Shortcuts -->
     <link rel="stylesheet" href="https://cdn.design-system.canada.ca/@gcds-core/css-shortcuts@1.1.0/dist/gcds-css-shortcuts.min.css" />
@@ -32,7 +32,7 @@
   <body>
     <gcds-header {{if .LangSwapSlug}} lang-href="{{.LangSwapPath}}{{.LangSwapSlug}}" {{end}} skip-to-href="#main-content">
       <gcds-search slot="search"></gcds-search>
-      <gcds-top-nav slot="menu" label="Main menu" alignment="right" slot="menu">
+      <gcds-top-nav label="Main menu" alignment="end" slot="menu">
         <gcds-nav-link href="{{.Home}}" slot="home">{{.SiteName}}</gcds-nav-link>
         {{$pageTitle := .Title}} 
         {{range $i, $item := .Menu.Items}} {{if gt (len $item.Children) 0}}
@@ -54,7 +54,7 @@
       </gcds-breadcrumbs>
     </gcds-header>
 
-    <gcds-container id="main-content" main-container size="xl" centered tag="main">
+    <gcds-container id="main-content" alignment="center" layout="page" tag="main">
       <gcds-heading tag="h1">{{.Title}}</gcds-heading>
       {{.Content}}
       <gcds-date-modified>{{.Modified}}</gcds-date-modified>
