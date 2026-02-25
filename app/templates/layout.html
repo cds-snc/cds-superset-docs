@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="{{.Lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" sizes="96x96" href="https://design-system.alpha.canada.ca/favicon.ico" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" sizes="96x96" href="https://design-system.alpha.canada.ca/favicon.ico">
+    <title>{{.Title}}</title>
 
-  <title>{{.Title}}</title>
+    <!-- GC Design System -->
+    <link rel="stylesheet" href="https://cdn.design-system.alpha.canada.ca/@gcds-core/components@1.0.0/dist/gcds/gcds.css" />
+    <script type="module" src="https://cdn.design-system.alpha.canada.ca/@gcds-core/components@1.0.0/dist/gcds/gcds.esm.js" ></script>
 
-  <!-- GC Design System -->
-  <link rel="stylesheet"
-    href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-utility@1.8.0/dist/gcds-utility.min.css" />
-  <link rel="stylesheet"
-    href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.34.0/dist/gcds/gcds.css" />
-  <script type="module"
-    src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.34.0/dist/gcds/gcds.esm.js"></script>
+    <!-- GC Design System CSS Shortcuts -->
+    <link rel="stylesheet" href="https://cdn.design-system.canada.ca/@gcds-core/css-shortcuts@1.1.0/dist/gcds-css-shortcuts.min.css" />
 
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/static/css/styles.css" />
 
-  {{if .GoogleAnalyticsID}}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{.GoogleAnalyticsID}}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{.GoogleAnalyticsID}}');
-  </script>
-  {{end}}
-</head>
+    {{if .GoogleAnalyticsID}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{.GoogleAnalyticsID}}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "{{.GoogleAnalyticsID}}");
+    </script>
+    {{end}}
+  </head>
 
-<body>
-
-  <gcds-header {{if .LangSwapSlug}}lang-href="{{.LangSwapPath}}{{.LangSwapSlug}}"{{end}} skip-to-href="#main-content">
-
-    <gcds-top-nav slot="menu" label="Main menu" alignment="right">
-      <gcds-nav-link href="{{.Home}}" slot="home">{{.SiteName}}</gcds-nav-link>
-      {{$pageTitle := .Title}}
-      {{range $i, $item := .Menu.Items}}
-        {{if gt (len $item.Children) 0}}
+  <body>
+    <gcds-header {{if .LangSwapSlug}} lang-href="{{.LangSwapPath}}{{.LangSwapSlug}}" {{end}} skip-to-href="#main-content">
+      <gcds-search slot="search"></gcds-search>
+      <gcds-top-nav label="Main menu" alignment="end" slot="menu">
+        <gcds-nav-link href="{{.Home}}" slot="home">{{.SiteName}}</gcds-nav-link>
+        {{$pageTitle := .Title}} 
+        {{range $i, $item := .Menu.Items}} {{if gt (len $item.Children) 0}}
         <gcds-nav-group open-trigger="{{.Title}}">
           {{range $j, $child := $item.Children}}
           <gcds-nav-link href="{{.Url}}" {{if eq .Title $pageTitle}}current{{end}}>{{.Title}}</gcds-nav-link>
@@ -47,26 +43,23 @@
         </gcds-nav-group>
         {{else}}
         <gcds-nav-link href="{{.Url}}" {{if eq .Title $pageTitle}}current{{end}}>{{.Title}}</gcds-nav-link>
+         {{end}} 
         {{end}}
-      {{end}}
-    </gcds-top-nav>
+      </gcds-top-nav>
 
-    <gcds-breadcrumbs slot="breadcrumb">
-      {{if .ShowBreadcrumb}}
-      <gcds-breadcrumbs-item href="{{.Home}}">{{.SiteName}}</gcds-breadcrumbs-item>
-      {{end}}
-    </gcds-breadcrumbs>
+      <gcds-breadcrumbs slot="breadcrumb">
+        {{if .ShowBreadcrumb}}
+        <gcds-breadcrumbs-item href="{{.Home}}">{{.SiteName}}</gcds-breadcrumbs-item>
+        {{end}}
+      </gcds-breadcrumbs>
+    </gcds-header>
 
-  </gcds-header>
+    <gcds-container id="main-content" alignment="center" layout="page" tag="main">
+      <gcds-heading tag="h1">{{.Title}}</gcds-heading>
+      {{.Content}}
+      <gcds-date-modified>{{.Modified}}</gcds-date-modified>
+    </gcds-container>
 
-  <gcds-container id="main-content" main-container size="xl" centered tag="main">
-    <gcds-heading tag="h1">{{.Title}}</gcds-heading>
-    {{.Content}}
-    <gcds-date-modified>{{.Modified}}</gcds-date-modified>
-  </gcds-container>
-
-  <gcds-footer display="full"></gcds-footer>
-
-</body>
-
+    <gcds-footer display="full"></gcds-footer>
+  </body>
 </html>
