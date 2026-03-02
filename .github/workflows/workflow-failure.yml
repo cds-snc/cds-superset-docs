@@ -7,6 +7,7 @@ on:
       - "Docker build and push Staging"
       - "Docker deploy Production"
       - "Docker deploy Staging"
+      - "Docker SBOM Staging"
       - "Terraform Apply Production"
       - "Terraform Apply Staging"
     types:
