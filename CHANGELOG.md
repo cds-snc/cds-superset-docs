@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.10.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.2...v1.10.3) (2026-03-02)
+
+
+### Bug Fixes
+
+* use ARM GitHub runner ([#279](https://github.com/cds-snc/cds-superset-docs/issues/279)) ([bbc7a31](https://github.com/cds-snc/cds-superset-docs/commit/bbc7a31267aece73a576763ad0dd00812e890d3c))
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/dependency-review-action action to v4.8.3 ([#277](https://github.com/cds-snc/cds-superset-docs/issues/277)) ([ab64738](https://github.com/cds-snc/cds-superset-docs/commit/ab647384b37ab77d5ed50cb575ed493ecc6299d8))
+* **deps:** update aws-actions/configure-aws-credentials action to v6 ([#275](https://github.com/cds-snc/cds-superset-docs/issues/275)) ([64c3ef8](https://github.com/cds-snc/cds-superset-docs/commit/64c3ef8ce215d95f5d8ea76f68aaa3165a760964))
+* **deps:** update cds-snc/security-tools action to v4 ([#278](https://github.com/cds-snc/cds-superset-docs/issues/278)) ([66e1403](https://github.com/cds-snc/cds-superset-docs/commit/66e1403446110507ec3011599a450f3f15c5efcd))
+
 ## [1.10.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.1...v1.10.2) (2026-02-23)
 
 
