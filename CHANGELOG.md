@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.3...v1.10.4) (2026-03-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** update cds-snc/security-tools digest to 50aceef ([#280](https://github.com/cds-snc/cds-superset-docs/issues/280)) ([aa79eba](https://github.com/cds-snc/cds-superset-docs/commit/aa79eba92e31f2873e092cb1d4b34c2619ccfc4c))
+* trigger apply to update security.txt ([#282](https://github.com/cds-snc/cds-superset-docs/issues/282)) ([0f8b263](https://github.com/cds-snc/cds-superset-docs/commit/0f8b2639236df733fe0cd650e19684c649f69ef0))
+
 ## [1.10.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.2...v1.10.3) (2026-03-02)
 
 
