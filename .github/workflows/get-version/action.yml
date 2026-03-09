@@ -23,8 +23,12 @@ runs:
         - name: Get version, perform release of tag
           if: inputs.is-tagged == 'true'
           run: | 
-            VERSION_FROM_FILE="$(tr -d '\n\r' < version.txt)"
-            echo "VERSION=v${VERSION_FROM_FILE}" >> $GITHUB_ENV
+            VERSION="$(tr -d '\n\r' < version.txt)"
+            if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                echo "::error::Invalid version format in version.txt: '$VERSION'"
+                exit 1
+            fi
+            echo "VERSION=v${VERSION}" >> $GITHUB_ENV
           shell: bash
         
         - name: Wait for ref to exist
