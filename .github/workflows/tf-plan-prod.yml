@@ -43,7 +43,7 @@ jobs:
         id: get-version
         uses: ./.github/workflows/get-version
         with:
-          is-tagged: ${{ !startsWith(github.head_ref, 'release-please--') }}
+          is-tagged: ${{ !startsWith(github.head_ref, 'release-please--') }} # If not the release PR branch, assume it is a revert PR
   terraform-plan:
     runs-on: ubuntu-latest
     needs: get-version
