@@ -1,4 +1,5 @@
 name: Get version to deploy
+description: Resolve and output the version to deploy for tagged and release PR flows.
 
 inputs:
     is-tagged:
