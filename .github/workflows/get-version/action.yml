@@ -22,7 +22,9 @@ runs:
 
         - name: Get version, perform release of tag
           if: inputs.is-tagged == 'true'
-          run: echo "VERSION=v$(cat version.txt)" >> $GITHUB_ENV
+          run: | 
+            VERSION_FROM_FILE="$(tr -d '\n\r' < version.txt)"
+            echo "VERSION=v${VERSION_FROM_FILE}" >> $GITHUB_ENV
           shell: bash
         
         - name: Wait for ref to exist
