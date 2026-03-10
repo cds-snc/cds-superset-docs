@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.11.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.4...v1.11.0) (2026-03-10)
+
+
+### Features
+
+* add architecture diagram ([#284](https://github.com/cds-snc/cds-superset-docs/issues/284)) ([fcc8615](https://github.com/cds-snc/cds-superset-docs/commit/fcc861598bb1718b07bd65ec439ac7e558c3a5a4))
+* support GitHub PR revert of prod deploys ([#287](https://github.com/cds-snc/cds-superset-docs/issues/287)) ([9a48328](https://github.com/cds-snc/cds-superset-docs/commit/9a48328fdbcb3d2e75a17656289a904addd34f22))
+
+
+### Miscellaneous Chores
+
+* synced file(s) with cds-snc/site-reliability-engineering ([#288](https://github.com/cds-snc/cds-superset-docs/issues/288)) ([a75f0f2](https://github.com/cds-snc/cds-superset-docs/commit/a75f0f2d8ba52a15814fd7c1fb14673ccbd0ef92))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([a75f0f2](https://github.com/cds-snc/cds-superset-docs/commit/a75f0f2d8ba52a15814fd7c1fb14673ccbd0ef92))
+
 ## [1.10.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.3...v1.10.4) (2026-03-04)
 
 
