@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.11.0...v1.11.1) (2026-03-10)
+
+
+### Bug Fixes
+
+* make the script executable ([#289](https://github.com/cds-snc/cds-superset-docs/issues/289)) ([cbec1a9](https://github.com/cds-snc/cds-superset-docs/commit/cbec1a961338cf63a2f92446f3b43a245a927aef))
+
 ## [1.11.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.10.4...v1.11.0) (2026-03-10)
 
 
