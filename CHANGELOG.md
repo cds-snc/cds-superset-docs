@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.11.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.11.1...v1.11.2) (2026-04-01)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-lambda-go to v1.54.0 ([#293](https://github.com/cds-snc/cds-superset-docs/issues/293)) ([481d189](https://github.com/cds-snc/cds-superset-docs/commit/481d189723bac3badd2305764da3997a30d75bf5))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#285](https://github.com/cds-snc/cds-superset-docs/issues/285)) ([0aeae73](https://github.com/cds-snc/cds-superset-docs/commit/0aeae735d94df23cdf80a40230e55c75cb5a931d))
+* **deps:** update all non-major github action dependencies ([#283](https://github.com/cds-snc/cds-superset-docs/issues/283)) ([453ae19](https://github.com/cds-snc/cds-superset-docs/commit/453ae19575e820290772a9fdd43b487cca8e52e9))
+* **deps:** update all patch dependencies to v1.26.1 ([#292](https://github.com/cds-snc/cds-superset-docs/issues/292)) ([996c149](https://github.com/cds-snc/cds-superset-docs/commit/996c149da7b0b536310ac6524ee5aac18de992dd))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to c4a714f ([#291](https://github.com/cds-snc/cds-superset-docs/issues/291)) ([5802bc0](https://github.com/cds-snc/cds-superset-docs/commit/5802bc0dc8a26d05f11ce160add56521c74906a1))
+* synced file(s) with cds-snc/site-reliability-engineering ([#294](https://github.com/cds-snc/cds-superset-docs/issues/294)) ([ccb3f9e](https://github.com/cds-snc/cds-superset-docs/commit/ccb3f9eaf2b70afaff4823ebc8a03b39b7d19c16))
+
 ## [1.11.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.11.0...v1.11.1) (2026-03-10)
 
 
