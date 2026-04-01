@@ -6,11 +6,7 @@ on:
     types:
     - completed
 
-env: 
-  REGISTRY: ${{ vars.STAGING_AWS_ACCOUNT_ID }}.dkr.ecr.ca-central-1.amazonaws.com/cds-superset-docs
-
 permissions:
-  id-token: write
   contents: write
 
 jobs:
@@ -31,24 +27,19 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Configure AWS credentials using OIDC
-      uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
-      with:
-        role-to-assume: arn:aws:iam::${{ vars.STAGING_AWS_ACCOUNT_ID }}:role/cds-superset-docs-plan
-        role-session-name: ECRPull
-        aws-region: ca-central-1
-
-    - name: Login to ECR
-      id: login-ecr
-      uses: aws-actions/amazon-ecr-login@183a1442edf41672e66566b7fc560e297a290896 # v2.1.1
+    - name: Build image
+      run: |
+        docker build \
+          --file ./app/Dockerfile \
+          --platform linux/arm64 \
+          --tag cds-superset-docs:latest ./app
 
     - name: Docker generate SBOM
       uses: cds-snc/security-tools/.github/actions/generate-sbom@837a88b6337d4842543184c8eac97a8adac8f302 # v4.0.3
       env:
         TRIVY_DB_REPOSITORY: ${{ vars.TRIVY_DB_REPOSITORY }}
       with:
-        docker_image: "${{ env.REGISTRY }}:latest"
+        docker_image: "cds-superset-docs:latest"
         dockerfile_path: "./app/Dockerfile"
         platform: "linux/arm64"
-        sbom_name: "cds-superset-docs"
         token: "${{ secrets.GITHUB_TOKEN }}"
