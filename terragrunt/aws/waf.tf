@@ -1,6 +1,5 @@
 locals {
   rate_limit_all_requests      = 1000
-  rate_limit_mutating_requests = 200
 }
 
 resource "aws_wafv2_web_acl" "superset_docs" {
@@ -96,39 +95,6 @@ resource "aws_wafv2_web_acl" "superset_docs" {
     }
   }
 
-  rule {
-    name     = "RateLimitMutatingRequestsIp"
-    priority = 20
-
-    action {
-      block {}
-    }
-
-    statement {
-      rate_based_statement {
-        limit              = local.rate_limit_mutating_requests
-        aggregate_key_type = "IP"
-        scope_down_statement {
-          regex_match_statement {
-            field_to_match {
-              method {}
-            }
-            regex_string = "^(delete|patch|post|put)$"
-            text_transformation {
-              priority = 1
-              type     = "LOWERCASE"
-            }
-          }
-        }
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "RateLimitMutatingRequestsIp"
-      sampled_requests_enabled   = true
-    }
-  }
 
   rule {
     name     = "RateLimitAllRequestsJA4"
@@ -154,47 +120,6 @@ resource "aws_wafv2_web_acl" "superset_docs" {
     visibility_config {
       cloudwatch_metrics_enabled = true
       metric_name                = "RateLimitAllRequestsJA4"
-      sampled_requests_enabled   = true
-    }
-  }
-
-  rule {
-    name     = "RateLimitMutatingRequestsJA4"
-    priority = 40
-
-    action {
-      block {}
-    }
-
-    statement {
-      rate_based_statement {
-        limit              = local.rate_limit_mutating_requests
-        aggregate_key_type = "CUSTOM_KEYS"
-
-        custom_key {
-          ja4_fingerprint {
-            fallback_behavior = "MATCH"
-          }
-        }
-
-        scope_down_statement {
-          regex_match_statement {
-            field_to_match {
-              method {}
-            }
-            regex_string = "^(delete|patch|post|put)$"
-            text_transformation {
-              priority = 1
-              type     = "LOWERCASE"
-            }
-          }
-        }
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "RateLimitMutatingRequestsJA4"
       sampled_requests_enabled   = true
     }
   }
