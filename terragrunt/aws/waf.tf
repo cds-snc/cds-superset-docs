@@ -1,5 +1,5 @@
 locals {
-  rate_limit_all_requests      = 1000
+  rate_limit_all_requests = 1000
 }
 
 resource "aws_wafv2_web_acl" "superset_docs" {
@@ -98,7 +98,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "RateLimitAllRequestsJA4"
-    priority = 30
+    priority = 20
 
     action {
       block {}
@@ -126,7 +126,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "BlockLargeRequests"
-    priority = 50
+    priority = 30
 
     action {
       block {}
@@ -199,7 +199,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "AWSManagedRulesAmazonIpReputationList"
-    priority = 60
+    priority = 40
 
     override_action {
       none {}
@@ -221,7 +221,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "AWSManagedRulesKnownBadInputsRuleSet"
-    priority = 70
+    priority = 50
 
     override_action {
       none {}
@@ -243,7 +243,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "AWSManagedRulesCommonRuleSet"
-    priority = 80
+    priority = 60
 
     override_action {
       none {}
