@@ -1,3 +1,7 @@
+locals {
+  rate_limit_all_requests = 1000
+}
+
 resource "aws_wafv2_web_acl" "superset_docs" {
   provider = aws.us-east-1
 
@@ -84,7 +88,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "CanadaOnlyGeoRestriction"
-    priority = 5
+    priority = 10
 
     action {
       block {
@@ -136,7 +140,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "AWSManagedRulesCommonRuleSet"
-    priority = 10
+    priority = 20
 
     override_action {
       none {}
@@ -158,7 +162,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "AWSManagedRulesKnownBadInputsRuleSet"
-    priority = 20
+    priority = 30
 
     override_action {
       none {}
@@ -180,7 +184,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "AWSManagedRulesAmazonIpReputationList"
-    priority = 30
+    priority = 40
 
     override_action {
       none {}
@@ -202,7 +206,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
   rule {
     name     = "RateLimit"
-    priority = 40
+    priority = 50
 
     action {
       block {
@@ -218,7 +222,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 
     statement {
       rate_based_statement {
-        limit              = 1000
+        limit              = local.rate_limit_all_requests
         aggregate_key_type = "IP"
       }
     }
