@@ -14,8 +14,90 @@ resource "aws_wafv2_web_acl" "superset_docs" {
   }
 
   rule {
-    name     = "BlockLargeRequests"
+    name     = "CanadaOnlyGeoRestriction"
     priority = 1
+
+    action {
+      block {
+        custom_response {
+          response_code = 403
+          response_header {
+            name  = "waf-block"
+            value = "CanadaOnlyGeoRestriction"
+          }
+        }
+      }
+    }
+
+    statement {
+      not_statement {
+        statement {
+          or_statement {
+            statement {
+              geo_match_statement {
+                country_codes = ["CA"]
+              }
+            }
+            statement {
+              byte_match_statement {
+                positional_constraint = "EXACTLY"
+                field_to_match {
+                  single_header {
+                    name = "upptime"
+                  }
+                }
+                search_string = var.upptime_status_header
+                text_transformation {
+                  priority = 1
+                  type     = "NONE"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "CanadaOnlyGeoRestriction"
+      sampled_requests_enabled   = true
+    }
+  }
+
+  rule {
+    name     = "RateLimit"
+    priority = 10
+
+    action {
+      block {
+        custom_response {
+          response_code = 429
+          response_header {
+            name  = "waf-block"
+            value = "RateLimit"
+          }
+        }
+      }
+    }
+
+    statement {
+      rate_based_statement {
+        limit              = local.rate_limit_all_requests
+        aggregate_key_type = "IP"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "RateLimit"
+      sampled_requests_enabled   = true
+    }
+  }
+
+  rule {
+    name     = "BlockLargeRequests"
+    priority = 20
 
     action {
       block {}
@@ -87,104 +169,8 @@ resource "aws_wafv2_web_acl" "superset_docs" {
   }
 
   rule {
-    name     = "CanadaOnlyGeoRestriction"
-    priority = 10
-
-    action {
-      block {
-        custom_response {
-          response_code = 403
-          response_header {
-            name  = "waf-block"
-            value = "CanadaOnlyGeoRestriction"
-          }
-        }
-      }
-    }
-
-    statement {
-      not_statement {
-        statement {
-          or_statement {
-            statement {
-              geo_match_statement {
-                country_codes = ["CA"]
-              }
-            }
-            statement {
-              byte_match_statement {
-                positional_constraint = "EXACTLY"
-                field_to_match {
-                  single_header {
-                    name = "upptime"
-                  }
-                }
-                search_string = var.upptime_status_header
-                text_transformation {
-                  priority = 1
-                  type     = "NONE"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "CanadaOnlyGeoRestriction"
-      sampled_requests_enabled   = true
-    }
-  }
-
-  rule {
-    name     = "AWSManagedRulesCommonRuleSet"
-    priority = 20
-
-    override_action {
-      none {}
-    }
-
-    statement {
-      managed_rule_group_statement {
-        name        = "AWSManagedRulesCommonRuleSet"
-        vendor_name = "AWS"
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "AWSManagedRulesCommonRuleSet"
-      sampled_requests_enabled   = true
-    }
-  }
-
-  rule {
-    name     = "AWSManagedRulesKnownBadInputsRuleSet"
-    priority = 30
-
-    override_action {
-      none {}
-    }
-
-    statement {
-      managed_rule_group_statement {
-        name        = "AWSManagedRulesKnownBadInputsRuleSet"
-        vendor_name = "AWS"
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "AWSManagedRulesKnownBadInputsRuleSet"
-      sampled_requests_enabled   = true
-    }
-  }
-
-  rule {
     name     = "AWSManagedRulesAmazonIpReputationList"
-    priority = 40
+    priority = 30
 
     override_action {
       none {}
@@ -205,31 +191,45 @@ resource "aws_wafv2_web_acl" "superset_docs" {
   }
 
   rule {
-    name     = "RateLimit"
-    priority = 50
+    name     = "AWSManagedRulesKnownBadInputsRuleSet"
+    priority = 40
 
-    action {
-      block {
-        custom_response {
-          response_code = 429
-          response_header {
-            name  = "waf-block"
-            value = "RateLimit"
-          }
-        }
-      }
+    override_action {
+      none {}
     }
 
     statement {
-      rate_based_statement {
-        limit              = local.rate_limit_all_requests
-        aggregate_key_type = "IP"
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesKnownBadInputsRuleSet"
+        vendor_name = "AWS"
       }
     }
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "RateLimit"
+      metric_name                = "AWSManagedRulesKnownBadInputsRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+
+  rule {
+    name     = "AWSManagedRulesCommonRuleSet"
+    priority = 50
+
+    override_action {
+      none {}
+    }
+
+    statement {
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesCommonRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWSManagedRulesCommonRuleSet"
       sampled_requests_enabled   = true
     }
   }
