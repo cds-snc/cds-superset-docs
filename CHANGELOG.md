@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.12.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.11.2...v1.12.0) (2026-05-04)
+
+
+### Features
+
+* update DNS proxy action to use safelist ([#302](https://github.com/cds-snc/cds-superset-docs/issues/302)) ([19c4dd7](https://github.com/cds-snc/cds-superset-docs/commit/19c4dd7d9a9fb5f28762048b6fb15624b57df990))
+* update firewall rules ([#315](https://github.com/cds-snc/cds-superset-docs/issues/315)) ([670e2fe](https://github.com/cds-snc/cds-superset-docs/commit/670e2fe73381d19feb342e2deaaaebdf29568cfc))
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 8400f4a ([#300](https://github.com/cds-snc/cds-superset-docs/issues/300)) ([1a6a022](https://github.com/cds-snc/cds-superset-docs/commit/1a6a0222c73c036b8bb1c8f9c161be3d466ca23f))
+* tighten workflow security ([#295](https://github.com/cds-snc/cds-superset-docs/issues/295)) ([a3f2c46](https://github.com/cds-snc/cds-superset-docs/commit/a3f2c46650137892755a7433a782359512491cce))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#301](https://github.com/cds-snc/cds-superset-docs/issues/301)) ([f9dcc57](https://github.com/cds-snc/cds-superset-docs/commit/f9dcc57fc8322a7dbaf8e1e148f9026b3ef200fe))
+* **deps:** lock file maintenance ([#306](https://github.com/cds-snc/cds-superset-docs/issues/306)) ([f1fa5ef](https://github.com/cds-snc/cds-superset-docs/commit/f1fa5ef78dff8cbe8e22c0a3920e897e8d9030b0))
+* **deps:** lock file maintenance ([#312](https://github.com/cds-snc/cds-superset-docs/issues/312)) ([f7a1390](https://github.com/cds-snc/cds-superset-docs/commit/f7a13901011cdec669de4bdf4765433cfc50f6a5))
+* **deps:** lock file maintenance ([#314](https://github.com/cds-snc/cds-superset-docs/issues/314)) ([5d4a47d](https://github.com/cds-snc/cds-superset-docs/commit/5d4a47de5f3d4534d676085ffcffa9f69fe02fea))
+* **deps:** update all non-major github action dependencies ([#304](https://github.com/cds-snc/cds-superset-docs/issues/304)) ([ccd9de7](https://github.com/cds-snc/cds-superset-docs/commit/ccd9de7abb758eca15c741e6422b0bf617e19d6e))
+* **deps:** update all patch dependencies ([#305](https://github.com/cds-snc/cds-superset-docs/issues/305)) ([2b13a9b](https://github.com/cds-snc/cds-superset-docs/commit/2b13a9bfb218563fbcff13e78c73217f4580f665))
+* **deps:** update aws-actions/amazon-ecr-login action to v2.1.3 ([#310](https://github.com/cds-snc/cds-superset-docs/issues/310)) ([f0ea069](https://github.com/cds-snc/cds-superset-docs/commit/f0ea06901cdc1024eca68e7bb3ebd4794e47e7ae))
+* **deps:** update aws-actions/amazon-ecr-login action to v2.1.4 ([#313](https://github.com/cds-snc/cds-superset-docs/issues/313)) ([0af162a](https://github.com/cds-snc/cds-superset-docs/commit/0af162a8343d43e82b3f4dc0c843b51773b11754))
+* **deps:** update cds-snc/dns-proxy-action digest to 9ad7931 ([#299](https://github.com/cds-snc/cds-superset-docs/issues/299)) ([5c06bf1](https://github.com/cds-snc/cds-superset-docs/commit/5c06bf1928f6405415a1830595b81204954ef1c5))
+* **deps:** update cds-snc/terraform-plan action to v5 ([#298](https://github.com/cds-snc/cds-superset-docs/issues/298)) ([ba8cf74](https://github.com/cds-snc/cds-superset-docs/commit/ba8cf74d8905ce4738abd085e5bd299e4df1deb1))
+* **deps:** update dependency go to v1.26.2 ([#307](https://github.com/cds-snc/cds-superset-docs/issues/307)) ([0ff0feb](https://github.com/cds-snc/cds-superset-docs/commit/0ff0feb66a12431bc69abaa088612113d312ed2b))
+* **deps:** update golang docker tag to v1.26.2 ([#311](https://github.com/cds-snc/cds-superset-docs/issues/311)) ([e6def51](https://github.com/cds-snc/cds-superset-docs/commit/e6def51e15baf65f0098f0ce6c08da3fb5843091))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 5139be2 ([#309](https://github.com/cds-snc/cds-superset-docs/issues/309)) ([2257d82](https://github.com/cds-snc/cds-superset-docs/commit/2257d826c41048da3d96fdf163176af771245b86))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v10.11.4 ([#308](https://github.com/cds-snc/cds-superset-docs/issues/308)) ([ad9383c](https://github.com/cds-snc/cds-superset-docs/commit/ad9383caf44c6dc756f7fd12a34db006cb5004b5))
+
 ## [1.11.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.11.1...v1.11.2) (2026-04-01)
 
 
