@@ -1,0 +1,90 @@
+locals {
+  docker_push_role   = "${var.product_name}-docker-push"
+  docker_deploy_role = "${var.product_name}-docker-deploy"
+}
+
+module "github_workflow_roles" {
+  source = "github.com/cds-snc/terraform-modules//gh_oidc_role?ref=v10.11.4"
+
+  roles = [
+    {
+      name      = local.docker_push_role
+      repo_name = var.product_name
+      claim     = "ref:refs/heads/main"
+    },
+    {
+      name      = local.docker_deploy_role
+      repo_name = var.product_name
+      claim     = "ref:refs/heads/main"
+    }
+  ]
+
+  oidc_exists       = true
+  billing_tag_value = var.billing_code
+}
+
+resource "aws_iam_role_policy_attachment" "docker_push" {
+  role       = local.docker_push_role
+  policy_arn = aws_iam_policy.docker_push.arn
+
+  depends_on = [module.github_workflow_roles]
+}
+
+resource "aws_iam_policy" "docker_push" {
+  name   = local.docker_push_role
+  path   = "/"
+  policy = data.aws_iam_policy_document.docker_push.json
+}
+
+#trivy:ignore:AWS-0342
+data "aws_iam_policy_document" "docker_push" {
+  statement {
+    sid    = "ECRAuthentication"
+    effect = "Allow"
+    actions = [
+      "ecr:GetAuthorizationToken"
+    ]
+    resources = ["*"]
+  }
+
+  statement {
+    sid    = "ECRPush"
+    effect = "Allow"
+    actions = [
+      "ecr:BatchCheckLayerAvailability",
+      "ecr:CompleteLayerUpload",
+      "ecr:InitiateLayerUpload",
+      "ecr:PutImage",
+      "ecr:UploadLayerPart",
+    ]
+    resources = [aws_ecr_repository.superset_docs.arn]
+  }
+}
+
+#
+# Docker deploy role — used by docker-deploy-staging and docker-deploy-prod workflows
+#
+
+resource "aws_iam_role_policy_attachment" "docker_deploy" {
+  role       = local.docker_deploy_role
+  policy_arn = aws_iam_policy.docker_deploy.arn
+
+  depends_on = [module.github_workflow_roles]
+}
+
+resource "aws_iam_policy" "docker_deploy" {
+  name   = local.docker_deploy_role
+  path   = "/"
+  policy = data.aws_iam_policy_document.docker_deploy.json
+}
+
+data "aws_iam_policy_document" "docker_deploy" {
+  statement {
+    sid    = "LambdaUpdateFunctionCode"
+    effect = "Allow"
+    actions = [
+      "lambda:UpdateFunctionCode"
+    ]
+    resources = [module.superset_docs.function_arn]
+  }
+}
