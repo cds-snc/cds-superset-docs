@@ -39,7 +39,6 @@ resource "aws_iam_policy" "docker_push" {
 #trivy:ignore:AWS-0342
 data "aws_iam_policy_document" "docker_push" {
   statement {
-    sid    = "ECRAuthentication"
     effect = "Allow"
     actions = [
       "ecr:GetAuthorizationToken"
@@ -48,7 +47,6 @@ data "aws_iam_policy_document" "docker_push" {
   }
 
   statement {
-    sid    = "ECRPush"
     effect = "Allow"
     actions = [
       "ecr:BatchCheckLayerAvailability",
