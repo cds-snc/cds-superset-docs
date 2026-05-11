@@ -9,12 +9,12 @@ module "github_workflow_roles" {
   roles = [
     {
       name      = local.docker_push_role
-      repo_name = var.product_name
+      repo_name = "cds-superset-docs"
       claim     = "ref:refs/heads/main"
     },
     {
       name      = local.docker_deploy_role
-      repo_name = var.product_name
+      repo_name = "cds-superset-docs"
       claim     = "ref:refs/heads/main"
     }
   ]
