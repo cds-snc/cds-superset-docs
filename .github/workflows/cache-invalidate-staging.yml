@@ -2,7 +2,7 @@ name: Cache invalidate Staging
 
 on:
   repository_dispatch:
-  workflow_run:
+  workflow_run: # zizmor: ignore[dangerous-triggers]
     workflows:
     - "Docker deploy Staging"
     - "Lambda restart Staging"

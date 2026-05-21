@@ -2,7 +2,7 @@ name: Cache invalidate Production
 
 on:
   repository_dispatch:
-  workflow_run:
+  workflow_run: # zizmor: ignore[dangerous-triggers]
     workflows:
     - "Docker deploy Production"
     - "Lambda restart Production"
