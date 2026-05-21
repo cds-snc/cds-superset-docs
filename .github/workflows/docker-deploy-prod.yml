@@ -11,13 +11,13 @@ env:
   FUNCTION_NAME: cds-superset-docs
   REGISTRY: ${{ vars.PROD_AWS_ACCOUNT_ID }}.dkr.ecr.ca-central-1.amazonaws.com/cds-superset-docs
 
-permissions:
-  id-token: write
-  contents: read
+permissions: {}
 
 jobs:
   get-version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       version: ${{ steps.get-version.outputs.version }}
     steps:
@@ -45,6 +45,8 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     needs: get-version
+    permissions:
+      id-token: write
     env:
       VERSION: ${{ needs.get-version.outputs.version }}
     steps:
