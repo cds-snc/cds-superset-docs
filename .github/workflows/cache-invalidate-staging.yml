@@ -2,12 +2,7 @@ name: Cache invalidate Staging
 
 on:
   repository_dispatch:
-  workflow_run:
-    workflows:
-    - "Docker deploy Staging"
-    - "Lambda restart Staging"
-    types:
-    - completed
+  workflow_call:
 
 env: 
   AWS_REGION: ca-central-1
@@ -17,7 +12,6 @@ permissions:
 
 jobs:
   cache-invalidate:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:

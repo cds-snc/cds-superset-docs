@@ -37,3 +37,8 @@ jobs:
           --function-name ${{ env.FUNCTION_NAME }} \
           --description "Updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" > /dev/null 2>&1
 
+  cache-invalidate:
+    needs: lambda-restart
+    uses: ./.github/workflows/cache-invalidate-prod.yml
+    secrets: inherit
+

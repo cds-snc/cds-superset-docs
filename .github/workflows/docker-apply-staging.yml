@@ -58,3 +58,13 @@ jobs:
       run: |
         docker push $REGISTRY:sha-${{ env.GITHUB_SHA }}
         docker push $REGISTRY:latest
+
+  docker-deploy:
+    needs: docker-push
+    uses: ./.github/workflows/docker-deploy-staging.yml
+    secrets: inherit
+
+  docker-sbom:
+    needs: docker-push
+    uses: ./.github/workflows/docker-sbom-staging.yml
+    secrets: inherit

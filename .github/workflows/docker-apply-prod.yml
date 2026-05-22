@@ -85,3 +85,8 @@ jobs:
       run: |
         docker push $REGISTRY:${VERSION}
         docker push $REGISTRY:latest
+
+  docker-deploy:
+    needs: docker-push
+    uses: ./.github/workflows/docker-deploy-prod.yml
+    secrets: inherit
