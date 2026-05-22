@@ -40,5 +40,7 @@ jobs:
   cache-invalidate:
     needs: lambda-restart
     uses: ./.github/workflows/cache-invalidate-staging.yml
-    secrets: inherit
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+      LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
 

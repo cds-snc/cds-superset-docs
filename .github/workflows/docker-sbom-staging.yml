@@ -2,6 +2,11 @@ name: Docker SBOM Staging
 
 on:
   workflow_call:
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID:
+        required: true
+      LOG_ANALYTICS_WORKSPACE_KEY:
+        required: true
 
 permissions:
   contents: write

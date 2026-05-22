@@ -89,4 +89,6 @@ jobs:
   docker-deploy:
     needs: docker-push
     uses: ./.github/workflows/docker-deploy-prod.yml
-    secrets: inherit
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+      LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
