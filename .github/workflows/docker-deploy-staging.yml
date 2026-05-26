@@ -46,7 +46,9 @@ jobs:
 
   cache-invalidate:
     needs: docker-deploy
-    uses: ./.github/workflows/cache-invalidate-staging.yml
+    uses: ./.github/workflows/cache-invalidate.yml
+    with:
+      aws_account_id: ${{ vars.STAGING_AWS_ACCOUNT_ID }}
     secrets:
       LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
       LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}

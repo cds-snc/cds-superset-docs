@@ -61,7 +61,10 @@ jobs:
 
   docker-deploy:
     needs: docker-push
-    uses: ./.github/workflows/docker-deploy-staging.yml
+    uses: ./.github/workflows/docker-deploy.yml
+    with:
+      aws_account_id: ${{ vars.STAGING_AWS_ACCOUNT_ID }}
+      image_tag: sha-${{ github.sha }}
     secrets:
       LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
       LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
