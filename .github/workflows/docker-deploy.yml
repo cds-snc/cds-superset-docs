@@ -67,19 +67,15 @@ jobs:
 
     - name: Set image URI from version
       if: ${{ inputs.fetch_version }}
-      id: set-image-uri-version
       env:
         VERSION: ${{ steps.get-version.outputs.version }}
-      run: echo "image_uri=$REGISTRY:$VERSION" >> "$GITHUB_OUTPUT"
+      run: echo "IMAGE_URI=$REGISTRY:$VERSION" >> "$GITHUB_ENV"
 
     - name: Set image URI from tag
       if: ${{ !inputs.fetch_version }}
-      id: set-image-uri-tag
-      run: echo "image_uri=$REGISTRY:$IMAGE_TAG" >> "$GITHUB_OUTPUT"
+      run: echo "IMAGE_URI=$REGISTRY:$IMAGE_TAG" >> "$GITHUB_ENV"
 
     - name: Update Lambda
-      env:
-        IMAGE_URI: ${{ steps.set-image-uri-version.outputs.image_uri || steps.set-image-uri-tag.outputs.image_uri }}
       run: |
         aws lambda update-function-code \
           --function-name ${{ env.FUNCTION_NAME }} \
