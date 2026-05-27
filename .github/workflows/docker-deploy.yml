@@ -79,7 +79,7 @@ jobs:
       run: |
         aws lambda update-function-code \
           --function-name ${{ env.FUNCTION_NAME }} \
-          --image-uri "$IMAGE_URI" > /dev/null 2>&1
+          --image-uri ${{ env.IMAGE_URI }} > /dev/null 2>&1
 
   cache-invalidate:
     needs: deploy-lambda
