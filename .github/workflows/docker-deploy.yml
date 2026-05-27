@@ -1,0 +1,91 @@
+name: Docker deploy
+
+on:
+  workflow_call:
+    inputs:
+      aws_account_id:
+        required: true
+        type: string
+      image_tag:
+        required: false
+        type: string
+        default: "sha-${{ github.sha }}"
+      fetch_version:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID:
+        required: true
+      LOG_ANALYTICS_WORKSPACE_KEY:
+        required: true
+
+env: 
+  AWS_REGION: ca-central-1
+  FUNCTION_NAME: cds-superset-docs
+  REGISTRY: ${{ inputs.aws_account_id }}.dkr.ecr.ca-central-1.amazonaws.com/cds-superset-docs
+  IMAGE_TAG: ${{ inputs.image_tag }}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy-lambda:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Audit DNS requests
+      uses: cds-snc/dns-proxy-action@9ad793100229573be3f5ba78cc69ec523f2c8b7e # v1.1.0
+      env:
+        DNS_PROXY_FORWARDTOSENTINEL: "true"
+        DNS_PROXY_LOGANALYTICSWORKSPACEID: "${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}"
+        DNS_PROXY_LOGANALYTICSSHAREDKEY: "${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}"
+        DNS_PROXY_SAFELIST: "${{ vars.DNS_PROXY_SAFELIST }}"
+        DNS_PROXY_WILDCARDGREEDY: "true"
+
+    - name: Checkout
+      if: ${{ inputs.fetch_version }}
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        persist-credentials: false
+        ref: ${{ github.sha }}
+
+    - name: Get version to deploy
+      if: ${{ inputs.fetch_version }}
+      id: get-version
+      uses: ./.github/workflows/get-version
+      with:
+        is-tagged: "true"
+
+    - name: Configure aws credentials using OIDC
+      uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 # v6.1.1
+      with:
+        role-to-assume: arn:aws:iam::${{ inputs.aws_account_id }}:role/cds-superset-docs-docker-deploy
+        role-session-name: UpdateLambda
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Set image URI from version
+      if: ${{ inputs.fetch_version }}
+      env:
+        VERSION: ${{ steps.get-version.outputs.version }}
+      run: echo "IMAGE_URI=$REGISTRY:$VERSION" >> "$GITHUB_ENV"
+
+    - name: Set image URI from tag
+      if: ${{ !inputs.fetch_version }}
+      run: echo "IMAGE_URI=$REGISTRY:$IMAGE_TAG" >> "$GITHUB_ENV"
+
+    - name: Update Lambda
+      run: |
+        aws lambda update-function-code \
+          --function-name ${{ env.FUNCTION_NAME }} \
+          --image-uri ${{ env.IMAGE_URI }} > /dev/null 2>&1
+
+  cache-invalidate:
+    needs: deploy-lambda
+    uses: ./.github/workflows/cache-invalidate.yml
+    with:
+      aws_account_id: ${{ inputs.aws_account_id }}
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+      LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
