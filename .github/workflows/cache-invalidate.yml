@@ -1,7 +1,6 @@
 name: Cache invalidate
 
 on:
-  repository_dispatch:
   workflow_call:
     inputs:
       aws_account_id:
