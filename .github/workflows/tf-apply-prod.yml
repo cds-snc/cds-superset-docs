@@ -96,9 +96,9 @@ jobs:
         working-directory: terragrunt/env/prod
         run: terragrunt run --non-interactive -- apply -auto-approve
 
-  workflow-failure:
+  notify-failure:
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
     needs: [get-version, terragrunt-apply]
-    if: failure()
     uses: ./.github/workflows/workflow-failure.yml
     secrets:
       LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
