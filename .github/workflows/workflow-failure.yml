@@ -1,25 +1,21 @@
 name: Workflow failure
 
 on:
-  workflow_run: # zizmor: ignore[dangerous-triggers]
-    workflows:
-      - "Docker build and push Production"
-      - "Docker build and push Staging"
-      - "Docker deploy Production"
-      - "Docker deploy Staging"
-      - "Docker SBOM Staging"
-      - "Terraform Apply Production"
-      - "Terraform Apply Staging"
-    types:
-      - completed
+  workflow_call:
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID:
+        required: true
+      LOG_ANALYTICS_WORKSPACE_KEY:
+        required: true
+      SLACK_WEBHOOK_URL:
+        required: true
 
 permissions:
-  contents: read
+  contents: none
 
 jobs:
   on-failure:
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'failure'
     steps:
       - name: Audit DNS requests
         uses: cds-snc/dns-proxy-action@9ad793100229573be3f5ba78cc69ec523f2c8b7e # v1.1.0
@@ -30,23 +26,11 @@ jobs:
           DNS_PROXY_SAFELIST: "${{ vars.DNS_PROXY_SAFELIST }}"
           DNS_PROXY_WILDCARDGREEDY: "true"
 
-      - name: Determine target ops channel
-        id: channel
-        env:
-          WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
-        run: |
-          WORKFLOW_NAME_LOWER="$(echo "$WORKFLOW_NAME" | tr '[:upper:]' '[:lower:]')"
-          if [[ "$WORKFLOW_NAME_LOWER" == *"staging"* ]]; then
-            echo "is_staging=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "is_staging=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Notify Slack
         env:
-          WORKFLOW_URL: ${{ github.event.workflow_run.html_url }}
-          WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
-          SLACK_WEBHOOK_URL: ${{ steps.channel.outputs.is_staging == 'true' && secrets.STAGING_CLOUDWATCH_ALERT_SLACK_WEBHOOK || secrets.PROD_CLOUDWATCH_ALERT_SLACK_WEBHOOK }}
+          WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           json='{"blocks":[{"type":"section","text":{"type":"mrkdwn","text":":red: Superset Docs workflow failed: <'"$WORKFLOW_URL"'|'"$WORKFLOW_NAME"'>"}}]}'
-          curl --fail -X POST -H 'Content-type: application/json' --data "$json" "$SLACK_WEBHOOK_URL" 
+          curl --fail -X POST -H 'Content-type: application/json' --data "$json" "$SLACK_WEBHOOK_URL"
