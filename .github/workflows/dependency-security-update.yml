@@ -4,12 +4,13 @@ on:
     types:
       - opened
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   dependency-security-update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: contains(github.event.pull_request.title, '[security]') && github.event.pull_request.user.login == 'renovate[bot]'
     steps:
       - name: Audit DNS requests
