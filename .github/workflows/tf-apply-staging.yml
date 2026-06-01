@@ -72,7 +72,7 @@ jobs:
         run: terragrunt run --non-interactive -- apply -auto-approve
 
   notify-failure:
-    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    if: failure()
     needs: [terragrunt-apply]
     uses: ./.github/workflows/workflow-failure.yml
     secrets:

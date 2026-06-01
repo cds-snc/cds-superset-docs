@@ -85,7 +85,7 @@ jobs:
       LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
 
   notify-failure:
-    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    if: failure()
     needs: [docker-push, docker-deploy, docker-sbom]
     uses: ./.github/workflows/workflow-failure.yml
     secrets:
