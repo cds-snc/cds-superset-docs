@@ -20,14 +20,13 @@ env:
   TF_VAR_wordpress_password: ${{ secrets.PROD_WORDPRESS_PASSWORD }}
   TF_VAR_upptime_status_header: ${{ secrets.PROD_UPPTIME_STATUS_HEADER }}
 
-permissions:
-  id-token: write
-  contents: read
-  pull-requests: write
+permissions: {}
 
 jobs:
   get-version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       version: ${{ steps.get-version.outputs.version }}
     steps:
@@ -53,6 +52,10 @@ jobs:
   terraform-plan:
     runs-on: ubuntu-latest
     needs: get-version
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
     env:
       VERSION: ${{ needs.get-version.outputs.version }}
     steps:

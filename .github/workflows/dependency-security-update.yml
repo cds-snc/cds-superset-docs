@@ -4,13 +4,14 @@ on:
     types:
       - opened
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   dependency-security-update:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.title, '[security]') && github.actor == 'renovate[bot]'
+    permissions:
+      contents: read
+    if: contains(github.event.pull_request.title, '[security]') && github.event.pull_request.user.login == 'renovate[bot]'
     steps:
       - name: Audit DNS requests
         uses: cds-snc/dns-proxy-action@9ad793100229573be3f5ba78cc69ec523f2c8b7e # v1.1.0
@@ -22,6 +23,10 @@ jobs:
           DNS_PROXY_WILDCARDGREEDY: "true"
 
       - name: Send Slack notification
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          SLACK_WEBHOOK_URL: ${{ secrets.PROD_CLOUDWATCH_ALERT_SLACK_WEBHOOK }}
         run: |
           curl \
             --request POST \
@@ -32,9 +37,9 @@ jobs:
                   \"type\": \"section\",
                   \"text\": {
                     \"type\": \"mrkdwn\",
-                    \"text\": \"🔒 Security dependency PR opened for Superset Docs:\n<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>\"
+                    \"text\": \"🔒 Security dependency PR opened for Superset Docs:\n<$PR_URL|$PR_TITLE>\"
                   }
                 }
               ]
             }" \
-            ${{ secrets.PROD_CLOUDWATCH_ALERT_SLACK_WEBHOOK }}
+            "$SLACK_WEBHOOK_URL"
