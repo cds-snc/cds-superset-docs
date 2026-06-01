@@ -13,14 +13,15 @@ env:
   REGISTRY: ${{ vars.STAGING_AWS_ACCOUNT_ID }}.dkr.ecr.ca-central-1.amazonaws.com/cds-superset-docs
   GITHUB_SHA: ${{ github.sha }}
 
-permissions:
-  id-token: write
-  contents: write
-  
+permissions: {}
+
 jobs:
   docker-push:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-24.04-arm
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
     - name: Audit DNS requests
@@ -63,6 +64,9 @@ jobs:
 
   docker-deploy:
     needs: docker-push
+    permissions:
+      id-token: write
+      contents: read
     uses: ./.github/workflows/docker-deploy.yml
     with:
       aws_account_id: ${{ vars.STAGING_AWS_ACCOUNT_ID }}
@@ -73,7 +77,18 @@ jobs:
 
   docker-sbom:
     needs: docker-push
+    permissions:
+      contents: write
     uses: ./.github/workflows/docker-sbom-staging.yml
     secrets:
       LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
       LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
+
+  notify-failure:
+    if: failure()
+    needs: [docker-push, docker-deploy, docker-sbom]
+    uses: ./.github/workflows/workflow-failure.yml
+    secrets:
+      LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+      LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
+      SLACK_WEBHOOK_URL: ${{ secrets.STAGING_CLOUDWATCH_ALERT_SLACK_WEBHOOK }}
