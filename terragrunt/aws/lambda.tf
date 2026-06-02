@@ -34,7 +34,7 @@ resource "aws_lambda_permission" "superset_docs_invoke_function_url" {
   action                 = "lambda:InvokeFunctionUrl"
   function_name          = module.superset_docs.function_name
   function_url_auth_type = "NONE"
-  principal              = "*"
+  principal              = aws_cloudfront_distribution.superset_docs.arn
 }
 
 resource "aws_lambda_permission" "superset_docs_invoke_function" {
