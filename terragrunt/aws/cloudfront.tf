@@ -6,8 +6,9 @@ resource "aws_cloudfront_distribution" "superset_docs" {
   http_version = "http2and3"
 
   origin {
-    domain_name = local.superset_docs_function_url
-    origin_id   = module.superset_docs.function_name
+    domain_name              = local.superset_docs_function_url
+    origin_id                = module.superset_docs.function_name
+    origin_access_control_id = aws_cloudfront_origin_access_control.superset_docs.id
 
     custom_origin_config {
       http_port              = 80
@@ -65,6 +66,14 @@ resource "aws_acm_certificate" "superset_docs" {
   lifecycle {
     create_before_destroy = true
   }
+}
+
+resource "aws_cloudfront_origin_access_control" "superset_docs" {
+  name                              = var.product_name
+  description                       = "Limit invocation of the Lambda function to the CloudFront distribution"
+  origin_access_control_origin_type = "lambda"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
 }
 
 resource "aws_route53_record" "superset_docs_cert_validation" {
