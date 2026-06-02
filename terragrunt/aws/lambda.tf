@@ -26,14 +26,14 @@ module "superset_docs" {
 
 resource "aws_lambda_function_url" "superset_docs" {
   function_name      = module.superset_docs.function_name
-  authorization_type = "NONE"
+  authorization_type = "AWS_IAM"
 }
 
 resource "aws_lambda_permission" "superset_docs_invoke_function_url" {
   statement_id           = "AllowInvokeFunctionUrl"
   action                 = "lambda:InvokeFunctionUrl"
   function_name          = module.superset_docs.function_name
-  function_url_auth_type = "NONE"
+  function_url_auth_type = "AWS_IAM"
   principal              = "cloudfront.amazonaws.com"
   source_arn             = aws_cloudfront_distribution.superset_docs.arn
 }
