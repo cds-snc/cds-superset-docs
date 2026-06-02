@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.13.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.12.0...v1.13.0) (2026-06-01)
+
+
+### Features
+
+* github workflow static analysis ([#323](https://github.com/cds-snc/cds-superset-docs/issues/323)) ([4e0b46c](https://github.com/cds-snc/cds-superset-docs/commit/4e0b46c0e90332e9a78502daa3b9b3a02a8ed772))
+* replace workflow_run triggers with workflow_call ([#324](https://github.com/cds-snc/cds-superset-docs/issues/324)) ([341a8bb](https://github.com/cds-snc/cds-superset-docs/commit/341a8bbe5d6ff7b8416e8d11cb9651d036dd6f0f))
+
+
+### Bug Fixes
+
+* updated ja4 rules ([#325](https://github.com/cds-snc/cds-superset-docs/issues/325)) ([26250c5](https://github.com/cds-snc/cds-superset-docs/commit/26250c525e23b0cec8aa93408d7f80a8541d240b))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#321](https://github.com/cds-snc/cds-superset-docs/issues/321)) ([bfc053b](https://github.com/cds-snc/cds-superset-docs/commit/bfc053b2d4f2550c637a34bf72e93b803acd45fe))
+* **deps:** lock file maintenance ([#327](https://github.com/cds-snc/cds-superset-docs/issues/327)) ([64b26f6](https://github.com/cds-snc/cds-superset-docs/commit/64b26f6014b5b008eb0d1bceb10edd7be471cefb))
+* **deps:** lock file maintenance ([#329](https://github.com/cds-snc/cds-superset-docs/issues/329)) ([b88fec4](https://github.com/cds-snc/cds-superset-docs/commit/b88fec41988b14ab95863dad7f2994d34e160748))
+* **deps:** update all non-major github action dependencies ([#319](https://github.com/cds-snc/cds-superset-docs/issues/319)) ([dddc234](https://github.com/cds-snc/cds-superset-docs/commit/dddc234c527e0d0398fd6ae998dd2faffc6be2f6))
+* **deps:** update all patch dependencies to v1.26.3 ([#320](https://github.com/cds-snc/cds-superset-docs/issues/320)) ([6fae8ed](https://github.com/cds-snc/cds-superset-docs/commit/6fae8edc93c1ef6b9830ceb97c3c5f58c085b6a7))
+* **deps:** update golangci/golangci-lint-action action to v9.2.1 ([#328](https://github.com/cds-snc/cds-superset-docs/issues/328)) ([d42aa97](https://github.com/cds-snc/cds-superset-docs/commit/d42aa976c31eb305a8b2995ac9c685c9115763ea))
+
 ## [1.12.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.11.2...v1.12.0) (2026-05-11)
 
 
