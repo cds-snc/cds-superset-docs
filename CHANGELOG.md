@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.13.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.13.0...v1.13.1) (2026-06-02)
+
+
+### Bug Fixes
+
+* add Cloudfront origin access control ([#333](https://github.com/cds-snc/cds-superset-docs/issues/333)) ([9b0595b](https://github.com/cds-snc/cds-superset-docs/commit/9b0595b09627b07dd90ad471f0bc2ff93933b2b9))
+* limit function invoke to CloudFront distribution ([#331](https://github.com/cds-snc/cds-superset-docs/issues/331)) ([0f2e0ce](https://github.com/cds-snc/cds-superset-docs/commit/0f2e0ce69f750befd04e6d03d8a1d2b94fd73b04))
+* permission issues ([#330](https://github.com/cds-snc/cds-superset-docs/issues/330)) ([ddcf9d6](https://github.com/cds-snc/cds-superset-docs/commit/ddcf9d6181353e72edcad67e9136759cffb11112))
+
 ## [1.13.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.12.0...v1.13.0) (2026-06-01)
 
 
