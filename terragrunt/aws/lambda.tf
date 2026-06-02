@@ -41,7 +41,7 @@ resource "aws_lambda_permission" "superset_docs_invoke_function" {
   statement_id  = "AllowInvokeFunction"
   action        = "lambda:InvokeFunction"
   function_name = module.superset_docs.function_name
-  principal     = "*"
+  principal     = aws_cloudfront_distribution.superset_docs.arn
 }
 
 #
