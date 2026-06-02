@@ -73,4 +73,4 @@ jobs:
           directory: "terragrunt/env/staging"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           terragrunt: true
-          conftest-checks: git::https://github.com/cds-snc/opa_checks.git//aws_terraform?ref=feat/lambda_prinicipal
+          conftest-checks: "git::https://github.com/cds-snc/opa_checks.git//aws_terraform?ref=feat/lambda_prinicipal"
