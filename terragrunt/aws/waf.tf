@@ -269,7 +269,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
     sampled_requests_enabled   = false
   }
 
-  tags = local.common_tags
+  tags = local.core_tags
 }
 
 #
@@ -278,7 +278,7 @@ resource "aws_wafv2_web_acl" "superset_docs" {
 resource "aws_shield_protection" "superset_docs_cloudfront" {
   name         = "superset-docs-cloudfront"
   resource_arn = aws_cloudfront_distribution.superset_docs.arn
-  tags         = local.common_tags
+  tags         = local.core_tags
 }
 
 resource "aws_shield_application_layer_automatic_response" "superset_docs_cloudfront" {
