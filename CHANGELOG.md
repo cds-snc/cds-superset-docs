@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.13.1...v1.13.2) (2026-06-08)
+
+
+### Miscellaneous Chores
+
+* add SSC CBR ID tags ([#334](https://github.com/cds-snc/cds-superset-docs/issues/334)) ([290403b](https://github.com/cds-snc/cds-superset-docs/commit/290403b2f9d63924d30e82d565e04d293c6db99f))
+
 ## [1.13.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.13.0...v1.13.1) (2026-06-02)
 
 
