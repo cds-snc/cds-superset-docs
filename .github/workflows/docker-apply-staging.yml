@@ -13,7 +13,9 @@ env:
   REGISTRY: ${{ vars.STAGING_AWS_ACCOUNT_ID }}.dkr.ecr.ca-central-1.amazonaws.com/cds-superset-docs
   GITHUB_SHA: ${{ github.sha }}
 
-permissions: {}
+permissions:
+  id-token: write
+  contents: write
 
 jobs:
   docker-push:
