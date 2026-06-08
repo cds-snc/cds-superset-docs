@@ -40,7 +40,7 @@ resource "aws_cloudwatch_metric_alarm" "superset_docs_errors" {
   alarm_actions = [data.aws_sns_topic.cloudwatch_alert_warning.arn]
   ok_actions    = [data.aws_sns_topic.cloudwatch_alert_ok.arn]
 
-  tags = local.common_tags
+  tags = local.core_tags
 }
 
 resource "aws_cloudwatch_metric_alarm" "superset_docs_invocation_errors" {
@@ -62,7 +62,7 @@ resource "aws_cloudwatch_metric_alarm" "superset_docs_invocation_errors" {
   alarm_actions = [data.aws_sns_topic.cloudwatch_alert_warning.arn]
   ok_actions    = [data.aws_sns_topic.cloudwatch_alert_ok.arn]
 
-  tags = local.common_tags
+  tags = local.core_tags
 }
 
 #
