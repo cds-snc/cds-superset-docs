@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.14.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.13.2...v1.14.0) (2026-07-14)
+
+
+### Features
+
+* version bump ([#343](https://github.com/cds-snc/cds-superset-docs/issues/343)) ([1e2b429](https://github.com/cds-snc/cds-superset-docs/commit/1e2b429ee6d9aeffd526e56b32b77cb6acd86e5b))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#336](https://github.com/cds-snc/cds-superset-docs/issues/336)) ([97f01c8](https://github.com/cds-snc/cds-superset-docs/commit/97f01c82a3cf72f19a24bc7f4440f50ce7373ca7))
+* **deps:** lock file maintenance ([#345](https://github.com/cds-snc/cds-superset-docs/issues/345)) ([5233dd6](https://github.com/cds-snc/cds-superset-docs/commit/5233dd6ac52251108133ab61122e60caed2ddd47))
+* **deps:** lock file maintenance ([#348](https://github.com/cds-snc/cds-superset-docs/issues/348)) ([ec4c1e0](https://github.com/cds-snc/cds-superset-docs/commit/ec4c1e00a982121f6b7500c973321498233d1c74))
+* **deps:** update all non-major github action dependencies ([#335](https://github.com/cds-snc/cds-superset-docs/issues/335)) ([1e14fcf](https://github.com/cds-snc/cds-superset-docs/commit/1e14fcfd6b8ecb6b3e780e64a01cfdb20fcf648c))
+* **deps:** update all non-major github action dependencies ([#339](https://github.com/cds-snc/cds-superset-docs/issues/339)) ([5c80731](https://github.com/cds-snc/cds-superset-docs/commit/5c807319fa9f3ac96bbfdf0572d66700ebeccbfc))
+* **deps:** update all non-major github action dependencies ([#347](https://github.com/cds-snc/cds-superset-docs/issues/347)) ([063cb13](https://github.com/cds-snc/cds-superset-docs/commit/063cb138d06c3a3d21e5cba7d5694d27a3f6acf9))
+* **deps:** update all non-major github action dependencies to v2.1.6 ([#341](https://github.com/cds-snc/cds-superset-docs/issues/341)) ([364db1c](https://github.com/cds-snc/cds-superset-docs/commit/364db1c478cba028e26edda93fcfcc890de411f8))
+* **deps:** update all patch dependencies to v1.26.4 ([#340](https://github.com/cds-snc/cds-superset-docs/issues/340)) ([e75ffce](https://github.com/cds-snc/cds-superset-docs/commit/e75ffcea52a51639112d29c95754bb185c45f63f))
+* **deps:** update golang docker tag to v1.26.4 ([#344](https://github.com/cds-snc/cds-superset-docs/issues/344)) ([c220064](https://github.com/cds-snc/cds-superset-docs/commit/c220064ecc7739ea1e8267137aab51e0004e0d3d))
+* **deps:** update golangci/golangci-lint-action action to v9.3.0 ([#349](https://github.com/cds-snc/cds-superset-docs/issues/349)) ([b5058a8](https://github.com/cds-snc/cds-superset-docs/commit/b5058a86273c38d32bc73fe5398841123f0ef6ef))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v11.3.6 ([#346](https://github.com/cds-snc/cds-superset-docs/issues/346)) ([479dbb5](https://github.com/cds-snc/cds-superset-docs/commit/479dbb55cdc7431cb23312d670467028ba259775))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v11.4.1 ([#350](https://github.com/cds-snc/cds-superset-docs/issues/350)) ([3cdde63](https://github.com/cds-snc/cds-superset-docs/commit/3cdde63853156672fc9bb44748fa33b5e42e8839))
+
 ## [1.13.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.13.1...v1.13.2) (2026-06-08)
 
 
