@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.14.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.0...v1.14.1) (2026-08-24)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to d701c51 ([#357](https://github.com/cds-snc/cds-superset-docs/issues/357)) ([7e051ea](https://github.com/cds-snc/cds-superset-docs/commit/7e051eaebb2907206bdb41d8445bc71a68a72011))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#353](https://github.com/cds-snc/cds-superset-docs/issues/353)) ([ecbb9d2](https://github.com/cds-snc/cds-superset-docs/commit/ecbb9d25b70950b7c22921ec15639d01f4bf8bce))
+* **deps:** lock file maintenance ([#356](https://github.com/cds-snc/cds-superset-docs/issues/356)) ([73e5035](https://github.com/cds-snc/cds-superset-docs/commit/73e5035650de090109507bea24df04338acb9df5))
+* **deps:** lock file maintenance ([#360](https://github.com/cds-snc/cds-superset-docs/issues/360)) ([d74c5ec](https://github.com/cds-snc/cds-superset-docs/commit/d74c5ec3f4d0bd3d7e9d6192150b2ff18188052d))
+* **deps:** lock file maintenance ([#361](https://github.com/cds-snc/cds-superset-docs/issues/361)) ([eac86c3](https://github.com/cds-snc/cds-superset-docs/commit/eac86c337257bb11bdf03555e7e538c3dae72608))
+* **deps:** update all non-major github action dependencies ([#351](https://github.com/cds-snc/cds-superset-docs/issues/351)) ([b543096](https://github.com/cds-snc/cds-superset-docs/commit/b543096e32ace2e497ddd14b88c6cd395cc98abb))
+* **deps:** update all non-major github action dependencies ([#355](https://github.com/cds-snc/cds-superset-docs/issues/355)) ([661af3d](https://github.com/cds-snc/cds-superset-docs/commit/661af3d92c79187a4929b9f3e13fd18334a177e1))
+* **deps:** update all non-major github action dependencies ([#359](https://github.com/cds-snc/cds-superset-docs/issues/359)) ([f5bccbc](https://github.com/cds-snc/cds-superset-docs/commit/f5bccbc43990f8aa4a6dee849006ef254c39d667))
+* **deps:** update all patch dependencies ([#352](https://github.com/cds-snc/cds-superset-docs/issues/352)) ([72c5d61](https://github.com/cds-snc/cds-superset-docs/commit/72c5d6191ba112102424c5deec78c413a89869cb))
+* **deps:** update all patch dependencies to v1.26.6 ([#362](https://github.com/cds-snc/cds-superset-docs/issues/362)) ([d84fc7f](https://github.com/cds-snc/cds-superset-docs/commit/d84fc7fe30a7cb0c88a124ba413c5e00f187eefe))
+* **deps:** update dependency go to v1.26.6 ([#363](https://github.com/cds-snc/cds-superset-docs/issues/363)) ([dcc2194](https://github.com/cds-snc/cds-superset-docs/commit/dcc2194f4d88e9dcd5c441917233e978152cfdcd))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v11.4.5 ([#358](https://github.com/cds-snc/cds-superset-docs/issues/358)) ([0ea7152](https://github.com/cds-snc/cds-superset-docs/commit/0ea71521f9fc9113052f9dc0d8265c705d34f668))
+
 ## [1.14.0](https://github.com/cds-snc/cds-superset-docs/compare/v1.13.2...v1.14.0) (2026-07-14)
 
 
