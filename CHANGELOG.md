@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.1...v1.14.2) (2026-08-31)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all minor dependencies to v1.27.0 ([#365](https://github.com/cds-snc/cds-superset-docs/issues/365)) ([bdeb3f3](https://github.com/cds-snc/cds-superset-docs/commit/bdeb3f3c9efa3290986a6dcd6703218ae3587aee))
+* **deps:** update all non-major github action dependencies ([#364](https://github.com/cds-snc/cds-superset-docs/issues/364)) ([7d0bf63](https://github.com/cds-snc/cds-superset-docs/commit/7d0bf632131de84c2f6f1990b1ca2f314b686f94))
+
 ## [1.14.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.0...v1.14.1) (2026-08-24)
 
 
