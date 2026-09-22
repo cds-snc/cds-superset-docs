@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.14.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.1...v1.14.2) (2026-09-22)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-lambda-go to v1.55.0 ([#368](https://github.com/cds-snc/cds-superset-docs/issues/368)) ([cab3bfd](https://github.com/cds-snc/cds-superset-docs/commit/cab3bfd491e8117533e37aea72a9f30266e86e1f))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#371](https://github.com/cds-snc/cds-superset-docs/issues/371)) ([bb04da0](https://github.com/cds-snc/cds-superset-docs/commit/bb04da0de9164eeabb0d02d6946d2ec17782bcfa))
+* **deps:** update actions/checkout action to v7 ([#373](https://github.com/cds-snc/cds-superset-docs/issues/373)) ([204e3aa](https://github.com/cds-snc/cds-superset-docs/commit/204e3aa14787b3de28b91242779a25bb6ac94dbc))
+* **deps:** update actions/create-github-app-token action to v3 ([#374](https://github.com/cds-snc/cds-superset-docs/issues/374)) ([2b86cb7](https://github.com/cds-snc/cds-superset-docs/commit/2b86cb7106855304fa094ef14b3b1312a4b50363))
+* **deps:** update actions/dependency-review-action action to v5 ([#375](https://github.com/cds-snc/cds-superset-docs/issues/375)) ([2ab3af7](https://github.com/cds-snc/cds-superset-docs/commit/2ab3af70d0159e6f17ff988d87c976a232e09c7f))
+* **deps:** update actions/setup-go action to v7 ([#376](https://github.com/cds-snc/cds-superset-docs/issues/376)) ([572daad](https://github.com/cds-snc/cds-superset-docs/commit/572daad9b348c7b8d61a8a4bb4973dea62d90428))
+* **deps:** update all minor dependencies to v1.27.0 ([#365](https://github.com/cds-snc/cds-superset-docs/issues/365)) ([bdeb3f3](https://github.com/cds-snc/cds-superset-docs/commit/bdeb3f3c9efa3290986a6dcd6703218ae3587aee))
+* **deps:** update all non-major github action dependencies ([#364](https://github.com/cds-snc/cds-superset-docs/issues/364)) ([7d0bf63](https://github.com/cds-snc/cds-superset-docs/commit/7d0bf632131de84c2f6f1990b1ca2f314b686f94))
+* **deps:** update all non-major github action dependencies ([#367](https://github.com/cds-snc/cds-superset-docs/issues/367)) ([d38465a](https://github.com/cds-snc/cds-superset-docs/commit/d38465ac3be0d4fefd407dbd36e7f2fdfa71804f))
+* **deps:** update all patch dependencies ([#369](https://github.com/cds-snc/cds-superset-docs/issues/369)) ([4a2bed4](https://github.com/cds-snc/cds-superset-docs/commit/4a2bed48a0a1a83068efda04821973a6452470c4))
+* **deps:** update dependency go to v1.27.1 ([#370](https://github.com/cds-snc/cds-superset-docs/issues/370)) ([0124568](https://github.com/cds-snc/cds-superset-docs/commit/01245684ff0ff01c58344426dd5b93a9be2b5c71))
+* **deps:** update googleapis/release-please-action action to v5 ([#377](https://github.com/cds-snc/cds-superset-docs/issues/377)) ([76a8b7c](https://github.com/cds-snc/cds-superset-docs/commit/76a8b7c857af9fe31aaee25c4f916178bb0c1aa1))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v12 ([#378](https://github.com/cds-snc/cds-superset-docs/issues/378)) ([24e6387](https://github.com/cds-snc/cds-superset-docs/commit/24e6387828cc6c1170ac63093d67ab6389f09241))
+* **deps:** update zizmorcore/zizmor-action action to v0.6.4 ([#372](https://github.com/cds-snc/cds-superset-docs/issues/372)) ([d5bd66e](https://github.com/cds-snc/cds-superset-docs/commit/d5bd66ebfe1743e964aff856cfa7f04ef22e3bcb))
+
 ## [1.14.1](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.0...v1.14.1) (2026-08-24)
 
 
