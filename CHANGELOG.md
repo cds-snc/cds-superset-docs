@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.2...v1.14.3) (2026-09-22)
+
+
+### Miscellaneous Chores
+
+* removed ossf-scorecard ([#379](https://github.com/cds-snc/cds-superset-docs/issues/379)) ([46f4fc8](https://github.com/cds-snc/cds-superset-docs/commit/46f4fc89a041584a290ebfebb357d1f9a6cc4ee1))
+
 ## [1.14.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.1...v1.14.2) (2026-09-22)
 
 
