@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.14.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.2...v1.14.3) (2026-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-lambda-go to v1.55.1 ([#384](https://github.com/cds-snc/cds-superset-docs/issues/384)) ([7c8b722](https://github.com/cds-snc/cds-superset-docs/commit/7c8b7222635a248718652c03ec7339dd2f3ab599))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#383](https://github.com/cds-snc/cds-superset-docs/issues/383)) ([cd03d01](https://github.com/cds-snc/cds-superset-docs/commit/cd03d012506c272718a6b03f124d41f58d801d76))
+* **deps:** lock file maintenance ([#386](https://github.com/cds-snc/cds-superset-docs/issues/386)) ([354c2d0](https://github.com/cds-snc/cds-superset-docs/commit/354c2d0b7c8b56f8bb59529644220e2ed7bff75c))
+* **deps:** update aws-actions/configure-aws-credentials action to v6.3.0 ([#381](https://github.com/cds-snc/cds-superset-docs/issues/381)) ([ae20f3e](https://github.com/cds-snc/cds-superset-docs/commit/ae20f3ee6c1fa538f1d4e42f62880b38f4183d97))
+* **deps:** update dependency golangci/golangci-lint to v2.14.0 ([#385](https://github.com/cds-snc/cds-superset-docs/issues/385)) ([507adfa](https://github.com/cds-snc/cds-superset-docs/commit/507adfafb5fdb79bfef56cad597465c4b7472b1b))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v12.1.2 ([#382](https://github.com/cds-snc/cds-superset-docs/issues/382)) ([f3e6440](https://github.com/cds-snc/cds-superset-docs/commit/f3e6440ca0449d4cd085da0bca14a47a24a7861a))
+* removed ossf-scorecard ([#379](https://github.com/cds-snc/cds-superset-docs/issues/379)) ([46f4fc8](https://github.com/cds-snc/cds-superset-docs/commit/46f4fc89a041584a290ebfebb357d1f9a6cc4ee1))
+
 ## [1.14.2](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.1...v1.14.2) (2026-09-22)
 
 
