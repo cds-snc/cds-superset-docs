@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.3...v1.14.4) (2026-10-21)
+
+
+### Miscellaneous Chores
+
+* bump go version to 1.27.3 ([#391](https://github.com/cds-snc/cds-superset-docs/issues/391)) ([3f72a9f](https://github.com/cds-snc/cds-superset-docs/commit/3f72a9f9fe1668419f93b3d4f36d19864ea81cc7))
+
 ## [1.14.3](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.2...v1.14.3) (2026-10-19)
 
 
