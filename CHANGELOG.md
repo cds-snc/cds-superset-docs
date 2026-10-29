@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.14.5](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.4...v1.14.5) (2026-10-29)
+
+
+### Bug Fixes
+
+* Sentinel stream name for DNS proxy action ([#398](https://github.com/cds-snc/cds-superset-docs/issues/398)) ([a180d91](https://github.com/cds-snc/cds-superset-docs/commit/a180d912ffe418ab407adffcc7e3d6a4ae03651d))
+* upgrade dns-proxy-action to v1.2.1 ([#397](https://github.com/cds-snc/cds-superset-docs/issues/397)) ([ee54171](https://github.com/cds-snc/cds-superset-docs/commit/ee541717148d0f1633a02221a47ad46cfa59ed63))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#395](https://github.com/cds-snc/cds-superset-docs/issues/395)) ([41759f1](https://github.com/cds-snc/cds-superset-docs/commit/41759f1facd4eab746053902429b1ef0ffa9d6f4))
+* **deps:** update all non-major github action dependencies ([#393](https://github.com/cds-snc/cds-superset-docs/issues/393)) ([1f79aab](https://github.com/cds-snc/cds-superset-docs/commit/1f79aab56f1b53044965a830e1d99d16d1462413))
+* **deps:** update dependency go to v1.27.3 ([#394](https://github.com/cds-snc/cds-superset-docs/issues/394)) ([fee11c1](https://github.com/cds-snc/cds-superset-docs/commit/fee11c1dc31fce29057a971f6fc39c0602add3d0))
+
 ## [1.14.4](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.3...v1.14.4) (2026-10-21)
 
 
