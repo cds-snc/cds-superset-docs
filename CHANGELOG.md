@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.14.6](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.5...v1.14.6) (2026-11-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#405](https://github.com/cds-snc/cds-superset-docs/issues/405)) ([910ce5e](https://github.com/cds-snc/cds-superset-docs/commit/910ce5ef6ae098d4f0fb8ec40f8542aaec9ce071))
+* **deps:** update all non-major github action dependencies ([#403](https://github.com/cds-snc/cds-superset-docs/issues/403)) ([0a6a1ee](https://github.com/cds-snc/cds-superset-docs/commit/0a6a1ee434dd14c74b3e7df730c446d34410330a))
+* **deps:** update terraform github.com/cds-snc/terraform-modules to v13.3.0 ([#404](https://github.com/cds-snc/cds-superset-docs/issues/404)) ([35dd3bd](https://github.com/cds-snc/cds-superset-docs/commit/35dd3bd81163eb7b521fac3fb99b251eb56e98eb))
+
 ## [1.14.5](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.4...v1.14.5) (2026-11-02)
 
 
