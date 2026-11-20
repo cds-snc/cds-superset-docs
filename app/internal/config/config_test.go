@@ -6,6 +6,7 @@ import (
 )
 
 func TestLoad_SiteNameEn(t *testing.T) {
+	t.Setenv("PORT", "8080")
 	// Store original environment variables to restore them later
 	originalSiteNameEn := os.Getenv("SITE_NAME_EN")
 	originalSiteNameFr := os.Getenv("SITE_NAME_FR")

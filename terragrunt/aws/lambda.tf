@@ -8,20 +8,32 @@ module "superset_docs" {
   memory                 = 1024
   timeout                = 10
   enable_lambda_insights = true
+  policies               = [data.aws_iam_policy_document.wordpress_parameters.json]
 
   environment_variables = {
-    GOOGLE_ANALYTICS_ID  = var.google_analytics_id
-    SECURITY_TXT_CONTENT = var.security_txt_content
-    SITE_NAME_EN         = var.site_name_en
-    SITE_NAME_FR         = var.site_name_fr
-    WORDPRESS_MENU_ID_EN = var.menu_id_en
-    WORDPRESS_MENU_ID_FR = var.menu_id_fr
-    WORDPRESS_URL        = var.wordpress_url
-    WORDPRESS_USERNAME   = var.wordpress_user
-    WORDPRESS_PASSWORD   = var.wordpress_password
+    GOOGLE_ANALYTICS_ID      = var.google_analytics_id
+    SECURITY_TXT_CONTENT     = var.security_txt_content
+    SITE_NAME_EN             = var.site_name_en
+    SITE_NAME_FR             = var.site_name_fr
+    WORDPRESS_MENU_ID_EN     = var.menu_id_en
+    WORDPRESS_MENU_ID_FR     = var.menu_id_fr
+    WORDPRESS_URL            = var.wordpress_url
+    WORDPRESS_USERNAME_PARAM = aws_ssm_parameter.wordpress_username.name
+    WORDPRESS_PASSWORD_PARAM = aws_ssm_parameter.wordpress_password.name
   }
 
   billing_tag_value = var.billing_code
+}
+
+data "aws_iam_policy_document" "wordpress_parameters" {
+  statement {
+    effect  = "Allow"
+    actions = ["ssm:GetParameters"]
+    resources = [
+      aws_ssm_parameter.wordpress_username.arn,
+      aws_ssm_parameter.wordpress_password.arn,
+    ]
+  }
 }
 
 resource "aws_lambda_function_url" "superset_docs" {
