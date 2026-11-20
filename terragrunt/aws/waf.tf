@@ -263,6 +263,40 @@ resource "aws_wafv2_web_acl" "superset_docs" {
     }
   }
 
+  rule {
+    name     = "AWSManagedRulesAntiDDoSRuleSet"
+    priority = 70
+    override_action {
+      none {}
+    }
+    statement {
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesAntiDDoSRuleSet"
+        vendor_name = "AWS"
+
+        managed_rule_group_configs {
+          aws_managed_rules_anti_ddos_rule_set {
+            client_side_action_config {
+              challenge {
+                sensitivity     = "HIGH"
+                usage_of_action = "ENABLED"
+                exempt_uri_regular_expression {
+                  regex_string = "/api/|.(acc|avi|css|gif|jpe?g|js|pdf|png|tiff?|ttf|webm|webp|woff2?)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWSManagedRulesAntiDDoSRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+
   visibility_config {
     cloudwatch_metrics_enabled = true
     metric_name                = "cds-superset-docs"
@@ -279,9 +313,4 @@ resource "aws_shield_protection" "superset_docs_cloudfront" {
   name         = "superset-docs-cloudfront"
   resource_arn = aws_cloudfront_distribution.superset_docs.arn
   tags         = local.core_tags
-}
-
-resource "aws_shield_application_layer_automatic_response" "superset_docs_cloudfront" {
-  resource_arn = aws_cloudfront_distribution.superset_docs.arn
-  action       = "BLOCK"
 }
