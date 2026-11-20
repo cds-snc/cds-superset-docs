@@ -39,18 +39,6 @@ variable "wordpress_url" {
   type        = string
 }
 
-variable "wordpress_user" {
-  description = "The WordPress admin user"
-  type        = string
-  sensitive   = true
-}
-
-variable "wordpress_password" {
-  description = "The WordPress admin password"
-  type        = string
-  sensitive   = true
-}
-
 variable "upptime_status_header" {
   description = "The header to check for Upptime status check requests."
   type        = string
