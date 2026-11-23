@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.14.7](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.6...v1.14.7) (2026-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update golang.org/x/crypto/x509roots/fallback digest to 7390709 ([#412](https://github.com/cds-snc/cds-superset-docs/issues/412)) ([758d176](https://github.com/cds-snc/cds-superset-docs/commit/758d176178cc2891512d0aab4d6cd3ad03ca4115))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#413](https://github.com/cds-snc/cds-superset-docs/issues/413)) ([80cf55f](https://github.com/cds-snc/cds-superset-docs/commit/80cf55f1545ed969244e392de549f5d62abf95ae))
+* **deps:** update all patch dependencies to v1.27.4 ([#410](https://github.com/cds-snc/cds-superset-docs/issues/410)) ([cfc019e](https://github.com/cds-snc/cds-superset-docs/commit/cfc019e95d511441034331c1c2c1090d8ccd8f1a))
+* **deps:** update dependency go to v1.27.4 ([#411](https://github.com/cds-snc/cds-superset-docs/issues/411)) ([dd4dd24](https://github.com/cds-snc/cds-superset-docs/commit/dd4dd24f2fa07bc9cc99d492903bec523c8e4424))
+
 ## [1.14.6](https://github.com/cds-snc/cds-superset-docs/compare/v1.14.5...v1.14.6) (2026-11-20)
 
 
