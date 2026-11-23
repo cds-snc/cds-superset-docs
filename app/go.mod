@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.33.21
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.83.0
 	github.com/awslabs/aws-lambda-go-api-proxy v0.16.2
-	golang.org/x/crypto/x509roots/fallback v0.0.0-20260723152544-d701c51f7e4e
+	golang.org/x/crypto/x509roots/fallback v0.0.0-20261115193255-739070949446
 )
 
 require (

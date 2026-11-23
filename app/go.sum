@@ -50,6 +50,8 @@ github.com/stretchr/testify v1.7.2 h1:4jaiDzPyXQvSd7D0EjG45355tLlV3VOECpq10pLC+8
 github.com/stretchr/testify v1.7.2/go.mod h1:R6va5+xMeoiuVRoj+gSkQ7d3FALtqAAGI1FQKckRals=
 golang.org/x/crypto/x509roots/fallback v0.0.0-20260723152544-d701c51f7e4e h1:9TjMDOuGaMMTP5f7GXeHeA0JvFqGmv4DYRIWkzoePGI=
 golang.org/x/crypto/x509roots/fallback v0.0.0-20260723152544-d701c51f7e4e/go.mod h1:+UoQFNBq2p2wO+Q6ddVtYc25GZ6VNdOMyyrd4nrqrKs=
+golang.org/x/crypto/x509roots/fallback v0.0.0-20261115193255-739070949446 h1:8hk854wkDB8NBK5A42QtEsIeC+alb1soEzMK9BDKaRE=
+golang.org/x/crypto/x509roots/fallback v0.0.0-20261115193255-739070949446/go.mod h1:HPze8vhfG6fO06AM+VSvxRm4E3+5Yk375mgrJ5M2z1E=
 golang.org/x/net v0.20.0 h1:aCL9BSgETF1k+blQaYUBx9hJ9LOGP3gAVemcZlf1Kpo=
 golang.org/x/net v0.20.0/go.mod h1:z8BVo6PvndSri0LbOE3hAn0apkU+1YvI6E70E9jsnvY=
 golang.org/x/sys v0.16.0 h1:xWw16ngr6ZMtmxDyKyIgsE93KNKz5HKmMa3b8ALHidU=
